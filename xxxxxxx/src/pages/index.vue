@@ -36,16 +36,20 @@
         <div class="layui-side-scroll">
           <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
           <ul class="layui-nav layui-nav-tree" lay-filter="test">
-            <li class="layui-nav-item">
-              <router-link href="javascript:;" tag="a" :to="{name: 'home'}">首页</router-link>
-            </li>
-            <li class="layui-nav-item" v-for="item in sidebar">
+            <!--<li class="layui-nav-item">-->
+              <!--<router-link href="javascript:;" tag="a" :to="{name: 'home'}">-->
+                <!--首页-->
+              <!--</router-link>-->
+            <!--</li>-->
+            <li class="layui-nav-item" v-for="(item,index) in sidebar" @click="goHome(index)">
               <a class="" href="javascript:;">
                 {{item.sidebarTitle}}
-                <i class="layui-icon" style="float: left">{{item.icon}}</i>
+                <i class="layui-icon" style="float: left;margin-right: 10px" v-html="item.icon"></i>
               </a>
               <dl class="layui-nav-child" v-for="subitem in item.subtitle">
-                <dd><a href="javascript:;">{{subitem.subname}}</a></dd>
+                <router-link tag="dd" :to="{name:subitem.path}">
+                  <a href="javascript:;">{{subitem.subname}}</a>
+                </router-link>
               </dl>
             </li>
 
@@ -55,7 +59,7 @@
 
       <div class="layui-body">
         <div style="padding: 15px">
-          <routerview></routerview>
+          <router-view></router-view>
         </div>
       </div>
 
@@ -71,6 +75,10 @@
     data() {
       return {
         sidebar: [
+          {
+            icon:'&#xe681;',
+            sidebarTitle:'首页'
+          },
           {
             icon: '&#xe681;',
             sidebarTitle: '系统管理',
@@ -161,9 +169,7 @@
       }
     },
     created() {
-      layui.use('element', function () {
-        var element = layui.element;
-      });
+//      window.$layele.render('nav')
 //      this.$http.get('/api/sidebar')
 //        .then(function (res) {
 //          console.log(res.data.sidebar.icon)
@@ -173,7 +179,15 @@
 //        })
 
     },
+    mounted(){
+      window.$layele.render('nav')
+    },
     methods:{
+      goHome(index){
+        if (index===0){
+          this.$router.replace('home');
+        }
+      }
     },
     computed:{
 
@@ -183,7 +197,5 @@
 </script>
 
 <style scoped>
-/*.layui-icon:after{*/
-  /*content:'\e756'*/
-/*}*/
+/*@import "/static/layui/css/layui.css";*/
 </style>
