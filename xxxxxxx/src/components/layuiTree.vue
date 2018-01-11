@@ -5,14 +5,17 @@
       class="layui-tree">
       <ul id="demo1"></ul>
     </div>
-    <p @click="con">dian </p>
+    <p @click="con">dian</p>
   </div>
 </template>
 
 <script>
   export default {
     props: {
-      tree:{}
+      nodes: {
+        type: Array,
+        default: []
+      }
     },
     data () {
       return{
@@ -32,68 +35,7 @@
 //          layer.msg('当前节名称：' + item.name + '<br>全部参数：' + JSON.stringify(item));
           console.log(item);
         }
-        , nodes: [ //节点
-          {
-            name: '顶级节点'
-            , id: 1
-            , spread: true
-            , children: [
-            {
-              name: '测试部'
-              , id: 11
-              , spread: true
-              , children: [
-              {
-                name: '测试一部'
-                , id: 111
-              }, {
-                name: '测试二部'
-                , id: 112
-              }
-            ]
-            },
-            {
-              name: '产品部'
-              , id: 12
-              , children: [
-                {
-                  name: '产品一部'
-                  , id: 121
-                }, {
-                  name: '产品二部'
-                  , id: 122
-                }
-              ]
-            },
-            {
-              name: '销售部'
-              , id: 13
-              , children: [
-              {
-                name: '销售一部'
-                , id: 131
-              }, {
-                name: '销售二部'
-                , id: 132
-              }
-            ]
-            },
-            {
-              name: '研发部'
-              , id: 14
-              , children: [
-              {
-                name: '研发一部'
-                , id: 141
-              }, {
-                name: '研发二部'
-                , id: 142
-              }
-            ]
-            }
-          ]
-          }
-        ]
+        , nodes: this.nodes
       });
 
     },

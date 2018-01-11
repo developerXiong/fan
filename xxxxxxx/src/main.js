@@ -29,11 +29,15 @@ layui.config({
   base:''
 })
 
-let router = new VueRouter({
+export let router = new VueRouter({
   mode: 'history',
   routes: [
     {
       path:'/',
+      component:LoginPage
+    },
+    {
+      path:'/loginPage',
       component:LoginPage
     },
     {
@@ -87,7 +91,7 @@ layui.use(['layer','form','element','table','tree'],function () {
   // Vue.http.options.emulateJSON = true;
   // Vue.http.options.crossOrigin = true;
   // Vue.http.options.emulateHTTP = true;
-  Vue.http.headers.common['Authorization'] = this.Authorization
+  Vue.http.headers.common['Authorization'] = sessionStorage.getItem('UserInfo')
 // 也可以在拦截器里动态设置
 //   Vue.http.interceptors.push((request, next)  =>{
 //     var a= true;

@@ -19,70 +19,85 @@
 </template>
 
 <script>
+  import {post} from '../common/http'
+
   export default {
-    data () {
+    data() {
       return {
-        username:'',
-        password:'',
-        message:''
+        username: '',
+        password: '',
+        message: ''
       }
     },
     methods: {
-      delayed:function () {
+      delayed: function () {
         setTimeout(() => {
-          this.message='';
-        },2000)
+          this.message = '';
+        }, 2000)
       },
-      confirm:function () {
+      confirm: function () {
 
       },
-      login:function () {
-        if (this.username !== '' && this.password !== ''){
+      login: function () {
+        if (this.username !== '' && this.password !== '') {
           this.toLogin()
-        }else{
+        } else {
           this.message = '用户名或密码不能为空';
           this.delayed()
         }
       },
-      toLogin:function () {
+      toLogin: function () {
         let loginInfo = {
-          'account':this.username,
-          'password':this.password
+          'account': this.username,
+          'password': this.password
         };
-        let loginIn=JSON.stringify(loginInfo);
+        let loginIn = JSON.stringify(loginInfo);
 
 
-        this.$http.post('/api/ajaxLogin', loginIn)
-          .then(function (res) {
-            console.log(res.data)
-            if(res.data.code === '0000'){
+        post('/api/ajaxLogin', loginIn)
+          .then((res) => {
+            console.log(res.data);
+            if (res.data.code === '200') {
               this.$router.replace('./index');
               var vals = JSON.stringify(res.data.data);
-              sessionStorage.setItem('UserInfo',vals)
-//              var arr=sessionStorage.getItem('UserInfo')
-//              console.log(arr)
-            }else {
+              sessionStorage.setItem('UserInfo', vals)
+            } else {
               this.message = res.data.msg;
               this.delayed()
             }
-          },function (res) {
-            this.message = '请求失败，请重试'
-            this.delayed()
+          }, (res) => {
+            console.log(res)
           })
+//        this.$http.post('/api/ajaxLogin', loginIn)
+//          .then(function (res) {
+//            console.log(res.data)
+//            if(res.data.code === '0000'){
+//              this.$router.replace('./index');
+//              var vals = JSON.stringify(res.data.data);
+//              sessionStorage.setItem('UserInfo',vals)
+//              var arr=sessionStorage.getItem('UserInfo')
+//              console.log(arr)
+//            }else {
+//              this.message = res.data.msg;
+//              this.delayed()
+//            }
+//          },function (res) {
+//            this.message = '请求失败，请重试'
+//            this.delayed()
+//          })
 
 
       }
     },
-    mounted (){
+    mounted() {
 
     },
-    computed: {
-    }
+    computed: {}
   }
 </script>
 
 <style scoped>
-  .title{
+  .title {
     width: 100%;
     text-align: center;
     white-space: nowrap;
@@ -90,7 +105,8 @@
     font-size: 50px;
     margin-top: 10%;
   }
-  .info{
+
+  .info {
     width: 100%;
     text-align: center;
     white-space: nowrap;
@@ -98,10 +114,12 @@
     font-size: 25px;
     margin-top: 10px;
   }
-  form{
+
+  form {
     text-align: center;
   }
-  form input{
+
+  form input {
     width: 360px;
     height: 80px;
     border-radius: 4px;
@@ -112,7 +130,8 @@
     font-size: 16px;
     line-height: 80px;
   }
-  .login_btn{
+
+  .login_btn {
     display: inline-block;
     width: 400px;
     height: 80px;
@@ -125,12 +144,13 @@
     cursor: pointer;
     user-select: none;
   }
-  .message{
-    width:200px;
+
+  .message {
+    width: 200px;
     height: 40px;
     line-height: 40px;
     color: white;
-    background: rgba(0,0,0,.3);
+    background: rgba(0, 0, 0, .3);
     font-size: 16px;
     margin-top: 20px;
     text-align: center;
