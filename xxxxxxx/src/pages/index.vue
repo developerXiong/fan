@@ -4,7 +4,7 @@
       <div class="layui-header">
         <div class="layui-logo">logo</div>
         <!-- 头部区域（可配合layui已有的水平导航） -->
-        <!-- <ul class="layui-nav layui-layout-left">
+         <ul class="layui-nav layui-layout-left">
           <li class="layui-nav-item"><a href="">控制台</a></li>
           <li class="layui-nav-item"><a href="">商品管理</a></li>
           <li class="layui-nav-item"><a href="">用户</a></li>
@@ -16,7 +16,7 @@
               <dd><a href="">授权管理</a></dd>
             </dl>
           </li>
-        </ul> -->
+        </ul>
         <ul class="layui-nav layui-layout-right">
           <li class="layui-nav-item">
             <a href="javascript:;">
@@ -169,14 +169,19 @@
       }
     },
     created() {
+
 //      window.$layele.render('nav')
-//      this.$http.get('/api/sidebar')
-//        .then(function (res) {
-//          console.log(res.data.sidebar.icon)
-//
-//        }, function (res) {
-//
-//        })
+        var Authorization=sessionStorage.getItem('UserInfo')
+        const params = {'Authorization':Authorization}
+        console.log(Authorization)
+        this.$http.get('/api/user/getUserById',params)
+          .then((res) => {
+            console.log(Authorization)
+            console.log(res.data)
+          },(res) => {
+
+          })
+
 
     },
     mounted(){

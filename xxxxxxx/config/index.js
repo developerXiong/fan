@@ -17,7 +17,7 @@ module.exports = {
         pathRewrite: {
           '^/api': ''
         }
-}
+}d
     },
 
     // Various Dev Server settings

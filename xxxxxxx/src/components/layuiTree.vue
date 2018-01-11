@@ -1,21 +1,38 @@
 <template>
   <div>
-    <div class="tree">
-      <p class="tree_title" @click="cons">
-        选择部门
-      </p>
-      <layuiTreen :nodes="nodes"></layuiTreen>
+    <div
+      style="display: inline-block; width: 180px; padding: 10px; overflow: hidden;"
+      class="layui-tree">
+      <ul id="demo1"></ul>
     </div>
-
+    <p @click="con">dian </p>
   </div>
 </template>
-<script>
-  import layuiTreen from '../../components/layuiTree.vue'
 
+<script>
   export default {
-    data() {
-      return {
-        nodes: [ //节点
+    props: {
+      tree:{}
+    },
+    data () {
+      return{
+
+      }
+    },
+    methods:{
+      con(){
+        console.log(this.nodes)
+      }
+    },
+    mounted() {
+      window.$lay.tree({
+        elem: '#demo1' //指定元素
+        , target: '_blank' //是否新选项卡打开（比如节点返回href才有效）
+        , click: function (item) { //点击节点回调
+//          layer.msg('当前节名称：' + item.name + '<br>全部参数：' + JSON.stringify(item));
+          console.log(item);
+        }
+        , nodes: [ //节点
           {
             name: '顶级节点'
             , id: 1
@@ -39,14 +56,14 @@
               name: '产品部'
               , id: 12
               , children: [
-              {
-                name: '产品一部'
-                , id: 121
-              }, {
-                name: '产品二部'
-                , id: 122
-              }
-            ]
+                {
+                  name: '产品一部'
+                  , id: 121
+                }, {
+                  name: '产品二部'
+                  , id: 122
+                }
+              ]
             },
             {
               name: '销售部'
@@ -77,31 +94,14 @@
           ]
           }
         ]
-      }
+      });
+
     },
-    components: {
-      layuiTreen
-    },
-    methods:{
-      cons(){
-        console.log(this.nodes)
-      }
+    created() {
     }
   }
 </script>
-<style scoped>
-  .tree {
-    width: 200px;
-    border: 2px solid #dddddd;
-  }
 
-  .tree_title {
-    width: 170px;
-    border-bottom: 2px solid #dddddd;
-    line-height: 30px;
-    height: 30px;
-    font-weight: bold;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
+<style scoped>
+
 </style>

@@ -52,10 +52,10 @@
         let loginIn=JSON.stringify(loginInfo);
 
 
-        this.$http.post('/api/login', loginIn)
+        this.$http.post('/api/ajaxLogin', loginIn)
           .then(function (res) {
             console.log(res.data)
-            if(res.data.code === '200'){
+            if(res.data.code === '0000'){
               this.$router.replace('./index');
               var vals = JSON.stringify(res.data.data);
               sessionStorage.setItem('UserInfo',vals)

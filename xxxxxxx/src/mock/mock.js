@@ -1,5 +1,5 @@
 import Mock from 'mockjs'
-export default Mock.mock(/login/,{
+export default Mock.mock(/zzzzzzzzzzzzzzzzzzz/,{
   'code':'200'
  })
 // Mock.mock(/sidebar/,{
