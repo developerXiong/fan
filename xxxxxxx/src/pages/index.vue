@@ -529,24 +529,28 @@
       }
     },
     created() {
-//        this.$http.get('/api/user/getUserById')
-//          .then((res) => {
-//            console.log(Authorization)
-//            console.log(res.data)
-//          },(res) => {
-//
-//          })
+        this.$http.get('/api/user/getUserById')
+          .then((res) => {
+            console.log(res.data)
+          },(res) => {
 
-      get('/api/user/getUserById')
-        .then((res) => {
-          console.log(res.data)
-//          this.$router.replace('./index');
-        }, (res) => {
-//          console.log(res)
-        })
+          })
+
+//      get('/api/user/getUserById')
+//        .then((res) => {
+//          console.log(res.data)
+////          this.$router.replace('./index');
+//        }, (res) => {
+////          console.log(res)
+//        })
 
       this.sideBar = this.data[0].sidebar
     },
+//    beforeRouteEnter: (to, from, next) => {
+//      next(vm => {
+//
+//      })
+//    },
     mounted(){
       window.$layele.render('nav')
     },
@@ -558,6 +562,9 @@
       },
       chooseSideBar(index){
         this.sideBar=this.data[index].sidebar
+      },
+      getAjax(){
+
       }
     },
     computed:{

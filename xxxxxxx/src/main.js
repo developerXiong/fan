@@ -38,6 +38,7 @@ export let router = new VueRouter({
     },
     {
       path:'/loginPage',
+      name:'login',
       component:LoginPage
     },
     {
@@ -75,6 +76,10 @@ export let router = new VueRouter({
   ]
 })
 
+
+export function setUserInfoToHeader() {
+  Vue.http.headers.common['Authorization'] = sessionStorage.getItem('UserInfo')
+}
 layui.use(['layer','form','element','table','tree'],function () {
   var layer = layui.layer,
     form = layui.form,
@@ -88,24 +93,9 @@ layui.use(['layer','form','element','table','tree'],function () {
   window.$laytab = table
   window.$laytree = tree
   window.$lay = layui
-  // Vue.http.options.emulateJSON = true;
-  // Vue.http.options.crossOrigin = true;
-  // Vue.http.options.emulateHTTP = true;
-  Vue.http.headers.common['Authorization'] = sessionStorage.getItem('UserInfo')
-// 也可以在拦截器里动态设置
-//   Vue.http.interceptors.push((request, next)  =>{
-//     var a= true;
-//     if(a){
-//       request.headers.AuthKey = 'ssh';
-//     }
-//     console.log(request.headers)
-//
-//     next((response) => {
-//       console.log(response.status)
-//       return response
-//     });
-//
-//   });
+
+
+
 
   new Vue({
     el: '#app',

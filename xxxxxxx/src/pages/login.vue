@@ -20,7 +20,7 @@
 
 <script>
   import {post} from '../common/http'
-
+import {setUserInfoToHeader} from '../main'
   export default {
     data() {
       return {
@@ -52,15 +52,16 @@
           'password': this.password
         };
         let loginIn = JSON.stringify(loginInfo);
-
+        console.log(loginIn)
 
         post('/api/ajaxLogin', loginIn)
           .then((res) => {
             console.log(res.data);
-            if (res.data.code === '200') {
+            if (res.data.code === '0000') {
               this.$router.replace('./index');
               var vals = JSON.stringify(res.data.data);
-              sessionStorage.setItem('UserInfo', vals)
+              sessionStorage.setItem('UserInfo', vals);
+              setUserInfoToHeader()
             } else {
               this.message = res.data.msg;
               this.delayed()

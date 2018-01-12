@@ -13,12 +13,11 @@ export function post(url, params) {
       .then(function (res) {
         //请求成功的回调
 
-        if(res.data.code==='200'){
+        if(res.data.code==='0000'){
           resolve(res)
         }else if (res.data.code==='203'){
         //  未登录状态
           router.replace('./loginPage');
-
         }
       },function (res) {
         //请求失败的回调
