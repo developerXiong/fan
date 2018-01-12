@@ -523,18 +523,28 @@
         ],
         sideBar: []
 
-//     '/detail/analysis': require('../assets/images/3.png'),
-//          '/detail/publish': require('../assets/images/4.png')
-//        }
       }
     },
     created() {
-        this.$http.get('/api/user/getUserById')
-          .then((res) => {
-            console.log(res.data)
-          },(res) => {
+//        this.$http.get('/api/user/getUserById')
+//          .then((res) => {
+//            console.log(res.data)
+//          },(res) => {
+//
+//          })
 
-          })
+//      $.ajax({
+//        url:'http://192.168.0.134:8088/user/getUserById',
+//        beforeSend:function (xhr) {
+//          xhr.setRequestHeader('Authorization',sessionStorage.getItem('UserInfo'));
+//        },
+//        type:'GET',
+//        dataType:'json',
+//        contentType:"application/json",
+//        success:(data) => {
+//          console.log(data)
+//        }
+//      })
 
 //      get('/api/user/getUserById')
 //        .then((res) => {

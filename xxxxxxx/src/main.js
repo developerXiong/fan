@@ -77,9 +77,9 @@ export let router = new VueRouter({
 })
 
 
-export function setUserInfoToHeader() {
-  Vue.http.headers.common['Authorization'] = sessionStorage.getItem('UserInfo')
-}
+// export function setUserInfoToHeader() {
+//   Vue.http.headers.common['Authorization'] = sessionStorage.getItem('UserInfo')
+// }
 layui.use(['layer','form','element','table','tree'],function () {
   var layer = layui.layer,
     form = layui.form,
