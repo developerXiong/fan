@@ -99,9 +99,10 @@
 //             console.log(res)
             $.ajax({
               url:'http://192.168.0.134:8088/user/getUserById',
-              beforeSend:function (xhr) {
-                xhr.setRequestHeader('Authorization', '6b15c1b0-38f0-42e0-ac19-20add86b0546');
-              },
+              // beforeSend:function (xhr) {
+              //   xhr.setRequestHeader('Authorization', '6b15c1b0-38f0-42e0-ac19-20add86b0546');
+              // },
+              headers: {'Authorization': '6b15c1b0-38f0-42e0-ac19-20add86b0546'},
               type:'GET',
               dataType:'json',
               contentType:"application/json",
