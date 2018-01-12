@@ -88,19 +88,19 @@
 //            this.delayed()
 //          })
 
-        $.ajax({
-          type:'POST',
-          url:'http://192.168.0.134:8088/ajaxLogin',
-          data:loginIn,
-          dataType: "json",
-          contentType:"application/json",
-          success:function (res) {
-//            this.$router.replace('./index');
-            console.log(res)
+//         $.ajax({
+//           type:'POST',
+//           url:'http://192.168.0.134:8088/ajaxLogin',
+//           data:loginIn,
+//           dataType: "json",
+//           contentType:"application/json",
+//           success:function (res) {
+// //            this.$router.replace('./index');
+//             console.log(res)
             $.ajax({
               url:'http://192.168.0.134:8088/user/getUserById',
               beforeSend:function (xhr) {
-                xhr.setRequestHeader('Authorization',res.data);
+                xhr.setRequestHeader('Authorization', '6b15c1b0-38f0-42e0-ac19-20add86b0546');
               },
               type:'GET',
               dataType:'json',
@@ -110,7 +110,7 @@
               }
             })
           }
-        })
+        // })
 
       }
     },
