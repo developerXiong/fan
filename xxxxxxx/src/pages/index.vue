@@ -542,10 +542,10 @@
                 this.data = JSON.parse(data.data)
                 console.log(this.data)
                 this.sideBar = this.data[0].sideBar
+                this.showIndexPage = true
               }
             })
-     this.sideBar = this.data[0].sideBar
-     this.showIndexPage = true
+     // this.sideBar = this.data[0].sideBar
   
     },
     mounted(){
