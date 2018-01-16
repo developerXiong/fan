@@ -37,7 +37,7 @@
       <div class="layui-side layui-bg-black">
         <div class="layui-side-scroll">
           <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-          <ul class="layui-nav layui-nav-tree" lay-filter="test">
+          <ul class="layui-nav layui-nav-tree" lay-filter="test" v-if="showIndexPage">
             <!--<li class="layui-nav-item">-->
               <!--<router-link href="javascript:;" tag="a" :to="{name: 'home'}">-->
                 <!--首页-->
@@ -523,7 +523,8 @@
 //          }
 //        ],
         data:[],
-        sideBar: []
+        sideBar: [],
+        showIndexPage: false
 
       }
     },
@@ -543,8 +544,9 @@
                 this.sideBar = this.data[0].sideBar
               }
             })
-//      this.sideBar = this.data[0].sideBar
-
+     this.sideBar = this.data[0].sideBar
+     this.showIndexPage = true
+  
     },
     mounted(){
       window.$layele.render('nav')
