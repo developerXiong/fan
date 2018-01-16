@@ -5,7 +5,7 @@
         <div class="layui-logo">logo</div>
         <!-- 头部区域（可配合layui已有的水平导航） -->
          <ul class="layui-nav layui-layout-left">
-          <li class="layui-nav-item" v-for="(item,index) in data" @click="chooseSideBar(index)"><a href="javascript:;">{{item.topName}}</a></li>
+          <li class="layui-nav-item" v-for="(item,index) in data" @click="choosesideBar(index)"><a href="javascript:;">{{item.topName}}</a></li>
 
           <!--<li class="layui-nav-item"><a href="">商品管理</a></li>-->
           <!--<li class="layui-nav-item"><a href="">用户</a></li>-->
@@ -45,7 +45,7 @@
             <!--</li>-->
             <li class="layui-nav-item" v-for="(item,index) in sideBar" @click="goHome(index)">
               <a class="" href="javascript:;">
-                {{item.sidebarTitle}}
+                {{item.sideBarTitle}}
                 <i class="layui-icon" style="float: left;margin-right: 10px" v-html="item.icon"></i>
               </a>
               <dl class="layui-nav-child" v-for="subitem in item.subtitle">
@@ -77,14 +77,14 @@
   export default {
     data() {
       return {
-//        sidebar: [
+//        sideBar: [
 //          {
 //            icon:'&#xe681;',
-//            sidebarTitle:'首页'
+//            sideBarTitle:'首页'
 //          },
 //          {
 //            icon: '&#xe681;',
-//            sidebarTitle: '系统管理',
+//            sideBarTitle: '系统管理',
 //            subtitle: [{
 //                subname: '用户管理',
 //                path: 'userManagement'
@@ -104,7 +104,7 @@
 //          },
 //          {
 //            icon: '&#xe660;',
-//            sidebarTitle: '系统监控',
+//            sideBarTitle: '系统监控',
 //            subtitle: [{
 //              subname: '用户管理',
 //              path: 'userManagement'
@@ -124,7 +124,7 @@
 //          },
 //          {
 //            icon: '&#xe65d',
-//            sidebarTitle: '官网监控',
+//            sideBarTitle: '官网监控',
 //            subtitle: [{
 //              subname: '用户管理',
 //              path: 'userManagement'
@@ -144,7 +144,7 @@
 //          },
 //          {
 //            icon: '&#xe65e',
-//            sidebarTitle: '数据分析',
+//            sideBarTitle: '数据分析',
 //            subtitle: [{
 //              subname: '用户管理',
 //              path: 'userManagement'
@@ -163,406 +163,392 @@
 //              }]
 //          }
 //        ],
-        data: [
-          {
-            topName: '控制台',
-            sidebar: [
-              {
-                icon:'&#xe681;',
-                sidebarTitle:'首页'
-              },
-              {
-                icon: '&#xe681;',
-                sidebarTitle: '系统管理',
-                subtitle: [{
-                  subname: '用户管理',
-                  path: 'userManagement'
-                }
-                  , {
-                    subname: '角色管理',
-                    path: 'roleManagement'
-                  }
-                  , {
-                    subname: '系统菜单',
-                    path: 'systemMenu'
-                  }
-                  , {
-                    subname: '部门管理',
-                    path: 'departManagement'
-                  }]
-              },
-              {
-                icon: '&#xe660;',
-                sidebarTitle: '系统监控',
-                subtitle: [{
-                  subname: '用户管理',
-                  path: 'userManagement'
-                }
-                  , {
-                    subname: '角色管理',
-                    path: 'roleManagement'
-                  }
-                  , {
-                    subname: '系统菜单',
-                    path: 'systemMenu'
-                  }
-                  , {
-                    subname: '部门管理',
-                    path: 'departManagement'
-                  }]
-              },
-              {
-                icon: '&#xe65d',
-                sidebarTitle: '官网监控',
-                subtitle: [{
-                  subname: '用户管理',
-                  path: 'userManagement'
-                }
-                  , {
-                    subname: '角色管理',
-                    path: 'roleManagement'
-                  }
-                  , {
-                    subname: '系统菜单',
-                    path: 'systemMenu'
-                  }
-                  , {
-                    subname: '部门管理',
-                    path: 'departManagement'
-                  }]
-              },
-              {
-                icon: '&#xe65e',
-                sidebarTitle: '数据分析',
-                subtitle: [{
-                  subname: '用户管理',
-                  path: 'userManagement'
-                }
-                  , {
-                    subname: '角色管理',
-                    path: 'roleManagement'
-                  }
-                  , {
-                    subname: '系统菜单',
-                    path: 'systemMenu'
-                  }
-                  , {
-                    subname: '部门管理',
-                    path: 'departManagement'
-                  }]
-              }
-            ],
-          },
-          {
-            topName: '商品管理',
-            sidebar: [
-              {
-                icon:'&#xe681;',
-                sidebarTitle:'首页111'
-              },
-              {
-                icon: '&#xe681;',
-                sidebarTitle: '系统管理',
-                subtitle: [{
-                  subname: '用户管理',
-                  path: 'userManagement'
-                }
-                  , {
-                    subname: '角色管理',
-                    path: 'roleManagement'
-                  }
-                  , {
-                    subname: '系统菜单',
-                    path: 'systemMenu'
-                  }
-                  , {
-                    subname: '部门管理',
-                    path: 'departManagement'
-                  }]
-              },
-              {
-                icon: '&#xe660;',
-                sidebarTitle: '系统监控',
-                subtitle: [{
-                  subname: '用户管理',
-                  path: 'userManagement'
-                }
-                  , {
-                    subname: '角色管理',
-                    path: 'roleManagement'
-                  }
-                  , {
-                    subname: '系统菜单',
-                    path: 'systemMenu'
-                  }
-                  , {
-                    subname: '部门管理',
-                    path: 'departManagement'
-                  }]
-              },
-              {
-                icon: '&#xe65d',
-                sidebarTitle: '官网监控',
-                subtitle: [{
-                  subname: '用户管理',
-                  path: 'userManagement'
-                }
-                  , {
-                    subname: '角色管理',
-                    path: 'roleManagement'
-                  }
-                  , {
-                    subname: '系统菜单',
-                    path: 'systemMenu'
-                  }
-                  , {
-                    subname: '部门管理',
-                    path: 'departManagement'
-                  }]
-              },
-              {
-                icon: '&#xe65e',
-                sidebarTitle: '数据分析',
-                subtitle: [{
-                  subname: '用户管理',
-                  path: 'userManagement'
-                }
-                  , {
-                    subname: '角色管理',
-                    path: 'roleManagement'
-                  }
-                  , {
-                    subname: '系统菜单',
-                    path: 'systemMenu'
-                  }
-                  , {
-                    subname: '部门管理',
-                    path: 'departManagement'
-                  }]
-              }
-            ],
-          },
-          {
-            topName: '用户',
-            sidebar: [
-              {
-                icon:'&#xe681;',
-                sidebarTitle:'首页222'
-              },
-              {
-                icon: '&#xe681;',
-                sidebarTitle: '系统管理',
-                subtitle: [{
-                  subname: '用户管理',
-                  path: 'userManagement'
-                }
-                  , {
-                    subname: '角色管理',
-                    path: 'roleManagement'
-                  }
-                  , {
-                    subname: '系统菜单',
-                    path: 'systemMenu'
-                  }
-                  , {
-                    subname: '部门管理',
-                    path: 'departManagement'
-                  }]
-              },
-              {
-                icon: '&#xe660;',
-                sidebarTitle: '系统监控',
-                subtitle: [{
-                  subname: '用户管理',
-                  path: 'userManagement'
-                }
-                  , {
-                    subname: '角色管理',
-                    path: 'roleManagement'
-                  }
-                  , {
-                    subname: '系统菜单',
-                    path: 'systemMenu'
-                  }
-                  , {
-                    subname: '部门管理',
-                    path: 'departManagement'
-                  }]
-              },
-              {
-                icon: '&#xe65d',
-                sidebarTitle: '官网监控',
-                subtitle: [{
-                  subname: '用户管理',
-                  path: 'userManagement'
-                }
-                  , {
-                    subname: '角色管理',
-                    path: 'roleManagement'
-                  }
-                  , {
-                    subname: '系统菜单',
-                    path: 'systemMenu'
-                  }
-                  , {
-                    subname: '部门管理',
-                    path: 'departManagement'
-                  }]
-              },
-              {
-                icon: '&#xe65e',
-                sidebarTitle: '数据分析',
-                subtitle: [{
-                  subname: '用户管理',
-                  path: 'userManagement'
-                }
-                  , {
-                    subname: '角色管理',
-                    path: 'roleManagement'
-                  }
-                  , {
-                    subname: '系统菜单',
-                    path: 'systemMenu'
-                  }
-                  , {
-                    subname: '部门管理',
-                    path: 'departManagement'
-                  }]
-              }
-            ],
-          },
-          {
-            topName: '其他系统',
-            sidebar: [
-              {
-                icon:'&#xe681;',
-                sidebarTitle:'首页333'
-              },
-              {
-                icon: '&#xe681;',
-                sidebarTitle: '系统管理',
-                subtitle: [{
-                  subname: '用户管理',
-                  path: 'userManagement'
-                }
-                  , {
-                    subname: '角色管理',
-                    path: 'roleManagement'
-                  }
-                  , {
-                    subname: '系统菜单',
-                    path: 'systemMenu'
-                  }
-                  , {
-                    subname: '部门管理',
-                    path: 'departManagement'
-                  }]
-              },
-              {
-                icon: '&#xe660;',
-                sidebarTitle: '系统监控',
-                subtitle: [{
-                  subname: '用户管理',
-                  path: 'userManagement'
-                }
-                  , {
-                    subname: '角色管理',
-                    path: 'roleManagement'
-                  }
-                  , {
-                    subname: '系统菜单',
-                    path: 'systemMenu'
-                  }
-                  , {
-                    subname: '部门管理',
-                    path: 'departManagement'
-                  }]
-              },
-              {
-                icon: '&#xe65d',
-                sidebarTitle: '官网监控',
-                subtitle: [{
-                  subname: '用户管理',
-                  path: 'userManagement'
-                }
-                  , {
-                    subname: '角色管理',
-                    path: 'roleManagement'
-                  }
-                  , {
-                    subname: '系统菜单',
-                    path: 'systemMenu'
-                  }
-                  , {
-                    subname: '部门管理',
-                    path: 'departManagement'
-                  }]
-              },
-              {
-                icon: '&#xe65e',
-                sidebarTitle: '数据分析',
-                subtitle: [{
-                  subname: '用户管理',
-                  path: 'userManagement'
-                }
-                  , {
-                    subname: '角色管理',
-                    path: 'roleManagement'
-                  }
-                  , {
-                    subname: '系统菜单',
-                    path: 'systemMenu'
-                  }
-                  , {
-                    subname: '部门管理',
-                    path: 'departManagement'
-                  }]
-              }
-            ],
-          }
-        ],
+
+//        data: [
+//          {
+//            topName: '控制台',
+//            sideBar: [
+//              {
+//                icon:'&#xe681;',
+//                sideBarTitle:'首页'
+//              },
+//              {
+//                icon: '&#xe681;',
+//                sideBarTitle: '系统管理',
+//                subtitle: [{
+//                  subname: '用户管理',
+//                  path: 'userManagement'
+//                }
+//                  , {
+//                    subname: '角色管理',
+//                    path: 'roleManagement'
+//                  }
+//                  , {
+//                    subname: '系统菜单',
+//                    path: 'systemMenu'
+//                  }
+//                  , {
+//                    subname: '部门管理',
+//                    path: 'departManagement'
+//                  }]
+//              },
+//              {
+//                icon: '&#xe660;',
+//                sideBarTitle: '系统监控',
+//                subtitle: [{
+//                  subname: '用户管理',
+//                  path: 'userManagement'
+//                }
+//                  , {
+//                    subname: '角色管理',
+//                    path: 'roleManagement'
+//                  }
+//                  , {
+//                    subname: '系统菜单',
+//                    path: 'systemMenu'
+//                  }
+//                  , {
+//                    subname: '部门管理',
+//                    path: 'departManagement'
+//                  }]
+//              },
+//              {
+//                icon: '&#xe65d',
+//                sideBarTitle: '官网监控',
+//                subtitle: [{
+//                  subname: '用户管理',
+//                  path: 'userManagement'
+//                }
+//                  , {
+//                    subname: '角色管理',
+//                    path: 'roleManagement'
+//                  }
+//                  , {
+//                    subname: '系统菜单',
+//                    path: 'systemMenu'
+//                  }
+//                  , {
+//                    subname: '部门管理',
+//                    path: 'departManagement'
+//                  }]
+//              },
+//              {
+//                icon: '&#xe65e',
+//                sideBarTitle: '数据分析',
+//                subtitle: [{
+//                  subname: '用户管理',
+//                  path: 'userManagement'
+//                }
+//                  , {
+//                    subname: '角色管理',
+//                    path: 'roleManagement'
+//                  }
+//                  , {
+//                    subname: '系统菜单',
+//                    path: 'systemMenu'
+//                  }
+//                  , {
+//                    subname: '部门管理',
+//                    path: 'departManagement'
+//                  }]
+//              }
+//            ],
+//          },
+//          {
+//            topName: '商品管理',
+//            sideBar: [
+//              {
+//                icon:'&#xe681;',
+//                sideBarTitle:'首页111'
+//              },
+//              {
+//                icon: '&#xe681;',
+//                sideBarTitle: '系统管理',
+//                subtitle: [{
+//                  subname: '用户管理',
+//                  path: 'userManagement'
+//                }
+//                  , {
+//                    subname: '角色管理',
+//                    path: 'roleManagement'
+//                  }
+//                  , {
+//                    subname: '系统菜单',
+//                    path: 'systemMenu'
+//                  }
+//                  , {
+//                    subname: '部门管理',
+//                    path: 'departManagement'
+//                  }]
+//              },
+//              {
+//                icon: '&#xe660;',
+//                sideBarTitle: '系统监控',
+//                subtitle: [{
+//                  subname: '用户管理',
+//                  path: 'userManagement'
+//                }
+//                  , {
+//                    subname: '角色管理',
+//                    path: 'roleManagement'
+//                  }
+//                  , {
+//                    subname: '系统菜单',
+//                    path: 'systemMenu'
+//                  }
+//                  , {
+//                    subname: '部门管理',
+//                    path: 'departManagement'
+//                  }]
+//              },
+//              {
+//                icon: '&#xe65d',
+//                sideBarTitle: '官网监控',
+//                subtitle: [{
+//                  subname: '用户管理',
+//                  path: 'userManagement'
+//                }
+//                  , {
+//                    subname: '角色管理',
+//                    path: 'roleManagement'
+//                  }
+//                  , {
+//                    subname: '系统菜单',
+//                    path: 'systemMenu'
+//                  }
+//                  , {
+//                    subname: '部门管理',
+//                    path: 'departManagement'
+//                  }]
+//              },
+//              {
+//                icon: '&#xe65e',
+//                sideBarTitle: '数据分析',
+//                subtitle: [{
+//                  subname: '用户管理',
+//                  path: 'userManagement'
+//                }
+//                  , {
+//                    subname: '角色管理',
+//                    path: 'roleManagement'
+//                  }
+//                  , {
+//                    subname: '系统菜单',
+//                    path: 'systemMenu'
+//                  }
+//                  , {
+//                    subname: '部门管理',
+//                    path: 'departManagement'
+//                  }]
+//              }
+//            ],
+//          },
+//          {
+//            topName: '用户',
+//            sideBar: [
+//              {
+//                icon:'&#xe681;',
+//                sideBarTitle:'首页222'
+//              },
+//              {
+//                icon: '&#xe681;',
+//                sideBarTitle: '系统管理',
+//                subtitle: [{
+//                  subname: '用户管理',
+//                  path: 'userManagement'
+//                }
+//                  , {
+//                    subname: '角色管理',
+//                    path: 'roleManagement'
+//                  }
+//                  , {
+//                    subname: '系统菜单',
+//                    path: 'systemMenu'
+//                  }
+//                  , {
+//                    subname: '部门管理',
+//                    path: 'departManagement'
+//                  }]
+//              },
+//              {
+//                icon: '&#xe660;',
+//                sideBarTitle: '系统监控',
+//                subtitle: [{
+//                  subname: '用户管理',
+//                  path: 'userManagement'
+//                }
+//                  , {
+//                    subname: '角色管理',
+//                    path: 'roleManagement'
+//                  }
+//                  , {
+//                    subname: '系统菜单',
+//                    path: 'systemMenu'
+//                  }
+//                  , {
+//                    subname: '部门管理',
+//                    path: 'departManagement'
+//                  }]
+//              },
+//              {
+//                icon: '&#xe65d',
+//                sideBarTitle: '官网监控',
+//                subtitle: [{
+//                  subname: '用户管理',
+//                  path: 'userManagement'
+//                }
+//                  , {
+//                    subname: '角色管理',
+//                    path: 'roleManagement'
+//                  }
+//                  , {
+//                    subname: '系统菜单',
+//                    path: 'systemMenu'
+//                  }
+//                  , {
+//                    subname: '部门管理',
+//                    path: 'departManagement'
+//                  }]
+//              },
+//              {
+//                icon: '&#xe65e',
+//                sideBarTitle: '数据分析',
+//                subtitle: [{
+//                  subname: '用户管理',
+//                  path: 'userManagement'
+//                }
+//                  , {
+//                    subname: '角色管理',
+//                    path: 'roleManagement'
+//                  }
+//                  , {
+//                    subname: '系统菜单',
+//                    path: 'systemMenu'
+//                  }
+//                  , {
+//                    subname: '部门管理',
+//                    path: 'departManagement'
+//                  }]
+//              }
+//            ],
+//          },
+//          {
+//            topName: '其他系统',
+//            sideBar: [
+//              {
+//                icon:'&#xe681;',
+//                sideBarTitle:'首页333'
+//              },
+//              {
+//                icon: '&#xe681;',
+//                sideBarTitle: '系统管理',
+//                subtitle: [{
+//                  subname: '用户管理',
+//                  path: 'userManagement'
+//                }
+//                  , {
+//                    subname: '角色管理',
+//                    path: 'roleManagement'
+//                  }
+//                  , {
+//                    subname: '系统菜单',
+//                    path: 'systemMenu'
+//                  }
+//                  , {
+//                    subname: '部门管理',
+//                    path: 'departManagement'
+//                  }]
+//              },
+//              {
+//                icon: '&#xe660;',
+//                sideBarTitle: '系统监控',
+//                subtitle: [{
+//                  subname: '用户管理',
+//                  path: 'userManagement'
+//                }
+//                  , {
+//                    subname: '角色管理',
+//                    path: 'roleManagement'
+//                  }
+//                  , {
+//                    subname: '系统菜单',
+//                    path: 'systemMenu'
+//                  }
+//                  , {
+//                    subname: '部门管理',
+//                    path: 'departManagement'
+//                  }]
+//              },
+//              {
+//                icon: '&#xe65d',
+//                sideBarTitle: '官网监控',
+//                subtitle: [{
+//                  subname: '用户管理',
+//                  path: 'userManagement'
+//                }
+//                  , {
+//                    subname: '角色管理',
+//                    path: 'roleManagement'
+//                  }
+//                  , {
+//                    subname: '系统菜单',
+//                    path: 'systemMenu'
+//                  }
+//                  , {
+//                    subname: '部门管理',
+//                    path: 'departManagement'
+//                  }]
+//              },
+//              {
+//                icon: '&#xe65e',
+//                sideBarTitle: '数据分析',
+//                subtitle: [{
+//                  subname: '用户管理',
+//                  path: 'userManagement'
+//                }
+//                  , {
+//                    subname: '角色管理',
+//                    path: 'roleManagement'
+//                  }
+//                  , {
+//                    subname: '系统菜单',
+//                    path: 'systemMenu'
+//                  }
+//                  , {
+//                    subname: '部门管理',
+//                    path: 'departManagement'
+//                  }]
+//              }
+//            ],
+//          }
+//        ],
+        data:[],
         sideBar: []
 
       }
     },
     created() {
-//        this.$http.get('/api/user/getUserById')
-//          .then((res) => {
-//            console.log(res.data)
-//          },(res) => {
-//
-//          })
+            $.ajax({
+              url:'http://192.168.0.134:8088/menu/getMenus',
+              beforeSend:function (xhr) {
+                 xhr.setRequestHeader('Authorization', sessionStorage.getItem('Authorization'));
+              },
+              type:'GET',
+              dataType:'json',
+              contentType:"application/json",
+              success:(data) => {
+                console.log(data)
+                this.data = JSON.parse(data.data)
+                console.log(this.data)
+                this.sideBar = this.data[0].sideBar
+              }
+            })
+//      this.sideBar = this.data[0].sideBar
 
-//      $.ajax({
-//        url:'http://192.168.0.134:8088/user/getUserById',
-//        beforeSend:function (xhr) {
-//          xhr.setRequestHeader('Authorization',sessionStorage.getItem('UserInfo'));
-//        },
-//        type:'GET',
-//        dataType:'json',
-//        contentType:"application/json",
-//        success:(data) => {
-//          console.log(data)
-//        }
-//      })
-
-//      get('/api/user/getUserById')
-//        .then((res) => {
-//          console.log(res.data)
-////          this.$router.replace('./index');
-//        }, (res) => {
-////          console.log(res)
-//        })
-
-      this.sideBar = this.data[0].sidebar
     },
-//    beforeRouteEnter: (to, from, next) => {
-//      next(vm => {
-//
-//      })
-//    },
     mounted(){
       window.$layele.render('nav')
+//      this.sideBar = this.data[0].sideBar
     },
     methods:{
       goHome(index){
@@ -570,11 +556,8 @@
           this.$router.replace('home');
         }
       },
-      chooseSideBar(index){
-        this.sideBar=this.data[index].sidebar
-      },
-      getAjax(){
-
+      choosesideBar(index){
+        this.sideBar=this.data[index].sideBar
       }
     },
     computed:{

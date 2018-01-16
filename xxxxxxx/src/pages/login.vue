@@ -20,7 +20,7 @@
 
 <script>
   import {post} from '../common/http'
-//  import {setUserInfoToHeader} from '../main'
+
   export default {
     data() {
       return {
@@ -48,20 +48,32 @@
       },
       toLogin: function () {
         let loginInfo = {
-          'account': this.username,
+          'username': this.username,
           'password': this.password
         };
         let loginIn = JSON.stringify(loginInfo);
         console.log(loginIn)
-
-//        post('/api/ajaxLogin', loginIn)
+//
+//        post('http://192.168.0.134:8088/ajaxLogin', loginIn)
 //          .then((res) => {
 //            console.log(res.data);
 //            if (res.data.code === '0000') {
-//              this.$router.replace('./index');
+//
 //              var vals = JSON.stringify(res.data.data);
-//              sessionStorage.setItem('UserInfo', vals);
-////              setUserInfoToHeader()
+//              sessionStorage.setItem('Authorization', vals);
+////              this.$router.replace('./index');
+//              $.ajax({
+//                url:'http://192.168.0.134:8088/menu/getMenus',
+//                beforeSend:function (xhr) {
+//                  xhr.setRequestHeader('Authorization', sessionStorage.getItem('Authorization'));
+//                },
+//                type:'GET',
+//                dataType:'json',
+//                contentType:"application/json",
+//                success:(data) => {
+//                  console.log(data)
+//                }
+//              })
 //            } else {
 //              this.message = res.data.msg;
 //              this.delayed()
@@ -88,6 +100,7 @@
 //            this.delayed()
 //          })
 
+        var _this=this
          $.ajax({
            type:'POST',
            url:'http://192.168.0.134:8088/ajaxLogin',
@@ -95,21 +108,9 @@
            dataType: "json",
            contentType:"application/json",
            success:function (res) {
- //            this.$router.replace('./index');
+             _this.$router.replace('./index');
              console.log(res)
-            $.ajax({
-              url:'http://192.168.0.134:8088/user/getUserById',
-               beforeSend:function (xhr) {
-                 xhr.setRequestHeader('Authorization', '6b15c1b0-38f0-42e0-ac19-20add86b0546');
-               },
-               headers: {'Authorization': '6b15c1b0-38f0-42e0-ac19-20add86b0546'},
-              type:'GET',
-              dataType:'json',
-              contentType:"application/json",
-              success:(data) => {
-                console.log(data)
-              }
-            })
+             sessionStorage.setItem('Authorization', res.data);
            }
          })
 

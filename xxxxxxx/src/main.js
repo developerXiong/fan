@@ -12,7 +12,7 @@ require('layui-src/src/css/layui.css')
 
 import IndexPage from './pages/index.vue'
 import LoginPage from './pages/login.vue'
-import HomePage from './pages/right/home.vue'
+import AllHomePage from './pages/right/home.vue'
 import userManagement from './pages/right/userManagement.vue'
 import roleManagement from './pages/right/roleManagement.vue'
 import systemMenu from './pages/right/systemMenu.vue'
@@ -34,22 +34,22 @@ export let router = new VueRouter({
   routes: [
     {
       path:'/',
-      component:LoginPage
+      component:IndexPage
     },
     {
-      path:'/loginPage',
+      path:'/login',
       name:'login',
       component:LoginPage
     },
     {
       path:'/index',
       component:IndexPage,
-      // redirect :{name:'home'},
+      redirect :{name:'home'},
       children:[
         {
-          path:'/index/home',
+          path:'/home',
           name:'home',
-          component:HomePage
+          component:AllHomePage
         },
         {
           path:'/index/userManagement',
@@ -76,10 +76,18 @@ export let router = new VueRouter({
   ]
 })
 
+// router.beforeEach((to, from, next) => {
+//   if (to.path === '/login') {
+//     sessionStorage.removeItem('Authorization');
+//   }
+//   let user = JSON.parse(sessionStorage.getItem('Authorization'));
+//   if (!user && to.path !== '/login') {
+//     next({ path: '/login' })
+//   } else {
+//     next()
+//   }
+// })
 
-// export function setUserInfoToHeader() {
-//   Vue.http.headers.common['Authorization'] = sessionStorage.getItem('UserInfo')
-// }
 layui.use(['layer','form','element','table','tree'],function () {
   var layer = layui.layer,
     form = layui.form,
