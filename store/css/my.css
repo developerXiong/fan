@@ -1,0 +1,168 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family:"Microsoft Yahei";
+}
+html,body{
+    font-size: 12px;
+    height: 100%;
+}
+img{
+    border: 0;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.cont{
+    width: 100%;
+    height: 100%;
+}
+.cont .title{
+    height: 6.74rem;
+    line-height: 6.74rem;
+    font-size: 3rem;
+    color:#101010;
+    padding-left: 1.58rem;
+    margin-bottom: 2rem;
+}
+.cont .function .func_ul .func_li{
+    height: 4.2rem;
+    line-height: 4.2rem;
+    font-size: 1.08rem;
+    color:#282828 ;
+}
+.cont .function .func_ul .func_li a{
+    display: block;
+    width: auto;
+    padding-left: 1.67rem;
+    padding-right: 1.42rem;
+    height: 100%;
+}
+.cont .function .func_ul .func_li a .func_li_img{
+    width: 2.2rem;
+    height: 4.2rem;
+    position: relative;
+    float: left;
+}
+.cont .function .func_ul .func_li a .func_li_img img{
+    width: 2.2rem;
+    height: 2.2rem;
+    position: absolute;
+    top: 50%;
+    margin-top: -1.1rem;
+}
+.cont .function .func_ul .func_li a .func_li_words{
+    float: left;
+    line-height: 4.2rem;
+    font-size: 1.2rem;
+    color: #282828;
+    margin-left: 0.73rem;
+}
+.cont .function .func_ul .func_li a .func_li_right{
+    display: block;
+    width: 3rem;
+    height: 4.2rem;
+    position: relative;
+    float: right;
+}
+.cont .function .func_ul .func_li a .func_li_right img{
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    top: 50%;
+    margin-top: -1.5rem;
+}
+.cont #goodcover1,#goodcover2{
+    background: rgba(3,3,3,.7);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+}
+.cont #code1{
+    width: 16.67rem;
+    height: 19.5rem;
+    background: white;
+    border-radius: 0.5rem;
+}
+.cont #code1 .close1{
+    position: relative;
+    height: 3rem;
+}
+.cont #code1 .close1 img{
+    position: absolute;
+    width: 3rem;
+    right: 0;
+    height: 3rem;
+}
+.cont #code1 .code-img{
+    width: 11.08rem;
+    height: 11.08rem;
+    margin: 0 auto;
+}
+.cont #code1 .code-img img{
+    width: 100%;
+    height: 100%;
+}
+.cont #code1 .goodtxt{
+    width: 100%;
+}
+.cont #code1 .goodtxt p{
+    text-align: center;
+    font-size: 1.33rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+.cont #code1 .goodtxt p:last-child{
+    font-size: 1rem;
+    font-weight: 500;
+}
+.cont #code2{
+    width: 20.42rem;
+    height: 7.92rem;
+    border-radius: 0.5rem;
+    background: white;
+}
+.cont #code2 .tel{
+    width: 100%;
+    height: 4.42rem;
+    border-bottom: .1rem solid #DADADE;;
+    line-height: 4.42rem;
+    text-align: center;
+    font-size: 1.33rem;
+    color: black;
+}
+.cont #code2 .btn{
+    width: 100%;
+    height: 3.33rem;
+    position: relative;
+}
+.cont #code2 .btn a{
+    display: block;
+    width: 50%;
+    height:3.33rem;
+    line-height: 3.33rem;
+    text-align: center;
+    font-size: 1.17rem;
+    color:#0079FF ;
+    float: left;
+}
+.cont #code2 .btn .btn_line{
+    position: absolute;
+    left: 50%;
+    height: 3.33rem;
+    width: 0.1rem;
+    background: #DADADE;
+}
+
+
+
+
+
+
+

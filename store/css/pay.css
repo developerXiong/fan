@@ -1,0 +1,170 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family:"Microsoft Yahei";
+}
+html,body{
+    font-size: 12px;
+    height: 100%;
+}
+img{
+    border: 0;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.cont{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: #F5F4F4;
+}
+.cont .selected{
+    margin-bottom: 0.83rem;
+    /*height: calc( 100% - 4.17rem);*/
+    width: 100%;
+}
+.cont .selected .sele_title{
+    width: calc( 100% - 2.8rem);
+    padding-left: 1.3rem;
+    padding-right: 1.5rem;
+    font-size: 1.17rem;
+    color: #171717;
+    height: 3.33rem;
+    line-height: 3.33rem;
+    background: white;
+    border-bottom: 1px solid #EDEDED;
+}
+.cont .selected .sele_cont{
+    width: calc( 100% - 2.8rem);
+    padding-left: 1.3rem;
+    padding-right: 1.5rem;
+    background: white;
+}
+.cont .selected .sele_cont .se_ul .se_li{
+    height: 4.42rem;
+}
+.cont .selected .sele_cont .se_ul .se_li .se_li_img{
+    width: 1.67rem;
+    height: 4.42rem;
+    float: left;
+    position: relative;
+}
+.cont .selected .sele_cont .se_ul .se_li .se_li_img img{
+    width: 1.67rem;
+    height: 1.67rem;
+    position: absolute;
+    top:50%;
+    margin-top: -0.84rem;
+}
+.cont .selected .sele_cont .se_ul .se_li .se_li_name{
+    display: block;
+    float: left;
+    margin-left: 0.75rem;
+    line-height: 4.42rem;
+    font-size: 1.17rem;
+    color: #343437;
+}
+.cont .selected .sele_cont .se_ul .se_li .se_li_right{
+    float: right;
+    font-size: 1.08rem;
+    height: 4.42rem;
+    line-height: 4.42rem;
+    color: #232323;
+}
+.cont .selected .sele_cont .se_ul .se_li .se_li_right .se_li_num{
+    float: left;
+}
+.cont .selected .sele_cont .se_ul .se_li .se_li_right .se_li_pr{
+    float: left;
+    margin-left: 2rem;
+}
+.cont .payment{
+    background: white;
+    padding-left: 1.3rem;
+    padding-right: 1.5rem;
+    margin-bottom: 4.17rem;
+}
+.cont .payment .pay_words{
+    height: 3.33rem;
+    line-height: 3.33rem;
+    font-size: 1.08rem;
+    color: #171717;
+}
+.cont .payment .pay_words p{
+    border-bottom: 1px solid #EDEDED;
+    overflow: hidden;
+}
+.cont .payment .pay_way .pay_way_ul .pay_way_li{
+    height: 4.42rem;
+}
+.cont .payment .pay_way .pay_way_ul .pay_way_li .pay_way_img{
+    width: 1.67rem;
+    height: 4.45rem;
+    position: relative;
+    float: left;
+}
+.cont .payment .pay_way .pay_way_ul .pay_way_li .pay_way_img img{
+    position: absolute;
+    width: 1.67rem;
+    height: 1.5rem;
+    top: 50%;
+    margin-top: -0.74rem;
+}
+.cont .payment .pay_way .pay_way_ul .pay_way_li .pay_way_words{
+    font-size: 1.17rem;
+    line-height: 4.42rem;
+    color:#343437;
+    float: left;
+    margin-left: 0.75rem;
+}
+.cont .footer{
+    width: calc( 100% - 2.8rem);
+    padding-left: 1.3rem;
+    padding-right: 1.5rem;
+    height: 4.17rem;
+    background: white;
+    position: fixed;
+    bottom: 0;
+    box-shadow: 0 -5px 10px 2px rgba(0,0,0,0.03);
+}
+.cont .footer .footer_words{
+    float: left;
+    font-size: 1.25rem;
+    color: #030303;
+    line-height: 4.17rem;
+    font-weight: bold;
+}
+.cont .footer .footer_pay{
+    display: block;
+    float: right;
+    width: 8.33rem;
+    height: 3rem;
+    background-image: linear-gradient(-111deg, #FF6533 3%, #FA1D41 100%);
+    border-radius: 2.08px;
+    text-align: center;
+    line-height: 3rem;
+    font-size: 1.33rem;
+    color: white;
+    margin-top: 0.67rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
