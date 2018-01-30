@@ -15,6 +15,6 @@ $(function () {
         }
     }
     var id = getQueryString('id');
-    alert(id)
-
+    // alert(id)
+    console.log(id)
 })
