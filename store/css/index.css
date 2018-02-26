@@ -23,44 +23,6 @@ a{
     height: 100%;
     position: relative;
 }
-/*.cont .header{*/
-    /*width: 100%;*/
-    /*height: 3.5rem;*/
-    /*background: black;*/
-    /*line-height: 3.5rem;*/
-    /*position: relative;*/
-/*}*/
-/*.cont .header .close{*/
-    /*display: block;*/
-    /*float: left;*/
-    /*margin-left: 1.2rem;*/
-/*}*/
-/*.cont .header .close a{*/
-    /*color: white;*/
-    /*font-size: 1.17rem;*/
-/*}*/
-/*.cont .header .close a img{*/
-    /*width: 0.67rem;*/
-    /*height: 1.33rem;*/
-    /*vertical-align: middle;*/
-/*}*/
-/*.cont .header .h_middle{*/
-    /*color: white;*/
-    /*position: absolute;*/
-    /*width: 4rem;*/
-    /*left: 50%;*/
-    /*margin-left: -2rem;*/
-    /*font-size: 1.33rem;*/
-/*}*/
-/*.cont .header .h_right{*/
-    /*float: right;*/
-    /*margin-right: 1.2rem;*/
-/*}*/
-/*.cont .header .h_right img{*/
-    /*width: 1.67rem;*/
-    /*height: 0.39rem;*/
-    /*vertical-align: middle;*/
-/*}*/
 .cont .title{
     width: 100%;
     height: 5.83rem;
@@ -136,10 +98,12 @@ a{
     width: 6rem;
     height: 100%;
     float: left;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 .cont .board .tab .tab_ul{
     width: 100%;
-    height: 100%;
+    /*height: 100%;*/
 }
 .cont .board .tab .tab_ul .tab_li{
     width: 100%;

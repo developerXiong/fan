@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family:"Microsoft Yahei";
+}
+html,body{
+    font-size: 12px;
+    height: 100%;
+}
+img{
+    border: 0;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.cont{
+    width: 100%;
+    height: calc(100% - 5rem);
+    padding-top: 5rem;
+    position: relative;
+    background-image: url("../img/bg@2x.png");
+    background-size: 100% 100%;
+}
+.cont .title{
+    padding-left: 1.6rem;
+    color: white;
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+.cont .form_box{
+    width: 90%;
+    height: 5.5rem;
+    position: absolute;
+    top: 10rem;
+    right: 50%;
+    transform: translateX(50%);
+    background-image: url("../img/frame_off@2x.png");
+    background-size: 100% 100%;
+}
+.cont .form_box input{
+    width: calc(100% - 4rem);
+    height:100%;
+    border: 0;
+    background: transparent;
+    line-height: 5.5rem;
+    color: white;
+    font-size:1.5rem ;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+.cont .btn{
+    width:8.4rem ;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 1.17rem;
+    color: white;
+    background-image: linear-gradient(-111deg,#ff6533 3%, #FA1D41 100%);
+    text-align: center;
+    position: absolute;
+    top:20rem;
+    left: 50%;
+    margin-left: -4.2rem;
+}
+
+
+
+
+
+
+
+
+
+
+

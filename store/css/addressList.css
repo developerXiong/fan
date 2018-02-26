@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family:"Microsoft Yahei";
+}
+html,body{
+    font-size: 12px;
+    height: 100%;
+}
+img{
+    border: 0;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.cont{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: #F5F4F4;
+}
+.cont .list .list_ul .list_li{
+    width: calc( 100% - 2.8rem);
+    padding-left: 1.3rem;
+    padding-right: 1.5rem;
+    background: white;
+    margin-bottom: 0.5rem;
+    font-size: 1.17rem;
+}
+.cont .list .list_ul .list_li .list_li_box{
+    height: 5.6rem;
+    color: #4a4a4a;
+    padding-top: 1.54rem;
+    border-bottom: 1px solid  #f2f2f2;
+}
+.cont .list .list_ul .list_li .l_l_name{
+    width:5rem;
+    height: 5.13rem;
+    float: left;
+}
+.cont .list .list_ul .list_li .l_l_right{
+    float: right;
+    width: calc( 100% - 10rem );
+    margin-left: 1rem;
+    padding-right: 4rem;
+}
+.cont .list .list_ul .list_li .l_l_right .l_l_num{
+    white-space: nowrap;
+    overflow: hidden;
+}
+.cont .list .list_ul .list_li .l_l_right .l_l_address{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: box;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.cont .list .list_ul .list_li .l_l_handle{
+    height: 4rem;
+    line-height: 4rem;
+    font-size:1.17rem ;
+    color: #7A797B;
+}
+.cont .list .list_ul .list_li .l_l_handle .handle_box{
+    float: right;
+}
+.cont .list .list_ul .list_li .l_l_handle .handle_box .handle_img{
+    width:1.6rem ;
+    height: 1.6rem;
+    float: left;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.cont .list .list_ul .list_li .l_l_handle .handle_box .handle_img img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left:0;
+}
+.cont .list .list_ul .list_li .l_l_handle .handle_box .edit,.delete{
+    position: relative;
+    height: 100%;
+    float: left;
+}
+.cont .list .list_ul .list_li .l_l_handle .handle_box .edit{
+    margin-right: 1.5rem;
+}
+.cont .list .list_ul .list_li .l_l_handle .handle_box p{
+    float: left;
+    margin-left: 2rem;
+}
+.cont .list .list_ul .list_li .l_l_handle .isDefault{
+    float: left;
+    position: relative;
+}
+
+.cont .list .list_ul .list_li .l_l_handle .isDefault p{
+    color: #FE5636;
+}
+.cont .list .list_ul .list_li .l_l_handle .notDefault p{
+    color: #7A797B;
+}
+.cont .footer{
+    width: 100%;
+    height: 4.33rem;
+    text-align: center;
+    line-height: 4.33rem;
+    color: white;
+    font-size: 1.33rem;
+    background-image: linear-gradient(-111deg, #FF6533 3%, #FD433A 54%, #FA1D41 100%);
+    box-shadow: 0 -5px 10px 2px rgba(0,0,0,0.03);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

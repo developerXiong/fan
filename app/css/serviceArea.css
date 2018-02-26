@@ -135,6 +135,17 @@ body{
 .cont .bottom .b_box .repair{
     float: right;
 }
+.mescroll-totop{
+    z-index: 9990;
+    position: fixed;
+    right: 1rem;
+    bottom: 5.3rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    opacity: 0;
+}
+
 
 
 

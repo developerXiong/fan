@@ -4,11 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>一路购</title>
+    <link rel="stylesheet" href="../css/honeySwitch.css">
     <link rel="stylesheet" href="../css/pay.css">
     <script src="../js/jquery.min.js"></script>
+    <script src="../js/honeySwitch.js"></script>
 </head>
 <body>
 <div class="cont">
+    <div class="express">
+        <div class="express_box">
+            <div class="express_words">是否邮寄</div>
+            <span class="switch-off" id="switch"></span>
+        </div>
+
+        <div class="e_address  address_hide">
+            <a href="../html/addAddress.html" class="e_address_add">
+                添加地址
+            </a>
+            <a href="" class="e_address_have isHide">
+                <div class="e_a_h_name">时冷冷</div>
+                <div class="e_a_h_right">
+                    <div class="e_a_h_num">13955555555</div>
+                    <div class="e_a_h_address">江苏省南京市雨花台区凤台南路152号赛虹桥产业园218</div>
+                </div>
+                <div class="e_a_h_arrow">
+                    <img src="../img/ic_more@2x.png">
+                </div>
+            </a>
+        </div>
+    </div>
     <div class="selected">
         <div class="sele_title">
             <span class="s_t_words">
@@ -98,5 +122,25 @@
     </div>
 </div>
 <script src="../js/pay.js"></script>
+<script type="text/javascript">
+    $(function(){
+
+        //控制地址区域是否展开
+        switchEvent("#switch",
+            function(){
+                //开启后的函数
+                $(".e_address").removeClass("address_hide")
+
+            },
+            function(){
+                //关闭后的函数
+                $(".e_address").addClass("address_hide")
+            })
+
+        //如果有地址，给.e_address_have移除类名.isHide，对应的.e_address_add做相反操作
+
+
+    })
+</script>
 </body>
 </html>

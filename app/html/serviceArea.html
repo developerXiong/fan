@@ -4,33 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Title</title>
+    <link rel="stylesheet" href="../css/mescroll.min.css">
     <link rel="stylesheet" href="../css/serviceArea.css">
     <script src="../js/jquery.min.js"></script>
 </head>
 <body>
 <div class="cont">
-    <div class="board">
-        <ul class="service_ul">
-            <li class="service_li">
+    <div class="board mescroll" id="mescroll">
+        <ul class="service_ul" v-cloak id="dataList">
+            <li class="service_li" v-for="(item,index) in pdlist" @click="goServiceDetails(index)">
                 <!--<a href="" class="service_li_a">-->
                     <div class="s_li_img">
-                        <img src="../img/p3.jpg" alt="">
+                        <img :src="item.imgSrc" alt="">
                     </div>
                     <div class="s_li_right">
                         <div class="s_name">
-                            郭村服务区
+                            {{item.name}}
                         </div>
                         <div class="s_address">
-                            S55宁宣高速公路
+                            {{item.address}}
                         </div>
                         <span class="s_distance">
-                        <div class="s_d_img">
-                            <img src="../img/ic_distance@2x.png" alt="">
-                        </div>
-                        <span class="s_d_info">
-                            距离
-                            <span class="s_d_num">290.3</span>
-                            公里
+                            <div class="s_d_img">
+                                <img src="../img/ic_distance@2x.png" alt="">
+                            </div>
+                            <span class="s_d_info">
+                                距离
+                            <span class="s_d_num">{{item.distance}}</span>
+                                公里
                         </span>
                     </span>
                     </div>
@@ -51,6 +52,8 @@
     </div>
 </div>
 
+<script src="../js/mescroll.min.js"></script>
+<script src="../js/vue.js"></script>
 <script src="../js/serviceArea.js"></script>
 </body>
 </html>

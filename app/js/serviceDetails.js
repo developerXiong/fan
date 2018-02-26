@@ -15,6 +15,7 @@ $(function () {
         }
     }
     var id = getQueryString('id');
-    // alert(id)
+    // var name = getQueryString('name');
     console.log(id)
+    // console.log(name)
 })

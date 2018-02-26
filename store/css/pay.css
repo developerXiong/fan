@@ -24,6 +24,90 @@ a{
     position: relative;
     background: #F5F4F4;
 }
+.cont .express{
+    width: calc( 100% - 2.8rem);
+    padding-left: 1.3rem;
+    padding-right: 1.5rem;
+    margin-bottom: 0.83rem;
+    background: white;
+    font-size: 1.17rem;
+    color: #4a4a4a;
+
+}
+.cont .express .express_box{
+    position: relative;
+    height: 5rem;
+    line-height: 5rem;
+}
+.cont .express .express_words{
+    float: left;
+}
+.cont .express #switch{
+    right: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.cont .express .e_address{
+    border-top: 1px solid  #f2f2f2;
+    font-size: 1.17rem;
+}
+.cont .express .e_address .e_address_add{
+    display: block;
+    height:4.9rem;
+    line-height: 4.9rem;
+    text-align: center;
+    color: #4a4a4a;
+}
+.cont .express .e_address .e_address_have{
+    display: block;
+    height: 6.67rem;
+    color: #4a4a4a;
+    padding-top: 1.54rem;
+    border-top: 1px solid  #f2f2f2;
+    position: relative;
+}
+.cont .express .e_address .e_address_have .e_a_h_name{
+    width:5rem;
+    height: 5.13rem;
+    float: left;
+}
+.cont .express .e_address .e_address_have .e_a_h_right{
+    float: right;
+    width: calc( 100% - 10rem );
+    margin-left: 1rem;
+    padding-right: 4rem;
+}
+.cont .express .e_address .e_address_have .e_a_h_right .e_a_h_num{
+    white-space: nowrap;
+    overflow: hidden;
+}
+.cont .express .e_address .e_address_have .e_a_h_right .e_a_h_address{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: box;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.cont .express .e_address .e_address_have .e_a_h_arrow{
+    width: 2.2rem;
+    height: 2.2rem;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -1.1rem;
+}
+.cont .express .e_address .e_address_have .e_a_h_arrow img{
+    width: 100%;
+    height: 100%;
+}
+.cont .express .e_address .isHide{
+    display: none;
+}
+.cont .address_hide{
+    display: none;
+}
 .cont .selected{
     margin-bottom: 0.83rem;
     /*height: calc( 100% - 4.17rem);*/
