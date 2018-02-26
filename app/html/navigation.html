@@ -11,9 +11,32 @@
 </head>
 <body>
 <div class="cont">
-<div id="map">
+    <div class="top_box">
+        <div class="top">
+            <div class="top_form">
+                <input type="text" class="location" value="我的位置">
+                <input type="text" class="destination" value="南京市夫子庙" placeholder="输入终点">
+                <div class="t_f_left">
+                    <img src="../img/map_left.png" alt="">
+                </div>
+                <div class="t_f_right">
+                    <img src="../img/map_right.png" alt="">
+                </div>
+            </div>
+            <div class="top_go">
+                <div class="top_go_img">
+                    <img src="../img/map_go.png" alt="">
+                </div>
+                <div class="top_go_info">
+                    立即出发
+                </div>
+            </div>
+        </div>
+    </div>
 
-</div>
+    <div id="map">
+
+    </div>
 </div>
 
 
@@ -21,7 +44,7 @@
     var map = new AMap.Map('map');
     mapObj.plugin('AMap.Geolocation', function () {
         geolocation = new AMap.Geolocation({
-            zoom: 10,
+//            zoom: 10,
 //            center:,
             enableHighAccuracy: true,//是否使用高精度定位，默认:true
             timeout: 10000,          //超过10秒后停止定位，默认：无穷大
