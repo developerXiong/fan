@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/swiper-4.1.6.min.css">
+    <!-- 轮播 -->
+    <link rel="stylesheet" href="../css/strategy.css">
+    <script src="../js/jquery.min.js"></script>
+</head>
+<body>
+<div class="cont" v-cloak id="strategy">
+    <div class="banner">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="../img/strategy_banner1.png" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="../img/strtegy_1.png" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="../img/Bitmap.png" alt="">
+                </div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+
+        </div>
+    </div>
+    <div class="strategy_list">
+        <ul class="strategy_ul">
+            <li class="strategy_li" v-for="(item,index) in details">
+                <a :href="item.url" class="go_details">
+                    <p class="str_title">{{item.title}}</p>
+                    <div class="str_info">{{item.info}}</div>
+                    <div class="str_img">
+                        <img :src="item.imgSrc" alt="">
+                    </div>
+                </a>
+                <div class="handle">
+                    <div class="share handle_list">
+                        <div class="handle_img">
+                            <img src="../img/share.png" alt="">
+                        </div>
+                        <div class="handle_num">{{item.share_num}}</div>
+                    </div>
+                    <div class="comment handle_list"  @click="goComment(index)">
+                        <div class="handle_img">
+                            <img src="../img/comment.png" alt="">
+                        </div>
+                        <div class="handle_num">{{item.comment_num}}</div>
+                    </div>
+                    <div class="praise handle_list" @click="praise(index)">
+                        <div class="handle_img">
+                            <img src="../img/praise.png" alt="" class="praise_show" v-if="!item.praise">
+                            <img src="../img/praised.png" alt="" v-else="!item.praise">
+                        </div>
+                        <div class="handle_num">{{item.praise_num}}</div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<script src="../js/swiper-4.1.6.min.js"></script>
+<!-- 轮播 -->
+<script src="../js/vue.js"></script>
+<script src="../js/strategy.js"></script>
+<script>
+    //轮播
+    var swiper = new Swiper('.swiper-container', {
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+        },
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+    });
+
+    //vue
+
+
+</script>
+</body>
+</html>

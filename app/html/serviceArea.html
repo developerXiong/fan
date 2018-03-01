@@ -12,7 +12,7 @@
 <div class="cont">
     <div class="board mescroll" id="mescroll">
         <ul class="service_ul" v-cloak id="dataList">
-            <li class="service_li" v-for="(item,index) in pdlist" @click="goServiceDetails(index)">
+            <li class="service_li" v-for="(item,index) in pdlist">
                 <!--<a href="" class="service_li_a">-->
                     <div class="s_li_img">
                         <img :src="item.imgSrc" alt="">
@@ -38,18 +38,18 @@
                 <!--</a>-->
             </li>
         </ul>
-    </div>
-    <div class="bottom">
-        <div class="b_box">
-            <div class="etc">
-                ETC网点
-            </div>
-            <div class="repair">
-                维修点
-            </div>
-        </div>
+    </div><div class="bottom">-->
+    <!--<div class="b_box">-->
+    <!--<div class="etc">-->
+    <!--ETC网点-->
+    <!--</div>-->
+    <!--<div class="repair">-->
+    <!--维修点-->
+    <!--</div>-->
+    <!--</div>-->
 
-    </div>
+    <!--</div>
+    <!---->
 </div>
 
 <script src="../js/mescroll.min.js"></script>

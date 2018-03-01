@@ -8,7 +8,7 @@
     <script src="../js/jquery.min.js"></script>
 </head>
 <body>
-<div class="cont">
+<div class="cont" id="details" v-cloak>
     <div class="header">
         <div class="back">
             <img src="../img/close.png" alt="">
@@ -17,10 +17,10 @@
     </div>
     <div class="top">
         <div class="t_img">
-            <img src="../img/p3.jpg" alt="">
+            <img :src="details.imgSrc" alt="">
         </div>
         <div class="t_name">
-            郭村服务区郭村服务区郭村服务区郭村服务区
+            {{details.name}}
         </div>
     </div>
     <div class="service_info">
@@ -30,7 +30,7 @@
             </div>
             <div class="p_words s_i_words">
                 电话：
-                <span class="p_w_num">0539-6598139</span>
+                <span class="p_w_num">{{details.phone}}</span>
             </div>
         </div>
         <div class="stake">
@@ -39,7 +39,7 @@
             </div>
             <div class="st_words s_i_words">
                 桩号：
-                <span class="st_w_num">K690+000</span>
+                <span class="st_w_num">{{details.stake}}</span>
             </div>
         </div>
         <div class="section">
@@ -48,7 +48,7 @@
             </div>
             <div class="se_words s_i_words">
                 所在路段：
-                <span class="se_w_num">G2京沪高速公路临沂段</span>
+                <span class="se_w_num">{{details.section}}</span>
             </div>
         </div>
         <div class="flow">
@@ -56,13 +56,14 @@
                 <img src="../img/ic_day@2x.png" alt="">
             </div>
             <div class="f_words s_i_words">
-                日驶入量(辆)：4000
+                日驶入量(辆)：
+                <span class="f_w_num">{{details.flow}}</span>
             </div>
         </div>
     </div>
     <div class="service_details">
         <div class="s_d_title">服务区介绍：</div>
-        <div class="s_d_info"></div>
+        <div class="s_d_info" v-html="details.service_details"></div>
     </div>
 </div>
 

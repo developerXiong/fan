@@ -29,92 +29,9 @@ body{
     height: 9.75rem;
     background: transparent;
 }
-.top{
-    width: 100%;
-    height: 9.33rem;
-    background: white;
-    position: relative;
-    box-shadow: 0 2px 4px 0 rgba(206,198,198,0.50);
-}
-.top .top_form{
-    width: calc(85% - 4rem);
-    height: 5.42rem;
-    background: #FAF9F9;
-    border-radius: 4px;
-    position: absolute;
-    top: 1.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    padding-left: 2rem;
-    padding-right: 2rem;
-}
-.top .top_form input{
-    border: 0;
-    background: transparent;
-    height: 2.54rem;
-    width: 100%;
-    line-height: 2.54rem;
-    font-size: 1.08rem;
-    color: #212021;
-    outline: none;
-}
-.top .top_form input.location{
-    border-bottom: 1px solid #EDEDED;
-}
-.top .top_form input.destination::-webkit-input-placeholder{
-    color: #C2C2C8;
-}
-.top .top_form .t_f_left{
-    position: absolute;
-    width: 0.58rem;
-    height: 2.91rem;
-    left: 0.83rem;
-    top: 50%;
-    margin-top: -1.45rem;
-}
-.top .top_form .t_f_left img{
-    width: 100%;
-    height: 100%;
-}
-.top .top_go{
-    position: absolute;
-    width: 4.67rem;
-    height: 4.67rem;
-    border-radius: 50%;
-    background-image: linear-gradient(-111deg, #FF6533 3%, #FA1D41 100%);
-    bottom:-2.67rem ;
-    left: 50%;
-    margin-left: -2.33rem;
-    z-index: 10000;
-}
-.top .top_go .top_go_img{
-    width: 4.67rem;
-    height: 2.33rem;
-    position: relative;
-}
-.top .top_go .top_go_img img{
-    width: 1.5rem;
-    height: 1.33rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -0.2rem;
-    margin-left: -0.75rem;
-}
-.top .top_go .top_go_info{
-    height: 2.3rem;
-    width: 4.67rem;
-    text-align: center;
-    color: white;
-    line-height: 1.8rem;
-    font-size: 0.75rem;
-}
-
-
-
 #map{
     width: 100%;
-    height: calc(100% - 9.33rem);
+    height: 100%;
 }
 
 

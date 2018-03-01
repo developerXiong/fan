@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="../css/comment.css">
+    <script src="../js/jquery.min.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<div class="cont">
+    <div class="board" id="board">
+        <a :href="details.url" class="go_details">
+            <p class="str_title">{{details.title}}</p>
+            <div class="str_info">{{details.info}}</div>
+            <div class="str_img">
+                <img :src="details.imgSrc" alt="">
+            </div>
+        </a>
+        <div class="handle">
+            <div class="share handle_list">
+                <div class="handle_img">
+                    <img src="../img/share.png" alt="">
+                </div>
+                <div class="handle_num">{{details.share_num}}</div>
+            </div>
+            <div class="comment handle_list">
+                <div class="handle_img">
+                    <img src="../img/comment.png" alt="">
+                </div>
+                <div class="handle_num">{{details.comment_num}}</div>
+            </div>
+            <div class="praise handle_list"  @click="praise">
+                <div class="handle_img">
+                    <img src="../img/praise.png" alt="" class="praise_show" v-if="!details.praise">
+                    <img src="../img/praised.png" alt="" v-else="!details.praise">
+                </div>
+                <div class="handle_num">{{details.praise_num}}</div>
+            </div>
+        </div>
+        <div class="comment_list">
+            <div class="comment_title">热门评论</div>
+            <ul class="comment_ul">
+                <li class="comment_li">
+                    <div class="comment_head">
+                        <img src="../img/ic_zhifubao@2x.png" alt="">
+                    </div>
+                    <div class="comment_right">
+                        <p class="name">肯定能够看到能概括</p>
+                        <div class="words">陈翔六点半，啊哈哈哈哈哈哈哈哈，这是ISIhi是i1陈翔六点半，啊哈哈哈哈哈哈哈</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script src="../js/vue.js"></script>
+<script src="../js/comment.js"></script>
+</body>
+</html>

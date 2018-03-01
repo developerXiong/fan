@@ -1,13 +1,13 @@
 $(function () {
     // $(".service_li").click(function () {
-    //     // id = $(this).id
-    //     id = 7;
-    //     name = 'p';
-    //
-    //     goServiceDetails(id,name)
+    //     id = $(this).id
+    //     // id = 7;
+    //     // name = 'p';
+    //     alert(1)
+    //     goServiceDetails(id)
     // })
-    // function goServiceDetails(id,name) {
-    //     url = "serviceDetails.html?id="+id+"&name="+name;
+    // function goServiceDetails(id) {
+    //     url = "serviceDetails.html?id="+id;
     //     window.location.href = url
     // }
     var pdlist1 = [
