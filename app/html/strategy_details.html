@@ -9,86 +9,72 @@
     <script src="../js/jquery.min.js"></script>
     <script>
 
-        function img_width() {
-//            $(".swiper-slide").width('17.17rem');
-//            $(".swiper-slide").css("marginRight","0.8")
-//            alert(1)
-            var num=$(".banner_li").length;
-            var width=num*18-0.83;
-            $(".banner_ul").width
-            (width+"rem")
-        }
 
+//        img_width()
     </script>
 </head>
 <body onload="img_width()">
-<div class="cont">
+<div class="cont" id="cont" v-cloak>
     <div class="title">
         <a class="title_words">
-            水韵风情逍遥游
-            <span class="title_img">南京</span>
+            {{strategy.title}}
         </a>
     </div>
     <div class="banner">
         <ul class="banner_ul">
-            <li class="banner_li">
-                <img src="../img/Group%202.png" alt="">
-            </li>
-            <li class="banner_li">
-                <img src="../img/Group%202.png" alt="">
-            </li>
-            <li class="banner_li">
-                <img src="../img/Group%202.png" alt="">
-            </li>
-            <li class="banner_li">
-                <img src="../img/Group%202.png" alt="">
+            <li class="banner_li" v-for="item in strategy.imgUrl">
+                <img :src="item" alt="">
             </li>
         </ul>
 
     </div>
+    <div class="overview">
+        <p class="overview_title">行程概览</p>
+        <div class="overview_info">
+            <ul class="overview_ul">
+                <li class="overview_li" v-for="item in strategy.trip_list">
+                    <div class="ov_li_left">{{item.time}}</div>
+                    <div class="ov_li_words">
+                        {{item.content}}
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="guide">
+        <div class="guide_title">游玩攻略</div>
+        <ul class="over_ul">
+            <li class="over_li" v-for="item in strategy.trip_list">
+                <p class="over_li_title">
+                    <span class="over_li_ti_left">{{item.time2}}：</span>
 
-    <!--<div class="swiper-container">-->
-        <!--<div class="swiper-wrapper">-->
-            <!--<div class="swiper-slide">-->
-                <!--<img src="../img/kefu.png" alt="">-->
-            <!--</div>-->
-            <!--<div class="swiper-slide">-->
-                <!--<img src="../img/kefu.png" alt="">-->
-
-            <!--</div>-->
-            <!--<div class="swiper-slide">-->
-                <!--<img src="../img/kefu.png" alt="">-->
-
-            <!--</div>-->
-            <!--<div class="swiper-slide">-->
-                <!--<img src="../img/kefu.png" alt="">-->
-
-            <!--</div>-->
-        <!--</div>-->
-        <!-- Add Pagination -->
-        <!--<div class="swiper-pagination"></div>-->
-    <!--</div>-->
+                    <span class="over_li_ti_right">{{item.content}}</span>
+                </p>
+                <ul class="guide_ul">
+                    <li class="guide_li" v-for="item in item.viewspot_list">
+                        <p class="guide_li_title">
+                            {{item.name}}
+                        </p>
+                        <div class="guide_li_img">
+                            <img :src="item.imgurl" alt="">
+                        </div>
+                        <div class="guide_li_info">
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;推荐理由:</span>
+                            <span class="guide_li_words">
+                                {{item.reason}}
+                            </span>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="bottom">到底了</div>
 
 
 </div>
-<script src="../js/swiper-4.1.6.min.js"></script>
 
-<script>
 
-//    var swiper = new Swiper('.swiper-container', {
-//        slidesPerView: 3,
-//        spaceBetween: 30,
-//        freeMode: true,
-////        width:206,
-////        height:206,
-//        autoHeight:true,
-//        pagination: {
-//            el: '.swiper-pagination',
-//            clickable: true,
-//        }
-//
-//    });
-</script>
 <script src="../js/vue.js"></script>
 <script src="../js/strategy_details.js"></script>
 </body>

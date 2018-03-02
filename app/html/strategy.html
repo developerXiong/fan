@@ -46,12 +46,12 @@
                         </div>
                         <div class="handle_num">{{item.share_num}}</div>
                     </div>
-                    <div class="comment handle_list"  @click="goComment(index)">
-                        <div class="handle_img">
-                            <img src="../img/comment.png" alt="">
-                        </div>
-                        <div class="handle_num">{{item.comment_num}}</div>
-                    </div>
+                    <!--<div class="comment handle_list"  @click="goComment(index)">-->
+                        <!--<div class="handle_img">-->
+                            <!--<img src="../img/comment.png" alt="">-->
+                        <!--</div>-->
+                        <!--<div class="handle_num">{{item.comment_num}}</div>-->
+                    <!--</div>-->
                     <div class="praise handle_list" @click="praise(index)">
                         <div class="handle_img">
                             <img src="../img/praise.png" alt="" class="praise_show" v-if="!item.praise">
@@ -63,6 +63,7 @@
             </li>
         </ul>
     </div>
+    <div class="bottom">到底了</div>
 </div>
 
 
