@@ -39,15 +39,15 @@
             </div>
         </div>
         <div class="comment_list">
-            <div class="comment_title">热门评论</div>
+            <p class="comment_title">热门评论</p>
             <ul class="comment_ul">
-                <li class="comment_li">
+                <li class="comment_li" v-for="item in details.comment_list">
                     <div class="comment_head">
-                        <img src="../img/ic_zhifubao@2x.png" alt="">
+                        <img :src="item.head" alt="">
                     </div>
                     <div class="comment_right">
-                        <p class="name">肯定能够看到能概括</p>
-                        <div class="words">陈翔六点半，啊哈哈哈哈哈哈哈哈，这是ISIhi是i1陈翔六点半，啊哈哈哈哈哈哈哈</div>
+                        <p class="name">{{item.userName}}</p>
+                        <div class="words">{{item.comment_content}}</div>
                     </div>
                 </li>
             </ul>

@@ -23,15 +23,15 @@ body{
     height: 100%;
 }
 .board{
-    width: calc(100% - 2.16rem);
-    padding-left: 1.08rem;
-    padding-right: 1.08rem;
+    width:100%;
     padding-top: 1.33rem;
 }
 .go_details{
     display: block;
-    width: 100%;
+    width: calc(100% - 2.16rem);
     height: 18.25rem;
+    padding-left: 1.08rem;
+    padding-right: 1.08rem;
 }
 .go_details .str_title{
     width: 100%;
@@ -40,6 +40,7 @@ body{
     font-size: 1.5rem;
     color: #3A3434;
     overflow: hidden;
+    white-space: nowrap;
     margin-top: 0.33rem;
 }
 .go_details .str_info{
@@ -63,12 +64,12 @@ body{
     height: 100%;
 }
 .handle{
-    width: calc(100% - 3rem);
+    width: calc(100% - 5.16rem);
     height: 3.25rem;
     display: flex;
     justify-content: space-between;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-left: 2.58rem;
+    padding-right: 2.58rem;
 }
 .handle .handle_list .handle_img{
     width: 1.5rem;
@@ -90,10 +91,58 @@ body{
     line-height: 3.1rem;
 }
 .comment_list{
-    width: 100%;
+    width: calc(100% - 2.16rem);
     background: #F8F8F8;
+    padding-top: 1rem;
+    padding-left: 1.08rem;
+    padding-right: 1.08rem;
 }
-
+.comment_list .comment_title{
+    width: 100%;
+    height: 1.83rem;
+    line-height: 1.83rem;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 1.33rem;
+    color: #252222;
+}
+.comment_list .comment_ul{
+    padding-left: 0.66rem;
+    padding-right: 0.66rem;
+    overflow: hidden;
+}
+.comment_list .comment_ul .comment_li{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    overflow: hidden;
+}
+.comment_list .comment_ul .comment_li .comment_head{
+    width: 2rem;
+    height: 2rem;
+    float: left;
+    margin-right: 0.5rem;
+}
+.comment_list .comment_ul .comment_li .comment_head img{
+    width: 100%;
+    height: 100%;
+}
+.comment_list .comment_ul .comment_li .comment_right{
+    float: left;
+    width: calc(100% - 2.5rem);
+}
+.comment_list .comment_ul .comment_li .comment_right .name{
+    font-size: 1rem;
+    color: #C4C4C4;
+    margin-bottom: 0.25rem;
+}
+.comment_list .comment_ul .comment_li .comment_right .words{
+    font-size: 1rem;
+    color: #484646;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
 
 
 

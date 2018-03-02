@@ -1,5 +1,5 @@
 $(function () {
-    console.log(sessionStorage.getItem("id"))
+    // console.log(sessionStorage.getItem("id"))
     var details =
         {
             areaId:'',
@@ -17,12 +17,12 @@ $(function () {
                 {
                     head:"../img/ic_zhifubao@2x.png",
                     userName:"啊哈哈",
-                    comment_content:'陈翔六点半，啊哈哈哈哈哈哈哈哈，这是ISIhi是i1陈翔六点半，啊'
+                    comment_content:'陈翔六点半，啊哈哈哈哈哈哈哈哈，这是ISIhi是i1陈翔六点半，啊陈翔六点半，啊哈哈哈哈哈哈哈哈，这是ISIhi是i1陈翔六点半，啊陈翔六点半，啊哈哈哈哈哈哈哈哈，这是ISIhi是i1陈翔六点半，啊陈翔六点半，啊哈哈哈哈哈哈哈哈，这是ISIhi是i1陈翔六点半，啊'
                 },
                 {
-                    head:"../img/ic_zhifubao@2x.png",
+                    head:"../img/bg@2x.png",
                     userName:"啊哈哈",
-                    comment_content:'陈翔六点半，啊哈哈哈哈哈哈哈哈，这是ISIhi是i1陈翔六点半，啊'
+                    comment_content:'陈翔111111111六点半，啊哈哈哈哈哈哈哈哈，这是ISIhi是i1陈翔六点半，啊'
                 }
                 ,
                 {
