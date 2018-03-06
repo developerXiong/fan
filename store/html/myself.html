@@ -4,6 +4,34 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <link rel="stylesheet" href="../css/myself.css">
+    <script src="../js/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        //点击获取验证码效果
+        var countdown=60;
+        function sendemail(){
+            var obj = $("#btn");
+            settime(obj);
+
+        }
+        function settime(obj) { //发送验证码倒计时
+            if (countdown == 0) {
+                obj.attr('disabled',false);
+                //obj.removeattr("disabled");
+                obj.val("免费获取验证码");
+                countdown = 60;
+                return;
+            } else {
+                obj.attr('disabled',true);
+                obj.val("重新发送(" + countdown + ")");
+                countdown--;
+            }
+            setTimeout(function() {
+                    settime(obj) }
+                ,1000)
+        }
+    </script>
+
 </head>
 
 <body>
@@ -24,18 +52,26 @@
             <a>男</a><input type="radio" name="sex" value="man" checked>
             <a>女</a><input type="radio" name="sex" value="woman">
         </li>
-        <li class="handle_li">
+        <li class="handle_li" style="position: relative">
             <span>头像:</span>
-            <input type="file" onchange="preview(this)">
+            <input type="file" onchange="preview(this)" id="file">
+            <div id="preview"><img src="../img/icon.png" alt=""></div>
+            <div class="cover" onclick="clickMe()"></div>
         </li>
         <li class="handle_li">
             <span>手机号:</span>
             <input type="text" placeholder="请输入手机号">
         </li>
-        <button>获取验证码</button>
+        <li class="handle_li">
+            <span>验证码:</span>
+            <input type="text" placeholder="请输入验证码">
+            <input id="btn" type="button" onclick="sendemail()" value="获取验证码">
+        </li>
     </ul>
-    <div id="preview"></div>
-    <input type="file" onchange="preview(this)" />
+    <div class="confirm">确定</div>
+
+    <!--<div id="preview"></div>-->
+    <!--<input type="file" onchange="preview(this)" />-->
 </div>
 
 
@@ -45,7 +81,14 @@
 
 
 <script type="text/javascript">
+    function clickMe() {
+        $("#file").click()
+    }
+
+
+    //图片上传
     function preview(file) {
+//        alert(1)
         var prevDiv = document.getElementById('preview');
         if (file.files && file.files[0]) {
             var reader = new FileReader();
@@ -56,6 +99,7 @@
         } else {
             prevDiv.innerHTML = '<div class="img" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src=\'' + file.value + '\'"></div>';
         }
+        console.log(file.value)//图片信息
     }
 </script>
 </body>
