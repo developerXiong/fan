@@ -22,6 +22,16 @@ body{
     width: 100%;
     height: 100%;
 }
+header{
+    width: 100%;
+    height: 3.7rem;
+    line-height: 3.7rem;
+    padding-top: 1.33rem;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #FFFFFF;
+    background: red;
+}
 .swiper-container{
     width: 100%;
     height: 15.17rem;
@@ -100,6 +110,88 @@ body{
     font-size: 1.17rem;
     color: #3A3737;
     font-weight: bold;
+}
+.cont .board{
+    width: calc( 100% - 2.5rem);
+    padding-left: 1.08rem;
+    padding-right: 1.42rem;
+    /*height: calc( 100% - 5rem);*/
+    /*padding-bottom: 5rem;*/
+    overflow-x: hidden;
+    /*overflow-y: auto;*/
+}
+.cont .board .service_ul .service_li{
+    height: 5.83rem;
+    width: 100%;
+    padding-top: 0.67rem;
+    padding-bottom: 0.58rem;
+    border-bottom: 1px solid #EDEDED;
+}
+.cont .board .service_ul .service_li:last-child{
+    border-bottom: 0;
+}
+.cont .board .service_ul .service_li .service_li_a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.cont .board .service_ul .service_li .s_li_img{
+    width: 7.5rem;
+    height:5.83rem ;
+    float: left;
+}
+.cont .board .service_ul .service_li .s_li_img img{
+    width: 100%;
+    height: 100%;
+}
+.cont .board .service_ul .service_li .s_li_right{
+    float: left;
+    margin-left:0.75rem ;
+    width: calc( 100% - 8.25rem);
+}
+.cont .board .service_ul .service_li .s_li_right .s_name{
+    height: 2.5rem;
+    line-height: 2.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 1.17rem;
+    color: #030303;
+    font-weight: bold;
+}
+.cont .board .service_ul .service_li .s_li_right .s_address{
+    height: 2rem;
+    line-height: 2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 1rem;
+    color: #9B9B9B;
+}
+.cont .board .service_ul .service_li .s_li_right .s_distance{
+    white-space: nowrap;
+    overflow: hidden;
+    height: 1.3rem;
+    line-height: 1.3rem;
+    padding-left: 1.4rem;
+    position: relative;
+    float: right;
+    max-width: 80%;
+}
+.cont .board .service_ul .service_li .s_li_right .s_distance .s_d_img{
+    width: 1.3rem;
+    height: 1.3rem;
+    position: absolute;
+    left:0;
+    top: 1px;
+}
+.cont .board .service_ul .service_li .s_li_right .s_distance .s_d_img img{
+    width: 100%;
+    height: 100%;
+}
+.cont .board .service_ul .service_li .s_li_right .s_distance .s_d_info {
+    height: 1.3rem;
+    line-height: 1.3rem;
+    font-size: 0.75rem;
+    color: #9B9B9B;
 }
 
 
