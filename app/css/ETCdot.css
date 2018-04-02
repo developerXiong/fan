@@ -24,10 +24,10 @@ body{
 }
 header{
     padding-top: 1.33rem;
-    height: 3.7rem;
+    height: 3.5rem;
     background-image: linear-gradient(-111deg, #FF6533 3%, #FA1D41 100%);
     font-size: 1.5rem;
-    line-height: 3.7rem;
+    line-height: 3.5rem;
     color: #FFFFFF;
     text-align: center;
     position: relative;
@@ -49,8 +49,8 @@ header .back img{
     width: calc(100% - 2.17rem);
     padding-left: 1.17rem;
     padding-right: 1rem;
-    /*height: calc(100% - 4.83rem);*/
-    height: 100%;
+    height: calc(100% - 4.83rem);
+    /*height: 100%;*/
     overflow-x: hidden;
     overflow-y: auto;
 }

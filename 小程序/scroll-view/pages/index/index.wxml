@@ -1,0 +1,28 @@
+<!--index.wxml-->
+<view class="container">
+
+
+<scroll-view scroll-x style="height: 100px;" >
+  <view class='cont'>
+    <view id="green" class="scroll-view-item bc_green one"></view>
+    <view id="red"  class="scroll-view-item bc_red one"></view>
+    <view id="yellow" class="scroll-view-item bc_yellow one"></view>
+    <view id="blue" class="scroll-view-item bc_blue one"></view>
+    <view id="green" class="scroll-view-item bc_green one"></view>
+    <view id="red"  class="scroll-view-item bc_red one"></view>
+    <view id="yellow" class="scroll-view-item bc_yellow one"></view>
+    <view id="blue" class="scroll-view-item bc_blue one"></view>
+  </view>
+   
+  </scroll-view>
+
+  <scroll-view scroll-y style="height: 200px;" bindscrolltoupper='scrollToUp' bindscrolltolower='scrollToLower' bindscroll='scroll' upper-threshold='100' scroll-top='{{scrolltop}}' scroll-into-view='{{intoview}}'>
+    <view id="green" class="scroll-view-item bc_green two"></view>
+    <view id="red"  class="scroll-view-item bc_red two"></view>
+    <view id="yellow" class="scroll-view-item bc_yellow two"></view>
+    <view id="blue" class="scroll-view-item bc_blue two"></view>
+  </scroll-view>
+  <view style="height:50px;width:100px;background:pink;margin-top:20px;" bindtap='click'></view>
+
+
+</view>

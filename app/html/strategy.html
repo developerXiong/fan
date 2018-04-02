@@ -10,25 +10,23 @@
     <script src="../js/jquery.min.js"></script>
 </head>
 <body>
-<div class="cont" v-cloak id="strategy">
-    <div class="banner">
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="../img/strategy_banner1.png" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="../img/strtegy_1.png" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="../img/Bitmap.png" alt="">
-                </div>
-            </div>
-            <!-- 如果需要分页器 -->
-            <div class="swiper-pagination"></div>
-
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <img src="../img/strategy_banner1.png" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img src="../img/strtegy_1.png" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img src="../img/Bitmap.png" alt="">
         </div>
     </div>
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination"></div>
+
+</div>
+<div class="cont" v-cloak id="strategy">
     <div class="strategy_list">
         <ul class="strategy_ul">
             <li class="strategy_li" v-for="(item,index) in details">
@@ -40,17 +38,17 @@
                     </div>
                 </a>
                 <div class="handle">
-                    <div class="share handle_list">
+                    <div class="share handle_list" @click="share(item)">
                         <div class="handle_img">
                             <img src="../img/share.png" alt="">
                         </div>
                         <div class="handle_num">{{item.share_num}}</div>
                     </div>
                     <!--<div class="comment handle_list"  @click="goComment(index)">-->
-                        <!--<div class="handle_img">-->
-                            <!--<img src="../img/comment.png" alt="">-->
-                        <!--</div>-->
-                        <!--<div class="handle_num">{{item.comment_num}}</div>-->
+                    <!--<div class="handle_img">-->
+                    <!--<img src="../img/comment.png" alt="">-->
+                    <!--</div>-->
+                    <!--<div class="handle_num">{{item.comment_num}}</div>-->
                     <!--</div>-->
                     <div class="praise handle_list" @click="praise(index)">
                         <div class="handle_img">

@@ -4,130 +4,136 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Title</title>
+    <link rel="stylesheet" href="../css/mescroll.min.css">
     <link rel="stylesheet" href="../css/swiper-4.1.6.min.css">
     <link rel="stylesheet" href="../css/index.css">
     <script src="../js/jquery.min.js"></script>
 </head>
-<body>
-<div class="cont" id="cont"  v-cloak>
-    <header>首页</header>
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <img src="../img/Bitmap.png" alt="">
-            </div>
-            <div class="swiper-slide">
-                <img src="../img/Bitmap.png" alt="">
-            </div>
-            <div class="swiper-slide">
-                <img src="../img/Bitmap.png" alt="">
-            </div>
-            <div class="swiper-slide">
-                <img src="../img/Bitmap.png" alt="">
-            </div>
+<body class="mescroll" id="mescroll">
+<header>首页</header>
+<div><div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <img src="../img/Bitmap.png" alt="">
         </div>
-        <!-- Add Pagination -->
-        <!--<div class="swiper-pagination"></div>-->
-        <!-- Add Arrows -->
-        <!--<div class="swiper-button-next"></div>-->
-        <!--<div class="swiper-button-prev"></div>-->
+        <div class="swiper-slide">
+            <img src="../img/p3.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img src="../img/phone.png" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img src="../img/map_go.png" alt="">
+        </div>
     </div>
-    <div class="weather">
-        <div class="weather_cover"></div>
-        <iframe src="//www.seniverse.com/weather/weather.aspx?uid=U2931FFA73&cid=CHBJ000000&l=zh-CHS&p=SMART&a=1&u=C&s=7&m=0&x=1&d=0&fc=&bgc=&bc=&ti=0&in=0&li=" frameborder="0" scrolling="no" width="200" height="20" allowTransparency="true"></iframe>
+    <!-- Add Pagination -->
+    <!--<div class="swiper-pagination"></div>-->
+    <!-- Add Arrows -->
+    <!--<div class="swiper-button-next"></div>-->
+    <!--<div class="swiper-button-prev"></div>-->
+</div></div>
 
-    </div>
-    <div class="function_list">
-        <div class="function_row">
-            <a href="" class="function">
-                <div class="function_img">
-                    <img src="../img/ic_service@2x.png" alt="">
-                </div>
-                <p class="function_name">服务区</p>
-            </a>
-            <a href="" class="function">
-                <div class="function_img">
-                    <img src="../img/ic_onlinerestaurant@2x.png" alt="">
-                </div>
-                <p class="function_name">在线餐厅</p>
-            </a>
-            <a href="" class="function">
-                <div class="function_img">
-                    <img src="../img/ic_onlineshop@2x.png" alt="">
-                </div>
-                <p class="function_name">在线商城</p>
-            </a>
-            <a href="" class="function">
-                <div class="function_img">
-                    <img src="../img/ic_travel@2x.png" alt="">
-                </div>
-                <p class="function_name">旅游景点</p>
-            </a>
+<div class="cont" id="cont"  v-cloak>
+
+
+    <div class="bigboard">
+
+        <div class="weather">
+            <div class="weather_cover"></div>
+            <iframe src="//www.seniverse.com/weather/weather.aspx?uid=U2931FFA73&cid=CHBJ000000&l=zh-CHS&p=SMART&a=1&u=C&s=7&m=0&x=1&d=0&fc=&bgc=&bc=&ti=0&in=0&li=" frameborder="0" scrolling="no" width="200" height="20" allowTransparency="true"></iframe>
+
         </div>
-        <div class="function_row">
-            <a href="" class="function">
-                <div class="function_img">
-                    <img src="../img/ic_way_@2x.png" alt="">
-                </div>
-                <p class="function_name">实时路况</p>
-            </a>
-            <a href="" class="function">
-                <div class="function_img">
-                    <img src="../img/ic_broadcast@2x.png" alt="">
-                </div>
-                <p class="function_name">路况播报</p>
-            </a>
-            <a href="" class="function">
-                <div class="function_img">
-                    <img src="../img/ic_plan@2x.png" alt="">
-                </div>
-                <p class="function_name">路径规划</p>
-            </a>
-            <a href="" class="function">
-                <div class="function_img">
-                    <img src="../img/ic_maintenance@2x.png" alt="">
-                </div>
-                <p class="function_name">维修点</p>
-            </a>
-        </div>
-        <div class="function_row">
-            <a href="" class="function">
-                <div class="function_img">
-                    <img src="../img/ic_ETC@2x.png" alt="">
-                </div>
-                <p class="function_name">ETC充值</p>
-            </a>
-            <a href="" class="function">
-                <div class="function_img">
-                    <img src="../img/ic_hotel@2x.png" alt="">
-                </div>
-                <p class="function_name">客服酒店</p>
-            </a>
-            <a class="function">
-            </a>
-            <a class="function">
-            </a>
-        </div>
-    </div>
-    <div class="serviceArea">
-        <div class="serviceArea_title">
-            <p>服务区</p>
-            <span>更多</span>
-        </div>
-        <div class="board">
-            <ul class="service_ul">
-                <li class="service_li" v-for="item in serviceArea">
-                    <div class="s_li_img">
-                        <img :src="item.imgSrc" alt="">
+        <div class="function_list">
+            <div class="function_row">
+                <a href="" class="function">
+                    <div class="function_img">
+                        <img src="../img/ic_service@2x.png" alt="">
                     </div>
-                    <div class="s_li_right">
-                        <div class="s_name">
-                            {{item.name}}
+                    <p class="function_name">服务区</p>
+                </a>
+                <a href="" class="function">
+                    <div class="function_img">
+                        <img src="../img/ic_onlinerestaurant@2x.png" alt="">
+                    </div>
+                    <p class="function_name">在线餐厅</p>
+                </a>
+                <a href="" class="function">
+                    <div class="function_img">
+                        <img src="../img/ic_onlineshop@2x.png" alt="">
+                    </div>
+                    <p class="function_name">在线商城</p>
+                </a>
+                <a href="" class="function">
+                    <div class="function_img">
+                        <img src="../img/ic_travel@2x.png" alt="">
+                    </div>
+                    <p class="function_name">旅游景点</p>
+                </a>
+            </div>
+            <div class="function_row">
+                <a href="" class="function">
+                    <div class="function_img">
+                        <img src="../img/ic_way_@2x.png" alt="">
+                    </div>
+                    <p class="function_name">实时路况</p>
+                </a>
+                <a href="" class="function">
+                    <div class="function_img">
+                        <img src="../img/ic_broadcast@2x.png" alt="">
+                    </div>
+                    <p class="function_name">路况播报</p>
+                </a>
+                <a href="" class="function">
+                    <div class="function_img">
+                        <img src="../img/ic_plan@2x.png" alt="">
+                    </div>
+                    <p class="function_name">路径规划</p>
+                </a>
+                <a href="" class="function">
+                    <div class="function_img">
+                        <img src="../img/ic_maintenance@2x.png" alt="">
+                    </div>
+                    <p class="function_name">维修点</p>
+                </a>
+            </div>
+            <div class="function_row">
+                <a href="" class="function">
+                    <div class="function_img">
+                        <img src="../img/ic_ETC@2x.png" alt="">
+                    </div>
+                    <p class="function_name">ETC充值</p>
+                </a>
+                <a href="" class="function">
+                    <div class="function_img">
+                        <img src="../img/ic_hotel@2x.png" alt="">
+                    </div>
+                    <p class="function_name">客服酒店</p>
+                </a>
+                <a class="function">
+                </a>
+                <a class="function">
+                </a>
+            </div>
+        </div>
+        <div class="serviceArea">
+            <div class="serviceArea_title">
+                <p>服务区</p>
+                <span>更多</span>
+            </div>
+            <div class="board">
+                <ul class="service_ul">
+                    <li class="service_li" v-for="item in serviceArea">
+                        <div class="s_li_img">
+                            <img :src="item.imgSrc" alt="">
                         </div>
-                        <div class="s_address">
-                            {{item.address}}
-                        </div>
-                        <span class="s_distance">
+                        <div class="s_li_right">
+                            <div class="s_name">
+                                {{item.name}}
+                            </div>
+                            <div class="s_address">
+                                {{item.address}}
+                            </div>
+                            <span class="s_distance">
                             <div class="s_d_img">
                                 <img src="../img/ic_distance@2x.png" alt="">
                             </div>
@@ -137,11 +143,13 @@
                                 公里
                         </span>
                     </span>
-                    </div>
-                </li>
-            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
+
 
     
 </div>
@@ -152,7 +160,7 @@
 <script src="../js/swiper-4.1.6.min.js"></script>
 <script>
     var swiper = new Swiper('.swiper-container', {
-//        spaceBetween: 30,
+        spaceBetween: 30,
         centeredSlides: true,
         autoplay: {
             delay: 2500,
@@ -166,6 +174,27 @@
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
+    });
+</script>
+<script src="../js/mescroll.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        //创建MeScroll对象
+        var mescroll = new MeScroll("mescroll", {
+            down: {
+                auto: false, //是否在初始化完毕之后自动执行下拉回调callback; 默认true
+                callback: downCallback //下拉刷新的回调
+            },
+            up: {
+                use:false
+            }
+        });
+
+        /*下拉刷新的回调 */
+        function downCallback(){
+            window.location.reload()
+        }
+
     });
 </script>
 </body>

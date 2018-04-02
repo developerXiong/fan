@@ -10,6 +10,12 @@
 </head>
 <body>
 <div class="cont">
+    <header>
+        <div class="back" onclick="javascript:window.history.go(-1);return false;">
+            <img src="../img/close.png" alt="">
+        </div>
+        服务区列表
+    </header>
     <div class="board mescroll" id="mescroll">
         <ul class="service_ul" v-cloak id="dataList">
             <li class="service_li" v-for="(item,index) in pdlist">

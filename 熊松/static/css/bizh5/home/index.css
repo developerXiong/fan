@@ -1,0 +1,241 @@
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-overflow-scrolling: touch;
+}
+
+li {
+	list-style: none;
+}
+
+img {
+	border: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+html, body {
+	font-size: 12px;
+	height: 100%;
+}
+
+body {
+	font-family: PingFangSC-Regular, "Microsoft Yahei", sans-serif;
+	padding-top: 5.03rem;
+	width: 100%;
+	height: calc(100% - 5.03rem);
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.cont {
+	width: 100%;
+}
+
+.bigboard {
+	width: 100%;
+}
+
+.swiper-container {
+	width: 100%;
+	height: 15.17rem;
+}
+
+.swiper-container img {
+	width: 100%;
+	height: 100%;
+}
+
+.weather {
+	height: 1.67rem;
+	padding-top: 1.17rem;
+	width: calc(100% - 1.5rem);
+	position: relative;
+	padding-bottom: 1.17rem;
+	padding-left: 1.5rem;
+}
+
+.weather .weather_cover {
+	width: 100%;
+	height: 4.01rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.weather iframe {
+	font-size: 1.17rem;
+	line-height: 1.67rem;
+}
+
+.function_list .function_row {
+	width: calc(100% - 1.66rem);
+	height: 8.75rem;
+	border-bottom: 1px solid #ECECEC;
+	display: flex;
+	justify-content: space-around;
+	margin-left: 0.83rem;
+}
+
+.function_list .function_row .function {
+	display: block;
+	color: #4A4A4A;
+	font-size: 1rem;
+	line-height: 1.42rem;
+	text-align: center;
+	width: 4.17rem;
+	height: 7.25rem;
+	padding-top: 1.5rem;
+}
+
+.function_list .function_row .function .function_img {
+	width: 4.17rem;
+	height: 4.17rem;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.function_list .function_row .function .function_img img {
+	width: 100%;
+	height: 100%;
+}
+
+.serviceArea_title {
+	height: 3.83rem;
+	width: calc(100% - 1.66rem);
+	line-height: 3.83rem;
+	margin-left: 0.83rem;
+	position: relative;
+	border-bottom: 1px solid #ECECEC;
+}
+
+.serviceArea_title p {
+	padding-left: 0.5rem;
+	font-size: 1.33rem;
+	color: #3A3737;
+	font-weight: bold;
+}
+
+.serviceArea_title span {
+	display: block;
+	position: absolute;
+	line-height: 3.83rem;
+	right: 0.5rem;
+	top: 0;
+	font-size: 1.17rem;
+	color: #3A3737;
+	font-weight: bold;
+}
+
+.cont .board {
+	width: calc(100% - 2.5rem);
+	padding-left: 1.08rem;
+	padding-right: 1.42rem;
+	/*height: calc( 100% - 5rem);*/
+	/*padding-bottom: 5rem;*/
+	overflow-x: hidden;
+	/*overflow-y: auto;*/
+}
+
+.cont .board .service_ul .service_li {
+	height: 5.83rem;
+	width: 100%;
+	padding-top: 0.67rem;
+	padding-bottom: 0.58rem;
+	border-bottom: 1px solid #EDEDED;
+}
+
+.cont .board .service_ul .service_li:last-child {
+	border-bottom: 0;
+}
+
+.cont .board .service_ul .service_li .service_li_a {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.cont .board .service_ul .service_li .s_li_img {
+	width: 7.5rem;
+	height: 5.83rem;
+	float: left;
+}
+
+.cont .board .service_ul .service_li .s_li_img img {
+	width: 100%;
+	height: 100%;
+}
+
+.cont .board .service_ul .service_li .s_li_right {
+	float: left;
+	margin-left: 0.75rem;
+	width: calc(100% - 8.25rem);
+}
+
+.cont .board .service_ul .service_li .s_li_right .s_name {
+	height: 2.5rem;
+	line-height: 2.5rem;
+	white-space: nowrap;
+	overflow: hidden;
+	font-size: 1.17rem;
+	color: #030303;
+	font-weight: bold;
+}
+
+.cont .board .service_ul .service_li .s_li_right .s_address {
+	height: 2rem;
+	line-height: 2rem;
+	white-space: nowrap;
+	overflow: hidden;
+	font-size: 1rem;
+	color: #9B9B9B;
+}
+
+.cont .board .service_ul .service_li .s_li_right .s_distance {
+	white-space: nowrap;
+	overflow: hidden;
+	height: 1.3rem;
+	line-height: 1.3rem;
+	padding-left: 1.4rem;
+	position: relative;
+	float: right;
+	max-width: 80%;
+}
+
+.cont .board .service_ul .service_li .s_li_right .s_distance .s_d_img {
+	width: 1.3rem;
+	height: 1.3rem;
+	position: absolute;
+	left: 0;
+	top: 1px;
+}
+
+.cont .board .service_ul .service_li .s_li_right .s_distance .s_d_img img
+	{
+	width: 100%;
+	height: 100%;
+}
+
+.cont .board .service_ul .service_li .s_li_right .s_distance .s_d_info {
+	height: 1.3rem;
+	line-height: 1.3rem;
+	font-size: 0.75rem;
+	color: #9B9B9B;
+}
+
+header {
+	width: 100%;
+	height: 3.7rem;
+	line-height: 3.7rem;
+	padding-top: 1.33rem;
+	text-align: center;
+	font-size: 1.5rem;
+	color: #FFFFFF;
+	background-image: linear-gradient(-111deg, #FF6533 3%, #FA1D41 100%);
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000000000;
+}

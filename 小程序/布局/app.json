@@ -1,0 +1,31 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/style/style"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "布局",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "red",
+    "selectedColor": "blue",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "flex"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "绝对相对"
+      },
+      {
+        "pagePath": "pages/style/style",
+        "text": "样式"
+      }
+    ]
+  }
+}

@@ -86,7 +86,6 @@ $(function () {
                 }else {
                     alert('提示登录')
                 }
-
             },
             goComment(index){
                 console.log(this.details[index].userId)
@@ -98,6 +97,17 @@ $(function () {
                     alert('提示登录')
                 }
 
+            },
+            share(item){
+                var data={
+                    action:"share",
+                    img:item.imgSrc,
+                    title:item.title,
+                    url:item.url,
+                    info:item.info
+                }
+                var dataJSON=yls.event(JSON.stringify(data))
+                console.log(dataJSON)
             }
         },
         computed:{

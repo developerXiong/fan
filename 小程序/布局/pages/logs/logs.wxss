@@ -1,0 +1,44 @@
+.container{
+  height: 100%;
+  width: 100%;
+  background-color: red;
+}
+.item{
+  width: 150rpx;
+  height: 150rpx; 
+  background: pink;
+  border: 1px solid blue;
+  text-align: center;
+}
+.item2{
+  width: 150rpx;
+  height: 150rpx; 
+  background: pink;
+  border: 1px solid blue;
+  text-align: center;
+  position: relative;
+  left: 50rpx;
+  top: 50rpx;
+  /*相对定位，相对定位是根据自己本身位置为基准定位的，参照物是自己  */
+}
+.item3{
+  width: 150rpx;
+  height: 150rpx; 
+  background: pink;
+  border: 1px solid blue;
+  text-align: center;
+  position: absolute;
+  left: 20rpx;
+  top: 20rpx;
+  /*绝对定位的元素是相对于离他最近的一个已定位的父级元素定位的  */
+}
+.item4{
+  width: 150rpx;
+  height: 150rpx; 
+  background: pink;
+  border: 1px solid blue;
+  text-align: center;
+  /* position: absolute; */
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+}

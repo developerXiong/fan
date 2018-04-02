@@ -1,0 +1,18 @@
+<include src="../templates/header" />
+你好,lallaa
+<button type="default" hover-class="other-button-hover"> default </button>
+<button type="primary" bindtap='btnClick'> {{btnText}} </button>
+<view wx:if="{{show}}">{{text}}1</view>
+<view wx:else>{{text}}2</view>
+
+<view wx:for="{{news}}">
+  循环内容{{item}}{{index}}
+</view>
+
+<include src="../templates/footer" />
+
+
+
+<import src="../templates/footer" />
+<template is="footer1" />
+<template is="footer2" data="{{tex:'导入设置的内容'}}" />

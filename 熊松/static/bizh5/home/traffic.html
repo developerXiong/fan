@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="https://cache.amap.com/lbs/static/main1119.css"/>
+    <script src="/js/appjs/bizh5/jquery.min.js"></script>
+    <script src="https://webapi.amap.com/maps?v=1.4.4&key=32b62484cda63d2225c98172877b637e"></script>
+    <script type="text/javascript" src="https://cache.amap.com/lbs/static/addToolbar.js"></script>
+    <style type="text/css">
+    	*{
+    		margin: 0;
+    		padding: 0;
+    	}
+	   body{
+		    position: relative;
+		}
+		body,html{
+            font-size: 12px;
+        }
+		header{
+		    padding-top: 1.33rem;
+		    height: 3.7rem;
+		    background-image: linear-gradient(-111deg, #FF6533 3%, #FA1D41 100%);
+		    font-size: 1.5rem;
+		    line-height: 3.7rem;
+		    color: #FFFFFF;
+		    text-align: center;
+		    position: relative;
+            z-index: 1000000000;
+		}
+		header .back{
+		    position: absolute;
+		    width: 1.3rem;
+		    height: 3.5rem;
+		    left: 0.9rem;
+		}
+		header .back img{
+		    width: 1.3rem;
+		    height: 2rem;
+		    position: absolute;
+		    top: 0.75rem;
+		    left: 0;
+		}
+		
+		.cont{
+		    width: 100%;
+		    height:calc(100% - 5.03rem)!important;
+		    overflow: hidden;
+		    position: absolute;
+		    bottom: 0;
+		}
+    </style>
+</head>
+<body>
+<header>
+	<div class="back" onclick="javascript:window.history.go(-1);">
+		<img src="/img/bizh5/close.png" alt="">
+	</div>
+	实时路况
+</header>
+<div class="cont">
+	<div id="container"></div>
+	<div class="button-group">
+	    <input type="button" class="button" id="control" value="显示/隐藏实时路况"/>
+	</div>
+</div>
+<script>
+var center = [];
+$(function () {
+	getLocation();
+	setTimeout(function () {
+		var map = new AMap.Map('container', {
+        resizeEnable: true,
+        center: center,
+        zoom: 13
+	    });
+	    //实时路况图层
+	    var trafficLayer = new AMap.TileLayer.Traffic({
+	        zIndex: 10
+	    });
+	    trafficLayer.setMap(map);
+	
+	    var isVisible = true;
+	    AMap.event.addDomListener(document.getElementById('control'), 'click', function() {
+	        if (isVisible) {
+	            trafficLayer.hide();
+	            isVisible = false;
+	        } else {
+	            trafficLayer.show();
+	            isVisible = true;
+	        }
+	    }, false);
+    }, 3000);
+});
+function getLocation() {
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(showPosition);
+	} else {
+		x.innerHTML = "该浏览器不支持获取地理位置。";
+	}
+}
+function showPosition(position) {
+	var lat = position.coords.latitude; //纬度 
+	var lag = position.coords.longitude; //经度 
+	center=[lag, lat];
+}
+
+</script>
+</body>
+</html>

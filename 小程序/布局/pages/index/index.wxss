@@ -1,0 +1,86 @@
+.container{
+  height: 100%;
+  width: 100%;
+  background-color: red;
+  display: flex;
+
+  /* flex-direction: row; */
+  /*定义横向为主轴方向 元素横向从左向右排列，默认  */
+
+   /* flex-direction: column;  */
+  /*定义纵向为主轴方向 元素纵向从上向下排列  */
+
+  /* flex-wrap: nowrap; */
+  /*不换行 默认 */
+
+    /* flex-wrap: wrap;   */
+  /*换行  */
+
+  /* flex-wrap: wrap-reverse; */
+  /*换行，把最上面的放在最下面，倒着排列  */
+
+  /* flex-flow: row wrap; */
+  /*为flex-direction和flex-wrap的简写  */
+
+   /* justify-content: flex-start;  */
+  /*定义元素在主轴的对齐方式 从左对齐（主轴为纵向时从上对齐） 默认 flex-end为相反*/
+
+   /* justify-content: center;  */
+  /*定义元素在主轴的对齐方式 居中对齐 */
+
+   /* justify-content: space-around;   */
+  /*定义元素在主轴的对齐方式 元素两边距离平分 */
+
+    justify-content: space-between;   
+  /*定义元素在主轴的对齐方式 两端先对齐，中间距离平分 */
+
+   /* align-items: flex-start;  */
+  /*定义元素在交叉轴的对齐方式，从上对齐（主轴为横向时从左对齐） 默认 flex-end为相反 */
+
+  /* align-items:center; */
+  /*定义元素在交叉轴的对齐方式，居中对齐 */
+
+  /* align-items: stretch; */
+  /*定义元素在交叉轴的对齐方式，当元素没有设置高度时，自动将元素占满容器高度 */
+
+   /* align-items: baseline;  */
+  /*定义元素在交叉轴的对齐方式，以文字所占据元素的位置为基准 */
+}
+.item{
+  width: 150rpx;
+  height: 150rpx; 
+  background: pink;
+  border: 1px solid blue;
+  text-align: center;
+  /* line-height: 100rpx;   */
+
+  /* flex-grow: 1; */
+  /*空间多余时，元素放大倍数，默认0不放大，也可理解为元素占几份  */
+
+  /* flex-shrink: 1; */
+  /*空间不足时默认等比缩小，默认1，0为不缩小  */
+
+  flex: 0 1 50px;
+  /*flex-grow flex-shrink flex-basis 的简写  */
+
+  /* order : 2; */
+  /*定义元素排列顺序 按数字从小到大排列  */
+
+
+}
+.item3{
+  display: flex;
+  align-items: flex-end;
+  /* flex-grow: 2; */
+  /* flex-shrink: 0; */
+
+
+  /* flex-basis: 250px; */
+  /*元素在主轴上占据的空间  */
+
+  /* order:1; */
+
+  /* align-self: flex-end; */
+  /*定义元素自己的排列方式  */
+  /* align-self:center; */
+}

@@ -21,6 +21,8 @@ body{
 .cont{
     width: 100%;
     height: 100%;
+    overflow-x: hidden;
+    overflow-y: visible;
 }
 .cont .header{
     padding-top: 1.33rem;

@@ -1,0 +1,4 @@
+<!--index.wxml-->
+<view class="container">
+    <image src="../../img1.png" bindtap='clickMe' animation="{{animationData}}"></image>
+</view>

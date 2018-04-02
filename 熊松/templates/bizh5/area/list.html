@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>服务区列表</title>
+	<link rel="stylesheet" href="/css/bizh5/mescroll.min.css">
+	<link rel="stylesheet" href="/css/bizh5/area/serviceArea.css">
+	<script src="/js/appjs/bizh5/jquery.min.js"></script>
+</head>
+<body>
+	<input type="hidden" id="longitude" value="">
+	<input type="hidden" id="latitude" value="">
+	<div class="cont">
+	    <header>
+	        <div class="back" onclick="javascript:window.history.go(-1);return false;">
+	            <img src="/img/bizh5/close.png" alt="">
+	        </div>
+			服务区列表
+    	</header>
+		<div class="board mescroll" id="mescroll">
+			<ul class="service_ul" v-cloak id="dataList">
+				<li class="service_li" v-for="(item,index) in pdlist"
+					@click="goServiceDetails(item.id)">
+					<!--<a href="" class="service_li_a">-->
+					<div class="s_li_img">
+						<img :src="item.picUrl" alt="">
+					</div>
+					<div class="s_li_right">
+						<div class="s_name" v-text="item.areaName"></div>
+						<div class="s_address" v-text="item.address"></div>
+						<span class="s_distance">
+							<div class="s_d_img">
+								<img src="/img/bizh5/area/ic_distance@2x.png" alt="">
+							</div> <span class="s_d_info"> 距离 <span class="s_d_num" v-text="item.distance"></span>
+								米
+						</span>
+						</span>
+					</div> <!--</a>-->
+				</li>
+			</ul>
+		</div>
+		<div class="bottom" style="display: none;">
+			<div class="b_box">
+				<div class="etc">ETC网点</div>
+				<div class="repair">维修点</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="/js/appjs/bizh5/mescroll.min.js"></script>
+	<script src="/js/appjs/bizh5/vue.js"></script>
+	<script src="/js/appjs/bizh5/area/serviceArea.js"></script>
+</body>
+</html>

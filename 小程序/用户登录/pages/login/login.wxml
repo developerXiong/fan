@@ -1,0 +1,11 @@
+<view>登录界面</view>
+
+<view>
+  <text>用户名</text>
+  <input placeholder="请输入用户名" auto-focus bindinput='usernameInput'/>
+</view>
+<view>
+  <text>密码</text>
+  <input placeholder="请输入密码" auto-focus bindinput='passwordInput'/>
+</view>
+<button type="primary" bindtap='loginBtnClick'> 点击登录 </button>

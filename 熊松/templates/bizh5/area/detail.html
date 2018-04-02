@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>服务区详情</title>
+    <link rel="stylesheet" href="/css/bizh5/mescroll.min.css">
+    <link rel="stylesheet" href="/css/bizh5/area/serviceDetails.css">
+    <script src="/js/appjs/bizh5/jquery.min.js"></script>
+</head>
+<body>
+<input type="hidden" id="areaDetailInfo" th:value="${areaDetailDO}">
+<div class="cont" id="details" v-cloak>
+    <header>
+        <div class="back" onclick="javascript:window.history.go(-1);">
+            <img src="/img/bizh5/close.png" alt="">
+        </div>
+        服务区详情
+    </header>
+    <div class="board mescroll" id="mescroll">
+        <div class="top">
+            <div class="t_img">
+                <img :src="details.picUrl" alt="">
+            </div>
+            <div class="t_name" v-text="details.areaName">
+            </div>
+        </div>
+        <div class="service_info">
+            <div class="phone">
+                <div class="p_img s_i_img">
+                    <img src="/img/bizh5/area/ic_phone@2x.png" alt="">
+                </div>
+                <div class="p_words s_i_words">
+                    电话：
+                    <span class="p_w_num" v-text="details.telNum"></span>
+                </div>
+            </div>
+            <div class="stake">
+                <div class="st_img s_i_img">
+                    <img src="/img/bizh5/area/ic_number@2x.png" alt="">
+                </div>
+                <div class="st_words s_i_words">
+                    桩号：
+                    <span class="st_w_num" v-text="details.haozhuang"></span>
+                </div>
+            </div>
+            <div class="section">
+                <div class="se_img s_i_img">
+                    <img src="/img/bizh5/area/ic_way@2x.png" alt="">
+                </div>
+                <div class="se_words s_i_words">
+                    所在路段：
+                    <span class="se_w_num" v-text="details.luduan"></span>
+                </div>
+            </div>
+            <div class="flow">
+                <div class="f_img s_i_img">
+                    <img src="/img/bizh5/area/ic_day@2x.png" alt="">
+                </div>
+                <div class="f_words s_i_words">
+                    日驶入量(辆)：
+                    <span class="f_w_num" v-text="details.cheliuliang"></span>
+                </div>
+            </div>
+        </div>
+        <div class="service_details">
+            <div class="s_d_title">服务区介绍：</div>
+            <div class="s_d_info" v-html="details.content"></div>
+        </div>
+    </div>
+
+</div>
+<script src="/js/appjs/bizh5/vue.js"></script>
+<script src="/js/appjs/bizh5/mescroll.min.js"></script>
+
+<script src="/js/appjs/bizh5/area/serviceDetails.js"></script>
+<script type="text/javascript">
+    $(function () {
+        //创建MeScroll对象
+        var mescroll = new MeScroll("mescroll", {
+            down: {
+                auto: false, //是否在初始化完毕之后自动执行下拉回调callback; 默认true
+                callback: downCallback //下拉刷新的回调
+            },
+            up: {
+                use: false
+            }
+        });
+
+        /*下拉刷新的回调 */
+        function downCallback() {
+            window.location.reload()
+        }
+
+    });
+</script>
+</body>
+</html>

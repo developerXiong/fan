@@ -1,0 +1,8 @@
+<!--index.wxml-->
+<view class="container">
+  <button type="default" bindtap='playAudio'> 播放背景音乐 </button>
+  <button type="default" bindtap='pauseAudio'> 暂停背景音乐 </button>
+  <button type="default" bindtap='stopAudio'> 停止背景音乐 </button>
+  <button type="default" bindtap='getAudioPlayerState'> 获取背景音乐状态 </button>
+
+</view>

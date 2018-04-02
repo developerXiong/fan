@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="/css/bizh5/mescroll.min.css">
+    <link rel="stylesheet" href="/css/bizh5/swiper-4.1.6.min.css">
+    <link rel="stylesheet" href="/css/bizh5/free/pleasure.css">
+    <script src="/js/appjs/bizh5/jquery.min.js"></script>
+</head>
+<body id="mescroll" class="mescroll">
+<input type="hidden" id="freeList" th:value="${freeList}">
+<input type="hidden" id="banners" th:value="${banners}">
+<header>
+    休闲旅游
+</header>
+<div class="swiper-container">
+	<div class="swiper-wrapper" id="bannerList">
+		<div class="swiper-slide">
+			<img src="" alt="">
+		</div>
+	</div>
+	<!-- 如果需要分页器 -->
+	<div class="swiper-pagination"></div>
+</div>
+<div class="cont" v-cloak id="container">
+
+    <div class="board mescroll">
+        <div class="container">
+            <ul class="pleasure_ul">
+                <li class="pleasure_li" v-for="item in pleasure">
+                    <a href="#" class="pleasure_a" @click="godetail(item.id);">
+                        <p class="plea_title" v-text="item.title"></p>
+                        <div class="plea_cont">
+                            <div class="plea_cont_left">
+                                <img :src="item.imgUrl" alt="">
+                            </div>
+                            <div class="plea_cont_right" v-text="item.content">
+                            </div>
+                        </div>
+                    </a>
+
+                </li>
+            </ul>
+        </div>
+        <div class="bottom">到底了</div>
+    </div>
+
+</div>
+<script src="/js/appjs/bizh5/vue.js"></script>
+<script src="/js/appjs/bizh5/free/pleasure.js"></script>
+<script src="/js/appjs/bizh5/swiper-4.1.6.min.js"></script>
+<script src="/js/appjs/bizh5/mescroll.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        //创建MeScroll对象
+        var mescroll = new MeScroll("mescroll", {
+            down: {
+                auto: false, //是否在初始化完毕之后自动执行下拉回调callback; 默认true
+                callback: downCallback //下拉刷新的回调
+            },
+            up: {
+                use:false
+            }
+        });
+
+        /*下拉刷新的回调 */
+        function downCallback(){
+            window.location.reload()
+        }
+
+    });
+</script>
+</body>
+</html>

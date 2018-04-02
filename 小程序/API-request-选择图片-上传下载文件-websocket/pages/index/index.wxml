@@ -1,0 +1,26 @@
+<!--index.wxml-->
+<view class="container">
+
+
+  <button type="default" bindtap='sendRequest' hover-class="other-button-hover"> 发送请求request </button>
+
+
+  <image src="{{avatarSrc}}"></image>
+  <button type="default" bindtap='chooseImage' hover-class="other-button-hover"> 选择图片chooseImage  </button> 
+
+
+  <button type="default" bindtap='upLoadFile' hover-class="other-button-hover">上传文件</button>
+
+
+  <button type="default" bindtap='downLoadFile' hover-class="other-button-hover">下载文件</button>
+
+
+  <view wx:for="{{messages}}">这里监听服务器返回的数据</view>
+  <button type="default" bindtap='downLoadFile' hover-class="other-button-hover">开启连接</button>
+
+  <button type="default" bindtap='downLoadFile' hover-class="other-button-hover">关闭连接</button>
+
+
+
+
+</view>

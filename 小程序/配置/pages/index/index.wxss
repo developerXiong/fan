@@ -19,3 +19,6 @@
 .usermotto {
   margin-top: 200px;
 }
+.container view{
+  margin-top: 100rpx;
+}

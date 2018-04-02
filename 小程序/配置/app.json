@@ -1,12 +1,43 @@
 {
   "pages":[
+
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/firstPage/first",
+    "pages/logs/logs",
+    "pages/details/details"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarBackgroundColor": "#ddd",
+    "navigationBarTitleText": "nihao",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "color":"red",
+    "selectedColor":"blue",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath":"images/icon1.png",
+        "selectedIconPath":"images/icon2.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "iconPath": "images/icon3.png",
+        "selectedIconPath": "images/icon4.png",
+        "text": "日志"
+      },
+      {
+        "pagePath":"pages/firstPage/first",
+        "iconPath": "images/icon3.png",
+        "selectedIconPath": "images/icon4.png",
+        "text":"你好"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
   }
 }

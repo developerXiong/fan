@@ -1,0 +1,24 @@
+.one{
+  height: 100px;
+  width: 150px;
+  float: left;
+}
+.bc_green{
+  background-color: green;
+}
+.bc_red{
+  background-color: red;
+}
+.bc_yellow{
+  background-color: yellow;
+}
+.bc_blue{
+  background-color: blue;
+}
+.cont{
+  width: 1200px;
+  height: 100px;
+}
+.two{
+  height: 100px;
+}

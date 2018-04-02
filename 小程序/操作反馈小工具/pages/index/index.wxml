@@ -1,0 +1,27 @@
+<view class='container'>
+
+
+  <button type='primary' bindtap='click'>触发actionsheet</button>
+  <action-sheet hidden="{{actionSheetHidden}}" bindchange='actionSheetChange'>
+    <action-sheet-item class='item' bindtap="itemClick" data-name="name1" data-id="1">item1</action-sheet-item>
+    <action-sheet-item class='item' bindtap="itemClick" data-name="name1">item2</action-sheet-item>
+    <action-sheet-item class='item' bindtap="itemClick" data-name="name1">item3</action-sheet-item>
+    <action-sheet-cancel class='cancel'>取消</action-sheet-cancel>
+  </action-sheet>
+
+
+
+
+  <button type='primary' bindtap='click1'>触发modal1</button>
+  <modal title="标题" confirm-text="确认" concel-text="取消" hidden="{{modal1Hidden}}" bindconfirm="modal1Confirm" bindcancel="modal1Concel">这是对话框内容</modal>
+   <button type='primary' bindtap='click2'>触发modal2</button>
+    <modal no-cancel confirm-text="确认" concel-text="取消" hidden="{{modal2Hidden}}" bindconfirm="modal2Confirm" bindcancel="modal2Concel">这是对话框内容</modal>
+
+
+   <button type='primary' bindtap='click3'>触发toast1</button>
+   <toast hidden="{{toast1Hidden}}" bindchange="toast1Change" duration="3000"></toast>
+
+
+   <button type='primary' bindtap='click4'>触发loading</button>
+   <loading hidden="{{loadingHidden}}" >加载中...</loading>
+</view>
