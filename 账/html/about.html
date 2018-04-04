@@ -2,17 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Title</title>
+    <title>关于我们</title>
     <script src="../js/jquery.min.js"></script>
-    <script src="../js/header.js"></script>
+    <script src="../js/public.js"></script>
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
     <style>
         .who{
-            width: calc(80% - 4rem);
+            width: -moz-calc(80% - 4rem);
+            width: -webkit-calc(80% - 4rem);
             min-height: 21rem;
             background: white;
             margin-left: 10%;
@@ -48,45 +47,32 @@
                 <div class="menu">
                     <ul>
                         <li class=""><a href="index.html">首页</a></li>
-                        <li class=""><a href="">公司注册</a></li>
-                        <li class=""><a href="">记账报税</a></li>
-                        <li class=""><a href="">公司变更</a></li>
+                        <li class=""><a href="register.html">公司注册</a></li>
+                        <li class=""><a href="account.html">记账报税</a></li>
+                        <li class=""><a href="change.html">公司变更</a></li>
                         <!--<li class=""><a href="">渠道招商</a></li>-->
-                        <li class="active menu_select"><a href="">关于我们</a></li>
-                        <li class=""><a href="">联系我们</a></li>
+                        <li class="active menu_select"><a href="about.html">关于我们</a></li>
+                        <li class=""><a href="contact.html">联系我们</a></li>
                     </ul>
                 </div>
                 <div class="header_btn">
                     <div class="open header_btn_show">
-                        <img src="../image/ic_baoshui@2x.png" alt="">
+                        <img src="../image/ic_menu@2x.png" alt="">
                     </div>
                     <div class="close">
-                        <img src="../image/ic_baodao@2x.png" alt="">
+                        <img src="../image/ic_cancel@2x.png" alt="">
                     </div>
                 </div>
                 <div class="menu_hide">
                     <ul>
                         <li class=""><a href="index.html">首页</a></li>
-                        <li class=""><a href="">公司注册</a></li>
-                        <li class=""><a href="">记账报税</a></li>
-                        <li class=""><a href="">公司变更</a></li>
+                        <li class=""><a href="register.html">公司注册</a></li>
+                        <li class=""><a href="account.html">记账报税</a></li>
+                        <li class=""><a href="change.html">公司变更</a></li>
                         <!--<li class=""><a href="">渠道招商</a></li>-->
-                        <li class="active menu_hide_select"><a href="">关于我们</a></li>
-                        <li class=""><a href="">联系我们</a></li>
+                        <li class="active menu_hide_select"><a href="about.html">关于我们</a></li>
+                        <li class=""><a href="contact.html">联系我们</a></li>
                     </ul>
-                </div>
-            </div>
-        </div>
-        <div class="header-bottom">
-            <div class="h_b_cont">
-                <div class="h_b_words">
-                    <p>Build a</p>
-                    <p>company your</p>
-                    <p>customers love.</p>
-                </div>
-                <div class="form">
-                    <input type="text" placeholder="Enter your work email" id="email">
-                    <button id="btn">Sign Up</button>
                 </div>
             </div>
         </div>
@@ -152,6 +138,16 @@
             </div>
         </div>
     </div>
+    <div class="goTop">
+        <img src="../image/up@2x.png" alt="">
+    </div>
 </div>
+<script>
+    var width=$(".header").width();
+    $(".header").height(width*0.46);
+    $(window).resize(function () {
+        $(".header").height(width*0.46);
+    })
+</script>
 </body>
 </html>

@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Title</title>
+    <title>首页</title>
     <script src="../js/jquery.min.js"></script>
-    <script src="../js/header.js"></script>
+    <script src="../js/public.js"></script>
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/index.css">
@@ -21,37 +21,39 @@
                 </div>
                 <div class="menu">
                     <ul>
+                        <!-- 两个导航栏，分别pc端和移动端，如需改动，需要同时改动 -->
                         <li class="active menu_select"><a href="index.html">首页</a></li>
-                        <li class=""><a href="">公司注册</a></li>
-                        <li class=""><a href="">记账报税</a></li>
-                        <li class=""><a href="">公司变更</a></li>
+                        <li class=""><a href="register.html">公司注册</a></li>
+                        <li class=""><a href="account.html">记账报税</a></li>
+                        <li class=""><a href="change.html">公司变更</a></li>
                         <!--<li class=""><a href="">渠道招商</a></li>-->
-                        <li class=""><a href="">关于我们</a></li>
-                        <li class=""><a href="">联系我们</a></li>
+                        <li class=""><a href="about.html">关于我们</a></li>
+                        <li class=""><a href="contact.html">联系我们</a></li>
                     </ul>
                 </div>
                 <div class="header_btn">
                     <div class="open header_btn_show">
-                        <img src="../image/ic_baoshui@2x.png" alt="">
+                        <img src="../image/ic_menu@2x.png" alt="">
                     </div>
                     <div class="close">
-                        <img src="../image/ic_baodao@2x.png" alt="">
+                        <img src="../image/ic_cancel@2x.png" alt="">
                     </div>
                 </div>
                 <div class="menu_hide">
+                    <!-- 两个导航栏，分别pc端和移动端，如需改动，需要同时改动 -->
                     <ul>
                         <li class="active menu_hide_select"><a href="index.html">首页</a></li>
-                        <li class=""><a href="">公司注册</a></li>
-                        <li class=""><a href="">记账报税</a></li>
-                        <li class=""><a href="">公司变更</a></li>
+                        <li class=""><a href="register.html">公司注册</a></li>
+                        <li class=""><a href="account.html">记账报税</a></li>
+                        <li class=""><a href="change.html">公司变更</a></li>
                         <!--<li class=""><a href="">渠道招商</a></li>-->
-                        <li class=""><a href="">关于我们</a></li>
-                        <li class=""><a href="">联系我们</a></li>
+                        <li class=""><a href="about.html">关于我们</a></li>
+                        <li class=""><a href="contact.html">联系我们</a></li>
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="header-bottom">
+        <!--<div class="header-bottom">
             <div class="h_b_cont">
                 <div class="h_b_words">
                     <p>Build a</p>
@@ -63,7 +65,7 @@
                     <button id="btn">Sign Up</button>
                 </div>
             </div>
-        </div>
+        </div>-->
     </div>
     <div class="register">
         <ul>
@@ -81,7 +83,7 @@
                 <div class="blank"></div>
             </li>
             <li class="item regi_mid">
-                <div class="r_m_left">
+                <div class="r_m_left" onclick="javascript:window.location.href='register.html'">
 
                     <div class="r_m_left_cont">
                         <div class="r_m_l_icon">
@@ -92,7 +94,7 @@
 
                 </div>
                 <div class="r_m_right">
-                    <div class="r_cont_top">
+                    <div class="r_cont_top"  onclick="javascript:window.location.href='register.html'">
                         <div class="r_m_public">
                             <div class="r_m_l_icon">
                                 <img src="../image/ic_Ltd.@2x.png" alt="">
@@ -100,7 +102,7 @@
                             <p>有限公司</p>
                         </div>
                     </div>
-                    <div class="r_cont_bot">
+                    <div class="r_cont_bot" onclick="javascript:window.location.href='register.html'">
                         <div class="r_m_public">
                             <div class="r_m_l_icon">
                                 <img src="../image/ic_partnership@2x.png" alt="">
@@ -113,18 +115,18 @@
             </li>
             <li class="item regi_right">
                 <div class="r_m_right">
-                    <div class="r_cont_top">
+                    <div class="r_cont_top" onclick="javascript:window.location.href='register.html'">
                         <div class="r_m_public">
                             <div class="r_m_l_icon">
-                                <img src="../image/ic_Ltd.@2x.png" alt="">
+                                <img src="../image/ic_branch@2x.png" alt="">
                             </div>
                             <p>有限公司</p>
                         </div>
                     </div>
-                    <div class="r_cont_bot">
+                    <div class="r_cont_bot" onclick="javascript:window.location.href='register.html'">
                         <div class="r_m_public">
                             <div class="r_m_l_icon">
-                                <img src="../image/ic_partnership@2x.png" alt="">
+                                <img src="../image/ic_owned@2x.png" alt="">
                             </div>
                             <p>合作企业</p>
                         </div>
@@ -132,18 +134,18 @@
 
                 </div>
                 <div class="r_m_right">
-                    <div class="r_cont_top">
+                    <div class="r_cont_top" onclick="javascript:window.location.href='register.html'">
                         <div class="r_m_public">
                             <div class="r_m_l_icon">
-                                <img src="../image/ic_Ltd.@2x.png" alt="">
+                                <img src="../image/ic_domestic@2x.png" alt="">
                             </div>
                             <p>有限公司</p>
                         </div>
                     </div>
-                    <div class="r_cont_bot">
+                    <div class="r_cont_bot" onclick="javascript:window.location.href='register.html'">
                         <div class="r_m_public">
                             <div class="r_m_l_icon">
-                                <img src="../image/ic_partnership@2x.png" alt="">
+                                <img src="../image/ic_foreigncompany@2x.png" alt="">
                             </div>
                             <p>合作企业</p>
                         </div>
@@ -156,28 +158,29 @@
     <div class="tax">
         <ul>
             <li class="item regi_left">
-                <p class="regi_left_title">注册公司</p>
-                <p class="regi_left_words">开公司起个独一无二的名字很重要</p>
+                <p class="regi_left_title">记账报税</p>
+                <p class="regi_left_words">公司开始经营，就要记账报税啦</p>
                 <div class="blank"></div>
             </li>
             <li class="item tax_item">
                 <div class="blank"></div>
-                <div class="tax_btn">小规模</div>
+                <div class="tax_btn" onclick="javascript:window.location.href='account.html'">小规模</div>
                 <p>税点低（3%），做账简单</p>
-                <p>税点低（3%），做账简单</p>
-                <p>税点低（3%），做账简单</p>
-                <p>税点低（3%），做账简单</p>
-                <p>税点低（3%），做账简单</p>
+                <p>不能开专用发票</p>
+                <p>不能开专用发票</p>
+                <p>年收入有上限</p>
+                <p>小规模公司可直接申请一般纳税人</p>
                 <div class="blank"></div>
             </li>
             <li class="item tax_item">
                 <div class="blank"></div>
-                <div class="tax_btn">小规模</div>
-                <p>税点低（3%），做账简单</p>
-                <p>税点低（3%），做账简单</p>
-                <p>税点低（3%），做账简单</p>
-                <p>税点低（3%），做账简单</p>
+                <div class="tax_btn" onclick="javascript:window.location.href='account.html'">一般纳税人</div>
+                <p>小规模公司可直接申请一般纳税人</p>
+                <p>可以开专用发票</p>
+                <p>可以做进项抵扣</p>
+                <p>年收入没有上限</p>
                 <p></p>
+                <div class="blank"></div>
                 <div class="blank"></div>
             </li>
         </ul>
@@ -185,9 +188,9 @@
     <div class="register change">
         <ul>
             <li class="item regi_left">
-                <p class="regi_left_title">注册公司</p>
+                <p class="regi_left_title">企业变更</p>
                 <div class="regi_cont">
-                    <p class="regi_left_words">开公司起个独一无二的名字很重要</p>
+                    <p class="regi_left_words">信息发生变化，要记得做变更</p>
                     <!--<p class="regi_left_count">-->
                         <!--累计-->
                         <!--<span>1021</span>-->
@@ -198,31 +201,40 @@
                 <div class="blank"></div>
             </li>
             <li class="item regi_mid">
-                <div class="r_m_left">
-
-                    <div class="r_m_left_cont">
-                        <div class="r_m_l_icon">
-                            <img src="../image/ic_registeredaddress@2x.png" alt="">
+                <div class="r_m_right">
+                    <div class="r_cont_top" onclick="javascript:window.location.href='change.html'">
+                        <div class="r_m_public">
+                            <div class="r_m_l_icon">
+                                <img src="../image/ic_addresschange@2x.png" alt="">
+                            </div>
+                            <p>地址变更</p>
                         </div>
-                        <p>注册地址</p>
+                    </div>
+                    <div class="r_cont_bot" onclick="javascript:window.location.href='change.html'">
+                        <div class="r_m_public">
+                            <div class="r_m_l_icon">
+                                <img src="../image/ic_card@2x.png" alt="">
+                            </div>
+                            <p>名称变更</p>
+                        </div>
                     </div>
 
                 </div>
                 <div class="r_m_right">
-                    <div class="r_cont_top">
+                    <div class="r_cont_top" onclick="javascript:window.location.href='change.html'">
                         <div class="r_m_public">
                             <div class="r_m_l_icon">
-                                <img src="../image/ic_Ltd.@2x.png" alt="">
+                                <img src="../image/ic_moneychange@2x.png" alt="">
                             </div>
-                            <p>有限公司</p>
+                            <p>资金变更</p>
                         </div>
                     </div>
-                    <div class="r_cont_bot">
+                    <div class="r_cont_bot" onclick="javascript:window.location.href='change.html'">
                         <div class="r_m_public">
                             <div class="r_m_l_icon">
-                                <img src="../image/ic_partnership@2x.png" alt="">
+                                <img src="../image/ic_legalperson@2x.png" alt="">
                             </div>
-                            <p>合作企业</p>
+                            <p>法人变更</p>
                         </div>
                     </div>
 
@@ -230,39 +242,39 @@
             </li>
             <li class="item regi_right">
                 <div class="r_m_right">
-                    <div class="r_cont_top">
+                    <div class="r_cont_top" onclick="javascript:window.location.href='change.html'">
                         <div class="r_m_public">
                             <div class="r_m_l_icon">
-                                <img src="../image/ic_Ltd.@2x.png" alt="">
+                                <img src="../image/ic_foreigncompany@2x.png" alt="">
                             </div>
-                            <p>有限公司</p>
+                            <p>股权变更</p>
                         </div>
                     </div>
-                    <div class="r_cont_bot">
+                    <div class="r_cont_bot" onclick="javascript:window.location.href='change.html'">
                         <div class="r_m_public">
                             <div class="r_m_l_icon">
-                                <img src="../image/ic_partnership@2x.png" alt="">
+                                <img src="../image/ic_logout@2x.png" alt="">
                             </div>
-                            <p>合作企业</p>
+                            <p>注销</p>
                         </div>
                     </div>
 
                 </div>
                 <div class="r_m_right">
-                    <div class="r_cont_top">
+                    <div class="r_cont_top" onclick="javascript:window.location.href='change.html'">
                         <div class="r_m_public">
                             <div class="r_m_l_icon">
-                                <img src="../image/ic_Ltd.@2x.png" alt="">
+                                <img src="../image/ic_scope@2x.png" alt="">
                             </div>
-                            <p>有限公司</p>
+                            <p>经营范围变更</p>
                         </div>
                     </div>
-                    <div class="r_cont_bot">
+                    <div class="r_cont_bot" onclick="javascript:window.location.href='change.html'">
                         <div class="r_m_public">
                             <div class="r_m_l_icon">
-                                <img src="../image/ic_partnership@2x.png" alt="">
+                                <img src="../image/ic_revoke@2x.png" alt="">
                             </div>
-                            <p>合作企业</p>
+                            <p>吊销转注销</p>
                         </div>
                     </div>
 
@@ -315,7 +327,7 @@
                             <span class="name">胡歌</span>
                         </p>
                     </li>
-                    <li class="banner_li banner_li_active">
+                    <li class="banner_li">
                         <p class="banner_words">平台给我们这种小微企业在财务报税方便节省了将近70%
                             的成本，而且提供 了周到的服务（短信提醒，微信客服
                             等），比传统代账公司更人性化。</p>
@@ -324,10 +336,10 @@
                                 乐维玄
                             </span>
                             <span class="job">总经理</span>
-                            <span class="name">胡歌</span>
+                            <span class="name">111</span>
                         </p>
                     </li>
-                    <li class="banner_li banner_li_active">
+                    <li class="banner_li">
                         <p class="banner_words">平台给我们这种小微企业在财务报税方便节省了将近70%
                             的成本，而且提供 了周到的服务（短信提醒，微信客服
                             等），比传统代账公司更人性化。</p>
@@ -336,7 +348,7 @@
                                 乐维玄
                             </span>
                             <span class="job">总经理</span>
-                            <span class="name">胡歌</span>
+                            <span class="name">ahahha</span>
                         </p>
                     </li>
                 </ul>
@@ -382,7 +394,54 @@
             </div>
         </div>
     </div>
+    <div class="goTop">
+        <img src="../image/up@2x.png" alt="">
+    </div>
 </div>
 
+<script>
+    //检测屏宽
+    var width=$(".header").width();
+    $(".header").height(width*0.46);
+    $(window).resize(function () {
+        $(".header").height(width*0.46);
+    })
+    //轮播
+    $(function(){
+
+        $(".dot_li").click(function(){
+            count=$(".dot_li").index(this);
+            $(this).addClass("dot_li_active").siblings().removeClass("dot_li_active");
+            $(".banner_li").eq(count).addClass("banner_li_active").siblings().removeClass("banner_li_active");
+        });
+        function aaa(){
+            $(".dot_li").each(function(){
+                $(".dot_li").eq(count).addClass("dot_li_active").siblings().removeClass("dot_li_active");
+                $(".banner_li").eq(count).addClass("banner_li_active").siblings().removeClass("banner_li_active");
+            })
+        }
+        var count=0;
+        function auto(){
+            count++;
+            if (count===$(".dot_li").length){
+                count=0;
+            }
+            aaa()
+        }
+        function start(){
+            a=setInterval(auto,2000)
+        }
+        function stop(){
+            clearInterval(a)
+        }
+        $(".banner").mouseover(function(){
+            stop()
+        }).mouseout(function(){
+            start()
+        });
+        start();
+    })
+
+</script>
 </body>
 </html>

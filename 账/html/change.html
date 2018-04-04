@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>公司变更</title>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/public.js"></script>
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/public_cont.css">
+    <style>
+        .details .process .process_list li{
+            margin-left: 3rem;
+            margin-right: 3rem;
+        }
+        .details .process .process_list li p:last-child{
+            font-size: 1.2rem;
+            color: #9B9B9B;
+        }
+        @media screen and (max-width: 1200px) {
+
+        }
+
+        @media screen and (max-width: 992px) {
+
+        }
+
+        @media screen and (max-width: 768px) {
+            .details .process .process_list li {
+                margin-left: 2rem;
+                margin-right: 2rem;
+            }
+        }
+
+        @media screen and (max-width: 320px) {
+            .details .process .process_list li p{
+                font-size: 1.3rem;
+            }
+            .details .process .process_list li {
+                margin-left: 1rem;
+                margin-right: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="cont">
+    <div class="header">
+        <div class="header-top">
+            <div class="wrap">
+                <div class="logo">
+                    <img src="../image/logo@2x.png" alt="">
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li class=""><a href="index.html">首页</a></li>
+                        <li class=""><a href="register.html">公司注册</a></li>
+                        <li class=""><a href="account.html">记账报税</a></li>
+                        <li class="active menu_select"><a href="change.html">公司变更</a></li>
+                        <!--<li class=""><a href="">渠道招商</a></li>-->
+                        <li class=""><a href="about.html">关于我们</a></li>
+                        <li class=""><a href="contact.html">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="header_btn">
+                    <div class="open header_btn_show">
+                        <img src="../image/ic_menu@2x.png" alt="">
+                    </div>
+                    <div class="close">
+                        <img src="../image/ic_cancel@2x.png" alt="">
+                    </div>
+                </div>
+                <div class="menu_hide">
+                    <ul>
+                        <li class=""><a href="index.html">首页</a></li>
+                        <li class=""><a href="register.html">公司注册</a></li>
+                        <li class=""><a href="account.html">记账报税</a></li>
+                        <li class="active menu_hide_select"><a href="change.html">公司变更</a></li>
+                        <!--<li class=""><a href="">渠道招商</a></li>-->
+                        <li class=""><a href="about.html">关于我们</a></li>
+                        <li class=""><a href="contact.html">联系我们</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="choose">
+        <div class="choose_img">
+            <img src="../image/img02@2x.png" alt="">
+        </div>
+        <div class="choose_cont">
+            <p class="choose_title">名称变更</p>
+            <p class="choose_message">
+                <span>价格：</span>
+                <a>因地域不同请咨询在线客服</a>
+            </p>
+            <div class="option">
+                <div class="option_left">
+                    选择类型：
+                </div>
+                <ul class="option_item_list">
+                    <li class="option_item option_item_active">名称变更</li>
+                    <li class="option_item">地址变更</li>
+                    <li class="option_item">资金变更</li>
+                    <li class="option_item">股权变更</li>
+                    <li class="option_item">经营范围变更</li>
+                    <li class="option_item">注销</li>
+                    <li class="option_item">法人变更</li>
+                </ul>
+            </div>
+            <div class="choose_btn">
+                免费咨询
+            </div>
+        </div>
+    </div>
+    <div class="details">
+        <p class="details_title">
+            产品详情
+            <span>PRODUCT DETAILS</span>
+        </p>
+        <div class="process">
+            <div class="process_title">
+                <p>注册流程</p>
+                <span>THE REGISTRATION PROCESS</span>
+            </div>
+            <ul class="process_list">
+                <li class="process_item">
+                    <div class="pro_item_img">
+                        <img src="../image/ic_ziliao@2x.png" alt="">
+                    </div>
+                    <p>整理变更资料</p>
+                    <p>1-2个工作日</p>
+                </li>
+                <li class="process_item">
+                    <div class="pro_item_img">
+                        <img src="../image/ic_shenqing@2x.png" alt="">
+                    </div>
+                    <p>提交网上申请</p>
+                    <p>3-5个工作日</p>
+                </li>
+                <li class="process_item">
+                    <div class="pro_item_img">
+                        <img src="../image/ic_cailiao@2x.png" alt="">
+                    </div>
+                    <p>递交变更材料</p>
+                    <p>一周</p>
+                </li>
+                <li class="process_item">
+                    <div class="pro_item_img">
+                        <img src="../image/ic_yyzh@2x.png" alt="">
+                    </div>
+                    <p>领取新营业执照</p>
+                    <p>2-3个工作日</p>
+                </li>
+
+            </ul>
+            <div class="process_info">由于各地区情况不同，以上资料信息仅供参考，详情请拨打400-107-000*，我们竭诚为您服务</div>
+        </div>
+    </div>
+    <div class="data">
+        <div class="process_title">
+            <p>所需资料</p>
+            <span>THE REGISTRATION PROCESS</span>
+        </div>
+        <p class="little_title">需要提交的文档资料</p>
+        <ul class="data_list">
+            <li class="data_item">
+                <span class="data_item_num">1.</span>
+                <span class="data_item_words"> 《公司变更（改制）登记申请书（公司备案申请表）》</span>
+            </li>
+            <li class="data_item">
+                <span class="data_item_num">2.</span>
+                <span class="data_item_words"> 《企业法人营业执照》正、副本</span>
+            </li>
+            <li class="data_item">
+                <span class="data_item_num">3.</span>
+                <span class="data_item_words">《指定（委托）书》</span>
+            </li>
+            <li class="data_item">
+                <span class="data_item_num">4.</span>
+                <span class="data_item_words">住所使用证明、房产证复印件，（产权为个人每页签字；产权人为单位的应加盖公章）</span>
+            </li>
+            <li class="data_item">
+                <span class="data_item_num">5.</span>
+                <span class="data_item_words"> 补充信息登记表</span>
+            </li>
+        </ul>
+        <p class="little_title">需要的基本资料及信息</p>
+        <ul class="data_list">
+            <li class="data_item">
+                <span class="data_item_num">1.</span>
+                <span class="data_item_words"> 营业执照正副本原件</span>
+            </li>
+            <li class="data_item">
+                <span class="data_item_num">2.</span>
+                <span class="data_item_words"> 组织机构代码证正副本原件</span>
+            </li>
+            <li class="data_item">
+                <span class="data_item_num">3.</span>
+                <span class="data_item_words"> 税务登记证正副本原件</span>
+            </li>
+            <li class="data_item">
+                <span class="data_item_num">4.</span>
+                <span class="data_item_words"> 统计证正副本原件</span>
+            </li>
+            <li class="data_item">
+                <span class="data_item_num">5.</span>
+                <span class="data_item_words"> 公章</span>
+            </li>
+            <li class="data_item">
+                <span class="data_item_num">6.</span>
+                <span class="data_item_words"> 法人身份证复印件</span>
+            </li>
+            <li class="data_item">
+                <span class="data_item_num">7.</span>
+                <span class="data_item_words"> 可注册公司的商用地址，住所使用证明、房产证复印件，（产权为个人每页签字；产权人为单位的应加盖公章）</span>
+            </li>
+        </ul>
+    </div>
+    <div class="harvest">
+        <div class="process_title">
+            <p>即将收获</p>
+            <span>THE REGISTRATION PROCESS</span>
+        </div>
+        <div class="harvest_img">
+            <img src="../image/harvest.png" alt="">
+        </div>
+    </div>
+    <div class="advantage">
+        <div class="advan_title">
+            我们的优势
+            <span>专业  安全 效率快  服务贴心</span>
+        </div>
+        <div class="advan_list1">
+            <div class="advan_item">
+                <img src="../image/part01@2x.png" alt="">
+            </div>
+            <div class="advan_item">
+                <img src="../image/part02@2x.png" alt="">
+            </div>
+            <div class="advan_item">
+                <img src="../image/part03@2x.png" alt="">
+            </div>
+        </div>
+        <div class="advan_list2">
+            <div class="advan_item">
+                <img src="../image/part04@2x.png" alt="">
+            </div>
+            <div class="advan_item">
+                <img src="../image/part05@2x.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer_item footer1">
+            <div class="footer_title">
+                <img src="../image/ic_baoshui@2x.png" alt="">
+                <span>BetterDesk</span>
+            </div>
+            <p class="footer1_info">This template is created by @iamjoannajiang. UX Designer @ www.betterdesign.io</p>
+        </div>
+        <div class="footer_item footer2">
+            <div class="footer_title">产品服务</div>
+            <a href="" class="footer_link">公司注册</a>
+            <a href="" class="footer_link">记账报税</a>
+            <a href="" class="footer_link">企业变更</a>
+        </div>
+        <div class="footer_item footer3">
+            <div class="footer_title">合作共赢</div>
+            <a href="" class="footer_link">渠道招商</a>
+        </div>
+        <div class="footer_item footer4">
+            <div class="footer_title">关于我们</div>
+            <a href="" class="footer_link">公司简介</a>
+            <a href="" class="footer_link">公司资讯</a>
+            <a href="" class="footer_link">联系我们</a>
+            <a href="" class="footer_link">加入我们</a>
+        </div>
+        <div class="footer_item footer5">
+            <div class="footer_title">微信关注</div>
+            <div class="QRcode">
+                <img src="../image/p3.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="goTop">
+        <img src="../image/up@2x.png" alt="">
+    </div>
+    <div class="cover">
+        <div class="box">
+            <p class="cover_words">算好账免费咨询热线</p>
+            <p class="cover_num">400-107-000*</p>
+            <p class="cover_btn">知道了</p>
+        </div>
+    </div>
+</div>
+<script>
+    //    弹窗设置
+    var height = document.documentElement.clientHeight || document.body.clientHeight;
+    $(".cover").height(height)
+
+    //   点击免费咨询，弹窗
+    $(".choose_btn").click(function () {
+        $(".cover").addClass("cover_show")
+    })
+    $(".cover_btn").click(function () {
+        $(".cover").removeClass("cover_show")
+    })
+</script>
+</body>
+</html>

@@ -27,4 +27,16 @@ $(function () {
         })
     })
 
+    //选择选项效果
+    $(".option_item").click(function () {
+        $(this).addClass("option_item_active").siblings().removeClass("option_item_active")
+    })
+
+    //点击去顶部
+    $(".goTop").click(function () {
+        $("html,body").animate({             //$('html,body')兼容问题
+            scrollTop: 0
+        },500)
+    })
+
 })

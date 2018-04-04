@@ -2,12 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Title</title>
+    <title>联系我们</title>
     <script src="../js/jquery.min.js"></script>
-    <script src="../js/header.js"></script>
+    <script src="../js/public.js"></script>
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
     <style>
@@ -17,12 +15,20 @@
             margin-left: 10%;
             min-height: 12rem;
             background: #EBF2FA;
-            display: flex;
+            display: -webkit-flex;  /* 新版本语法: Chrome 21+ */
+            display: flex;          /* 新版本语法: Opera 12.1, Firefox 22+ */
+             
+            display: -moz-box;      /* 老版本语法: Firefox (buggy) */
+            display: -ms-flexbox;   /* 混合版本语法: IE 10 */
             justify-content: space-around;
         }
         .phone .service,.cooperation{
             width: 45%;
-            display: flex;
+            display: -webkit-flex;  /* 新版本语法: Chrome 21+ */
+            display: flex;          /* 新版本语法: Opera 12.1, Firefox 22+ */
+             
+            display: -moz-box;      /* 老版本语法: Firefox (buggy) */
+            display: -ms-flexbox;   /* 混合版本语法: IE 10 */
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -51,20 +57,34 @@
             min-height: 20rem;
         }
         .address .add_cont{
-            width: calc(100% - 4rem);
+            width: -moz-calc(100% - 4rem);
+            width: -webkit-calc(100% - 4rem);
             margin-left: 2rem;
             margin-right: 2rem;
             /*background: pink;*/
-            display: flex;
+            display: -webkit-flex;  /* 新版本语法: Chrome 21+ */
+            display: flex;          /* 新版本语法: Opera 12.1, Firefox 22+ */
+             
+            display: -moz-box;      /* 老版本语法: Firefox (buggy) */
+            display: -ms-flexbox;   /* 混合版本语法: IE 10 */
             justify-content: space-between;
         }
-        .address .add_cont .map{
-            width:calc(50% - 1rem);
+        .address .add_cont .map_box{
+            width:-moz-calc(50% - 1rem);
+            width:-webkit-calc(50% - 1rem);
+            height: 20rem;
+            overflow-x: auto;
+            overflow-y: hidden;
+        }
+        .address .add_cont iframe{
+            width:100%;
             height: 20rem;
         }
         .address .add_cont .add_info{
-            width: calc(50% - 2px - 7rem);
-            height: calc(20rem - 2px);
+            width: -moz-calc(50% - 2px - 7rem);
+            width: -webkit-calc(50% - 2px - 7rem);
+            height: -moz-calc(20rem - 2px);
+            height: -webkit-calc(20rem - 2px);
             padding-left: 3rem;
             padding-right: 3rem;
             border: 1px solid #DFDFDF;
@@ -95,36 +115,29 @@
         .address .add_cont .add_info p span{
             display: block;
             float: left;
-            width: 3rem;
+            width: 5rem;
         }
         .address .add_cont .add_info p a{
             display: block;
-            width: calc(100% - 3rem);
+            width: -moz-calc(100% - 5rem);
+            width: -webkit-calc(100% - 5rem);
             min-height: 2rem;
             /*text-align: center;*/
             float: left;
         }
         .address .add_cont .add_info p span.phone_box{
-            width: calc(100% - 3rem);
+            width: -moz-calc(100% - 5rem);
+            width: -webkit-calc(100% - 5rem);
         }
         .address .add_cont .add_info p span.phone_box a{
             width: 100%;
         }
 
-
-        /*@media screen and (max-width: 992px) {*/
-
-            /*.address .add_cont .add_info{*/
-                /*width:calc(100% - 2px - 3rem);*/
-                /*height: 16rem;*/
-                /*padding-left: 1.5rem;*/
-                /*padding-right: 1.5rem;*/
-                /*margin-top: 1rem;*/
-            /*}*/
-        /*}*/
         @media screen and (max-width: 768px) {
             .phone{
                 display: block;
+                padding-top: 2rem;
+                padding-bottom: 2rem;
             }
             .phone .service{
                 width: 100%!important;
@@ -135,12 +148,17 @@
             .address .add_cont{
                 display: block;
             }
-            .address .add_cont .map{
+            .address .add_cont .map_box{
                 width: 100%;
-                height: 12rem;
+                height: 15rem;
+            }
+            .address .add_cont iframe{
+                width: 100%;
+                height: 15rem;
             }
             .address .add_cont .add_info{
-                width:calc(100% - 2px - 3rem);
+                width:-moz-calc(100% - 2px - 3rem);
+                width:-webkit-calc(100% - 2px - 3rem);
                 height: 16rem;
                 padding-left: 1.5rem;
                 padding-right: 1.5rem;
@@ -164,20 +182,20 @@
                 <div class="menu">
                     <ul>
                         <li class=""><a href="index.html">首页</a></li>
-                        <li class=""><a href="">公司注册</a></li>
-                        <li class=""><a href="">记账报税</a></li>
-                        <li class=""><a href="">公司变更</a></li>
+                        <li class=""><a href="register.html">公司注册</a></li>
+                        <li class=""><a href="account.html">记账报税</a></li>
+                        <li class=""><a href="change.html">公司变更</a></li>
                         <!--<li class=""><a href="">渠道招商</a></li>-->
-                        <li class="active menu_select"><a href="">关于我们</a></li>
-                        <li class=""><a href="">联系我们</a></li>
+                        <li class=""><a href="about.html">关于我们</a></li>
+                        <li class="active menu_select"><a href="contact.html">联系我们</a></li>
                     </ul>
                 </div>
                 <div class="header_btn">
                     <div class="open header_btn_show">
-                        <img src="../image/ic_baoshui@2x.png" alt="">
+                        <img src="../image/ic_menu@2x.png" alt="">
                     </div>
                     <div class="close">
-                        <img src="../image/ic_baodao@2x.png" alt="">
+                        <img src="../image/ic_cancel@2x.png" alt="">
                     </div>
                 </div>
                 <div class="menu_hide">
@@ -185,24 +203,11 @@
                         <li class=""><a href="index.html">首页</a></li>
                         <li class=""><a href="">公司注册</a></li>
                         <li class=""><a href="">记账报税</a></li>
-                        <li class=""><a href="">公司变更</a></li>
+                        <li class=""><a href="register.html">公司变更</a></li>
                         <!--<li class=""><a href="">渠道招商</a></li>-->
-                        <li class="active menu_hide_select"><a href="">关于我们</a></li>
-                        <li class=""><a href="">联系我们</a></li>
+                        <li class=""><a href="about.html">关于我们</a></li>
+                        <li class="active menu_hide_select"><a href="contact.html">联系我们</a></li>
                     </ul>
-                </div>
-            </div>
-        </div>
-        <div class="header-bottom">
-            <div class="h_b_cont">
-                <div class="h_b_words">
-                    <p>Build a</p>
-                    <p>company your</p>
-                    <p>customers love.</p>
-                </div>
-                <div class="form">
-                    <input type="text" placeholder="Enter your work email" id="email">
-                    <button id="btn">Sign Up</button>
                 </div>
             </div>
         </div>
@@ -229,9 +234,10 @@
 
     <div class="address">
         <div class="add_cont">
-            <div class="map">
-                <img src="../image/p3.jpg" alt="">
+            <div class="map_box">
+                <iframe src="map.html" frameborder="0" scrolling="no"></iframe>
             </div>
+
             <div class="add_info">
                 <p class="add_info_title">南京</p>
                 <p class="add_info_add">
@@ -284,7 +290,17 @@
             </div>
         </div>
     </div>
+    <div class="goTop">
+        <img src="../image/up@2x.png" alt="">
+    </div>
 </div>
+<script>
+    var width=$(".header").width();
+    $(".header").height(width*0.46);
+    $(window).resize(function () {
+        $(".header").height(width*0.46);
+    })
+</script>
 
 </body>
 </html>

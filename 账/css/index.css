@@ -7,16 +7,25 @@
 }
 .register ul{
     width: 100%;
-    display: flex;
+    display: -webkit-flex;  /* 新版本语法: Chrome 21+ */
+    display: flex;          /* 新版本语法: Opera 12.1, Firefox 22+ */
+     
+    display: -moz-box;      /* 老版本语法: Firefox (buggy) */
+    display: -ms-flexbox;   /* 混合版本语法: IE 10 */
     flex-wrap: wrap;
     justify-content: space-between;
     padding-top: 0.42rem;
     padding-bottom: 0.42rem;
 }
 .item{
-    width:calc((100% - 0.84rem)/3);
+    width:-moz-calc((100% - 0.84rem)/3);
+    width:-webkit-calc((100% - 0.84rem)/3);
     height: 24rem;
-    display: flex;
+    display: -webkit-flex;  /* 新版本语法: Chrome 21+ */
+    display: flex;          /* 新版本语法: Opera 12.1, Firefox 22+ */
+     
+    display: -moz-box;      /* 老版本语法: Firefox (buggy) */
+    display: -ms-flexbox;   /* 混合版本语法: IE 10 */
 }
 .regi_left{
     flex-direction: column;
@@ -64,6 +73,7 @@
     left: 50%;
     margin-left: -12%;
     bottom: 0;
+    cursor: default;
 }
 .register .item .blank{
     height: 2rem;
@@ -72,14 +82,20 @@
     justify-content: space-between;
 }
 .r_m_left,.r_m_right{
-    width: calc((100% - 0.42rem)/2);
-    display: flex;
+    width: -moz-calc((100% - 0.42rem)/2);
+    width: -webkit-calc((100% - 0.42rem)/2);
+    display: -webkit-flex;  /* 新版本语法: Chrome 21+ */
+    display: flex;          /* 新版本语法: Opera 12.1, Firefox 22+ */
+     
+    display: -moz-box;      /* 老版本语法: Firefox (buggy) */
+    display: -ms-flexbox;   /* 混合版本语法: IE 10 */
     flex-direction: column;
 }
 .r_m_left{
     justify-content: center;
     align-items: center;
     background: white;
+    cursor: pointer;
 }
 .r_m_left .r_m_l_icon{
     width: 3.2rem;
@@ -90,7 +106,11 @@
     height:100%;
 }
 .r_m_left .r_m_left_cont{
-    display: flex;
+    display: -webkit-flex;  /* 新版本语法: Chrome 21+ */
+    display: flex;          /* 新版本语法: Opera 12.1, Firefox 22+ */
+     
+    display: -moz-box;      /* 老版本语法: Firefox (buggy) */
+    display: -ms-flexbox;   /* 混合版本语法: IE 10 */
     justify-content: center;
     width: 6rem;
     flex-wrap: wrap;
@@ -109,16 +129,27 @@
 }
 .r_cont_top,.r_cont_bot{
     width: 100%;
-    height: calc((100% - 0.42rem)/2);
-    display: flex;
+    cursor: pointer;
+    /*height: -moz-calc((100% - 0.42rem)/2);*/
+    /*height: -webkit-calc((100% - 0.42rem)/2);*/
+    height: 11.79rem;
+    display: -webkit-flex;  /* 新版本语法: Chrome 21+ */
+    display: flex;          /* 新版本语法: Opera 12.1, Firefox 22+ */
+     
+    display: -moz-box;      /* 老版本语法: Firefox (buggy) */
+    display: -ms-flexbox;   /* 混合版本语法: IE 10 */
     justify-content: center;
     align-items: center;
     background: white;
 }
 .r_m_public{
-    display: flex;
+    display: -webkit-flex;  /* 新版本语法: Chrome 21+ */
+    display: flex;          /* 新版本语法: Opera 12.1, Firefox 22+ */
+     
+    display: -moz-box;      /* 老版本语法: Firefox (buggy) */
+    display: -ms-flexbox;   /* 混合版本语法: IE 10 */
     justify-content: center;
-    width: 6rem;
+    width: 7rem;
     flex-wrap: wrap;
 }
 .r_m_public .r_m_l_icon{
@@ -147,7 +178,11 @@
 }
 .tax ul{
     width: 100%;
-    display: flex;
+    display: -webkit-flex;  /* 新版本语法: Chrome 21+ */
+    display: flex;          /* 新版本语法: Opera 12.1, Firefox 22+ */
+     
+    display: -moz-box;      /* 老版本语法: Firefox (buggy) */
+    display: -ms-flexbox;   /* 混合版本语法: IE 10 */
     flex-wrap: wrap;
     justify-content: space-between;
     padding-top: 0.42rem;
@@ -157,7 +192,11 @@
     height: 18rem;
 }
 .tax ul li.tax_item{
-    display: flex;
+    display: -webkit-flex;  /* 新版本语法: Chrome 21+ */
+    display: flex;          /* 新版本语法: Opera 12.1, Firefox 22+ */
+     
+    display: -moz-box;      /* 老版本语法: Firefox (buggy) */
+    display: -ms-flexbox;   /* 混合版本语法: IE 10 */
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-around;
@@ -165,6 +204,7 @@
 }
 .tax ul li.tax_item .tax_btn{
     display: block;
+    cursor: pointer;
     background: #FFFFFF;
     border: 1px solid #B3A281;
     box-shadow: 0 2px 4px 0 #DFCDA9;
@@ -173,7 +213,7 @@
     color: #B09F7B;
     text-align: center;
     opacity: 0.8;
-    width: 25%;
+    width: 30%;
     height: 2.4rem;
     line-height: 2.4rem;
 }
@@ -181,17 +221,23 @@
     background: #F1E9F1;
 }
 .last{
-    width: calc(80% + 0.42rem);
+    width: -moz-calc(80% + 0.42rem);
+    width: -webkit-calc(80% + 0.42rem);
     margin-left: 10%;
     /*background: #ECF0F7;*/
     margin-top: 4.25rem;
     /*padding-right: 0.42rem;*/
-    display: flex;
+    display: -webkit-flex;  /* 新版本语法: Chrome 21+ */
+    display: flex;          /* 新版本语法: Opera 12.1, Firefox 22+ */
+     
+    display: -moz-box;      /* 老版本语法: Firefox (buggy) */
+    display: -ms-flexbox;   /* 混合版本语法: IE 10 */
     justify-content: space-between;
     flex-wrap: wrap;
 }
 .last .news,.sound{
-    width: calc(50% - 0.21rem);
+    width: -moz-calc(50% - 0.21rem);
+    width: -webkit-calc(50% - 0.21rem);
     height: 23.5rem;
 }
 .last .news{
@@ -201,7 +247,8 @@
     background: #EBF2FA;
 }
 .last_title{
-    width: calc(100% - 3rem);
+    width: -moz-calc(100% - 3rem);
+    width: -webkit-calc(100% - 3rem);
     height:5rem;
     line-height: 5rem;
     font-size: 1.8rem;
@@ -232,12 +279,16 @@
 }
 .last .news .more{
     display: block;
+    cursor: pointer;
     height: 5rem;
     position: absolute;
     right: 2rem;
     top: 0;
     color: #3A3A3A;
     font-size: 1.2rem;
+}
+.last .news .more:hover{
+    color: #0E6EB8;
 }
 .last .sound .banner{
     width:80%;
@@ -255,8 +306,10 @@
     left:0;
 }
 .last .sound .banner .banner_ul .banner_li{
-    width: calc(100% - 4rem);
-    height: calc(100% - 3.75rem);
+    width: -moz-calc(100% - 4rem);
+    width: -webkit-calc(100% - 4rem);
+    height: -moz-calc(100% - 3.75rem);
+    height: -webkit-calc(100% - 3.75rem);
     display: none;
     position: absolute;
     background: white;
@@ -333,6 +386,7 @@
 @media screen and (max-width: 768px) {
     .register ul{
         justify-content: center;
+        padding-bottom: 2rem;
     }
     .tax ul{
         justify-content: center;
@@ -354,6 +408,12 @@
     }
     .last .sound{
         margin-top: 1rem;
+    }
+    .r_cont_top{
+        height: 9.79rem;
+    }
+    .r_cont_bot{
+        height: 9.79rem;
     }
 }
 @media screen and (max-width: 480px) {

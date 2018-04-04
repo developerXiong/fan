@@ -1,0 +1,432 @@
+.header {
+    height: 6rem;
+    background: transparent;
+}
+
+.header .header-top .wrap .menu li a {
+    color: #4A4A4A;
+}
+
+.choose {
+    margin-top: 4.25rem;
+    width: 80%;
+    margin-left: 10%;
+    /*height: 25rem;*/
+    display: -webkit-flex;  /* 新版本语法: Chrome 21+ */
+    display: flex;          /* 新版本语法: Opera 12.1, Firefox 22+ */
+      
+    display: -moz-box;      /* 老版本语法: Firefox (buggy) */
+    display: -ms-flexbox;   /* 混合版本语法: IE 10 */
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /*background: pink;*/
+}
+
+.choose .choose_img {
+    width: 40%;
+    height: 25rem;
+}
+
+.choose .choose_img img {
+    width: 100%;
+    height: 100%;
+}
+
+.choose .choose_cont {
+    width: -moz-calc(60% - 2rem);
+    width: -webkit-calc(60% - 2rem);
+    min-height: 24rem;
+    padding-bottom: 1rem;
+}
+
+.choose .choose_cont .choose_title {
+    width: 100%;
+    height: 3.33rem;
+    line-height: 3.33rem;
+    font-size: 1.8rem;
+}
+
+.choose .choose_cont .choose_message {
+    width: 100%;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    font-size: 1.2rem;
+    color: #9E9E9E;
+}
+
+.choose .choose_cont .option {
+    display: -webkit-flex;  /* 新版本语法: Chrome 21+ */
+    display: flex;          /* 新版本语法: Opera 12.1, Firefox 22+ */
+      
+    display: -moz-box;      /* 老版本语法: Firefox (buggy) */
+    display: -ms-flexbox;   /* 混合版本语法: IE 10 */
+    justify-content: space-between;
+    padding-left: 1rem;
+    font-size: 1.2rem;
+    color: #696969;
+}
+
+.choose .choose_cont .option .option_left {
+    width: 6rem;
+}
+
+.choose .choose_cont .option .option_item_list {
+    min-height: 5rem;
+    width: -moz-calc(100% - 6rem);
+    width: -webkit-calc(100% - 6rem);
+    display: -webkit-flex;  /* 新版本语法: Chrome 21+ */
+    display: flex;          /* 新版本语法: Opera 12.1, Firefox 22+ */
+      
+    display: -moz-box;      /* 老版本语法: Firefox (buggy) */
+    display: -ms-flexbox;   /* 混合版本语法: IE 10 */
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.choose .choose_cont .option .option_item_list .option_item {
+    width: -moz-calc((100% - 2rem) / 3);
+    width: -webkit-calc((100% - 2rem) / 3);
+    height: 3.33rem;
+    background: #FFFFFF;
+    border: 1px solid #D4D3D3;
+    border-radius: 4px;
+    color: #D4D3D3;
+    line-height: 3.33rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+.choose .choose_cont .option .option_item_list .option_item_active{
+    border: 1px solid #0E6EB8;
+    color: #0E6EB8;
+}
+
+.choose .choose_cont .choose_btn {
+    margin-left: 7rem;
+    width: 14.5rem;
+    height: 4.17rem;
+    background: #ECF1FC;
+    border: 1px solid #4A90E2;
+    border-radius: 4px;
+    font-size: 1.6rem;
+    color: #4A90E2;
+    cursor: pointer;
+    line-height: 4.17rem;
+    text-align: center;
+}
+
+.details, .data {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 4.25rem;
+}
+
+.details_title {
+    width: 100%;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 1.6rem;
+    color: #3B3B3B;
+}
+
+.details_title span {
+    font-size: 1.4rem;
+    color: #D2D2D2;
+}
+
+.details .process {
+
+}
+
+.process_title {
+    font-size: 2.8rem;
+    color: #000000;
+    line-height: 4rem;
+    /*height: 4rem;*/
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.process_title span {
+    font-size: 1.3rem;
+    color: #D2D2D2;
+    line-height: 1.5rem;
+    display: block;
+}
+.little_title{
+    font-size: 1.6rem;
+    color: #646464;
+}
+
+.details .process .process_list {
+    display: -webkit-flex;  /* 新版本语法: Chrome 21+ */
+    display: flex;          /* 新版本语法: Opera 12.1, Firefox 22+ */
+      
+    display: -moz-box;      /* 老版本语法: Firefox (buggy) */
+    display: -ms-flexbox;   /* 混合版本语法: IE 10 */
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.details .process .process_list li {
+    width: 9.17rem;
+    height: 14rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.details .process .process_list li .pro_item_img {
+    width: 9.17rem;
+    height: 9.17rem;
+    margin-bottom: 1rem;
+}
+
+.details .process .process_list li .pro_item_img img {
+    width: 100%;
+    height: 100%;
+}
+
+.details .process .process_list li p {
+    width: 100%;
+    /*line-height: 4.83rem;*/
+    max-height: 4.83rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+    font-size: 1.4rem;
+    color: #454545;
+}
+
+.details .process .process_info {
+    width: -moz-calc(100% - 2rem);
+    width: -webkit-calc(100% - 2rem);
+    min-height: 7.5rem;
+    color: #9B9B9B;
+    font-size: 1.3rem;
+    background: #EBF2FA;
+    display: -webkit-flex;  /* 新版本语法: Chrome 21+ */
+    display: flex;          /* 新版本语法: Opera 12.1, Firefox 22+ */
+      
+    display: -moz-box;      /* 老版本语法: Firefox (buggy) */
+    display: -ms-flexbox;   /* 混合版本语法: IE 10 */
+    align-items: center;
+    justify-content: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.data .data_list {
+    width: 100%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.data .data_list .data_item {
+    font-size: 1.2rem;
+    color: #969696;
+    line-height: 2rem;
+}
+
+.harvest {
+    width: 100%;
+    background: white;
+    padding-top: 2rem;
+}
+
+.harvest .harvest_img {
+    width: 80%;
+    margin-left: 10%;
+    /*height: 23rem;*/
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.harvest .harvest_img img {
+    width: 100%;
+    height: auto;
+}
+
+.advantage {
+    width:80%;
+    padding-left: 10%;
+    padding-right: 10%;
+    background: #EBF2FA;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.advantage .advan_title{
+    font-size: 3rem;
+    color: #4A90E2;
+    text-align: center;
+    line-height: 6rem;
+}
+.advantage .advan_title span{
+    display: block;
+    font-size: 1.2rem;
+    line-height: 2rem;
+}
+.advantage .advan_list1,.advan_list2{
+    display: -webkit-flex;  /* 新版本语法: Chrome 21+ */
+    display: flex;          /* 新版本语法: Opera 12.1, Firefox 22+ */
+      
+    display: -moz-box;      /* 老版本语法: Firefox (buggy) */
+    display: -ms-flexbox;   /* 混合版本语法: IE 10 */
+    justify-content: center;
+}
+.advantage .advan_item{
+    margin:1rem;
+    width: 18rem;
+    height: 19.42rem;
+}
+.advantage .advan_item img{
+    width: 100%;
+    height: 100%;
+}
+.footer{
+    margin-top: 0;
+}
+
+.cover{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background: rgba(0,0,0,.3);
+    width: 100%;
+    display: -webkit-flex;
+    display: flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.cover_show{
+    display: flex;
+}
+.cover .box{
+    width: 43.33rem;
+    height: 25rem;
+    background: white;
+    display: -webkit-flex;
+    display: flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border-radius: 3px;
+}
+.cover .box .cover_words{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    text-align: center;
+}
+.cover .box .cover_num{
+    font-size: 2.7rem;
+    margin-bottom: 2rem;
+    color: #323232;
+    width: 100%;
+    text-align: center;
+}
+.cover .box .cover_btn{
+    width: 30%;
+    height: 3rem;
+    line-height: 3rem;
+    background: #0E6EB8;
+    border-radius: 3px;
+    color: white;
+    font-size: 1.6rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+
+}
+
+@media screen and (max-width: 992px) {
+
+}
+
+@media screen and (max-width: 768px) {
+    .choose{
+        margin-top: 1.25rem;
+    }
+    .choose .choose_img {
+        width: 100%;
+        height: 19rem;
+    }
+    .choose .choose_cont {
+        width: 100%;
+        margin-top: 1rem;
+        min-height: 5rem;
+    }
+
+    .choose .choose_cont .choose_title {
+        display: none;
+    }
+
+    .choose .choose_cont .choose_message {
+        display: none;
+    }
+
+    .choose .choose_cont .option .option_left {
+        display: none;
+    }
+
+    .choose .choose_cont .option .option_item_list {
+        width: -moz-calc(100% - 1rem);
+        width: -webkit-calc(100% - 1rem);
+        padding-right: 1rem;
+    }
+
+    .choose .choose_cont .choose_btn {
+        position: fixed;
+        left: 0;
+        height: 4.3rem;
+        line-height: 4.3rem;
+        bottom: -3px;
+        width: 100%;
+        margin-left: 0;
+        z-index: 1000;
+        border: 0;
+    }
+    .advantage .advan_list1 .advan_item{
+        width: 7.93333333rem;
+        height: 8.86666667rem;
+        margin-right: .26666667rem;
+    }
+    .advantage .advan_list2 .advan_item{
+        width: 7.93333333rem;
+        height: 8.86666667rem;
+        margin-right: .26666667rem;
+    }
+    .harvest .harvest_img{
+        height: 10rem;
+    }
+    .footer {
+        padding-bottom: 3rem;
+    }
+    .cover .box{
+        width: 22.33rem;
+        height:17rem ;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+
+}
+@media screen and (max-width: 414px) {
+    .choose .choose_cont .option .option_item_list .option_item{
+        width: -moz-calc((100% - 2rem) / 2);
+        width: -webkit-calc((100% - 2rem) / 2);
+    }
+}
+
+
