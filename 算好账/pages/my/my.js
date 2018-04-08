@@ -1,12 +1,10 @@
-var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    username:null,
-    password:null
+    
   },
 
   /**
@@ -63,23 +61,5 @@ Page({
    */
   onShareAppMessage: function () {
     
-  },
-
-
-  loginBtnClick:function(){
-//无用户名和密码的验证过程
-
-    app.appData.userinfo = {username:this.data.username,password:this.data.password}
-    wx.switchTab({
-      url: '../user/user',
-    })
-  },
-
-  usernameInput:function(event){
-    this.setData({username:event.detail.value})
-  },
-
-  passwordInput: function (event) {
-    this.setData({ password: event.detail.value })
   }
 })

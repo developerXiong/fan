@@ -1,0 +1,74 @@
+.container{
+  min-height: 100%;
+  width: 100%;
+  position: relative;
+}
+.cont_bg{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -1;
+  left: 0;
+  top: 0;
+}
+.cont_bg image{
+  width: 100%;
+  height: 100%;
+}
+.goBack{
+  width: 70rpx;
+  height: 70rpx;
+  position: absolute;
+   left: 5%;
+  top: 20rpx; 
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.goBack image{
+  width: 35rpx;
+  height: 25rpx;
+}
+.title{
+  width: 100%;
+  height:80rpx; 
+  /* position: absolute; */
+  margin-top: 45rpx;
+  font-size: 38rpx;
+  color: white;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.public{
+  width: 90%;
+  margin-left: 5%;
+  min-height: 260rpx;
+  background: #FFFFFF;
+  box-shadow: 0 4px 6px 0 rgba(0,0,0,0.10);
+  border-radius: 5px;
+  margin-top: 55rpx;
+  overflow: hidden;
+  position: relative;
+}
+.public .btn{
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+  position: absolute;
+  right: -100rpx;
+  top: -100rpx;
+  z-index: 10;
+  background-image: linear-gradient(-35deg,#C86DD7  0%,#3023AE  100%);
+}
+
+
+
+
+
+
+.account,.change{
+  margin-top: 35rpx;
+}

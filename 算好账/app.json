@@ -1,0 +1,25 @@
+{
+  "pages":[
+    "pages/process/process",
+    "pages/index/index",
+    "pages/my/my"
+    
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "财税数据"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的"
+      }
+    ]
+  }
+}
