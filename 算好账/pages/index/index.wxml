@@ -16,7 +16,7 @@
           <image src='../../image/prev.png'></image>
         </view> 
         <scroll-view scroll-x class='month' scroll-left="{{scrollLeft}}" scroll-with-animation="{{true}}" bindscroll="scroll">
-          <view class='scroll-view-item' bindtap='selectMonth' wx:for="{{month}}" id='{{item.id}}' class="{{item.isSelect?'scroll-view-item-select':'scroll-view-item-normal'}}">
+          <view class='scroll-view-item' bindtap='selectMonth' wx:for="{{month}}" id='{{item.id}}' class="{{item.isSelect?'scroll-view-item-select':'scroll-view-item-normal'}}"> 
             {{item.words}}
           </view>
         </scroll-view>

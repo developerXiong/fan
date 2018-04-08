@@ -1,5 +1,6 @@
 Page({
 
+
   /**
    * 页面的初始数据
    */
@@ -24,7 +25,7 @@ Page({
       {
         id: 3,
         words: '4月',
-        isSelect: false
+        isSelect: true
       },
       {
         id: 4,
@@ -129,59 +130,41 @@ Page({
 
   prev:function(){
     //点击月份左侧按钮
-    this.setData({
-      scrollLeft: this.data.scrollLeft - 130
-      
-    })
-    if (this.scrollLeft <= 0) {
-      this.setData({
-        scrollLeft:0
 
+    if (this.data.scrollLeft > 0) {
+      this.setData({
+        scrollLeft: this.data.scrollLeft - 120
       })
     }
+
   },
   next: function () {
     //点击月份右侧按钮
-    this.setData({
-      scrollLeft: this.data.scrollLeft + 120
-    })
-    if (this.scrollLeft >= 1600) {
+    if (this.data.scrollLeft < 471) {
       this.setData({
-        scrollLeft: 1600
-
+        scrollLeft: this.data.scrollLeft + 120
       })
     }
   },
   scroll:function(e){ 
     //手动滚动月份时取数值
+    console.log(e)
     this.setData({
+
       scrollLeft:e.detail.scrollLeft
     })
   },
   selectMonth:function(e){
     //选中月份时
     //切换样式
-    var id=e.currentTarget.id
-    
-    try {
-      var value = wx.getStorageSync('lastMonth')
-      if (value) {
-        console.log(value+id)
-        if(value === id){
-          var month = 'month[' + id + '].isSelect'
-          this.setData({
-            [month]: true
-          })
-        }else{
-          var month = 'month[' + value + '].isSelect'
-          this.setData({
-            [month]: false
-          })
-        }
-      }
-    } catch (e) {
+
+    for( var i = 0 ; i<this.data.month.length ; i++){
+      var month = 'month[' + i + '].isSelect'
+      this.setData({
+        [month]: false
+      })
     }
-    wx.setStorageSync('lastMonth', id)
+    var id=e.currentTarget.id
     
 
 
