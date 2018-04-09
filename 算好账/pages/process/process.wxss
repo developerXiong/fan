@@ -117,18 +117,20 @@
 .public .progress .prog_cont .prog_line{
   width: 87%;
   margin-left: 6.5%;
-  height: 25rpx;
+  height: 20rpx;
+  margin-top: 10rpx;
   /* background-image: linear-gradient(to left,#C86DD7 ,#3023AE );  */
   display: flex;
   justify-content: space-between;
 }
-.public .progress .prog_cont .prog_line text{
+.public .progress .prog_cont .prog_line text.prog_dot_default{
   width: 8rpx;
   background: #B5B5B5;
 }
-/* .public .progress .prog_cont .prog_line text{
+.public .progress .prog_cont .prog_line text.prog_dot_show{
+  width: 8rpx;
   background: #6F60CE;
-} */
+}  
 
 .public .list{
   width: 90%;
@@ -139,7 +141,8 @@
 .public .list .list_item{
   height: 136rpx;
   width: 100%;
-  border-bottom: 1px solid #B7BEC5;
+  border-bottom: 1px solid rgba(183,190,197
+,.3);
   display: flex;
   justify-content: space-between;
   align-items: center;

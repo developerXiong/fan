@@ -1,8 +1,9 @@
 {
   "pages":[
+    "pages/process/process",
     "pages/index/index",
-    "pages/detail/detail",
-    "pages/process/process"
+    "pages/detail/detail"
+    
     
   ],
   "window":{

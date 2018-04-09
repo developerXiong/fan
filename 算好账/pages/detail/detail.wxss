@@ -228,7 +228,8 @@
 .details_list .det_item{
   width: 100%;
   height: 136rpx;
-  border-bottom: 1px solid #B7BEC5;
+  border-bottom: 1px solid rgba(183,190,197
+,.3);
   font-size: 28rpx;
   color: #737B91;
   /* font-weight: bold; */
@@ -261,6 +262,11 @@
 .details_list .det_item .det_right text{
   margin-right: 20rpx;
   display: inline-block;
+}
+.details_list .det_item .det_right image{
+  width: 23rpx;
+  height: 23rpx;
+  margin-right: 15rpx;
 }
 .details_list .det_item .det_right .det_right_num{
   width: 170rpx;

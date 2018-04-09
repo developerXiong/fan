@@ -4,11 +4,15 @@ Page({
    * 页面的初始数据
    */
   data: {
+    // progressDot:[
+    //   progressDotClass:''
+    // ]
+    status:[],//本地
     message:[
       {
         listName:'公司注册',
         isOpen:false,
-        code:0,
+        code:1,
         words:['开始','准备材料','审核','领取营业材料','完成'],
         list:[
           {
@@ -71,7 +75,26 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options.monthId)
+    // console.log(options.monthId)
+    // let total = 30,step=6
+    // let mess = this.data.message
+    // // for( var i=0;i<mess.length;i++){
+    //   let code=mess[0].code;
+    //   var len = (code+1)*step
+    //   for(var z=0;z<total;z++){
+    //     var sss = []
+    //     if(z<len){
+    //       sss.push('prog_dot_show')
+    //     }else{
+    //       sss.push('prog_dot_default')
+    //     }
+    //     this.setData({
+    //       status: sss
+    //     });
+    //   }
+    // // }
+    // console.log(this.data.status)
+
   },
 
   /**

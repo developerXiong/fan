@@ -34,11 +34,11 @@
               <image src='../../image/bg02@2x.png'></image>
             </view>
             <view class='h_c_bot_cont'>
-              <view class='profit'>
+              <view class='profit' wx:if="{{statusCode == '0' || statusCode == '1'}}">
                 <view class='profit_num'>{{numTop}}</view>
                 <view class='profit_words'>{{wordsTop}}</view>
               </view>
-              <view class='pro_under'>
+              <view class='pro_under' wx:if="{{statusCode == '2' || statusCode == '1'}}">
                 <view class='public'>
                   <view class='public_top'>
                     <view class='public_top_img'>
@@ -67,7 +67,7 @@
     </view>
 
 
-    <view class='details_list'>
+     <view class='details_list' wx:if="{{statusCode == '1' || statusCode == '2'}}">
       <view class='det_item' wx:for="{{list}}">
         <view class="{{item.important?'det_left_impor':'det_left'}}">{{item.listLeft}}</view>
         <view class='det_right'>
@@ -81,6 +81,20 @@
           </view>
         </view>
       </view>
+    </view> 
+
+    <view class='details_list' wx:else>
+      <view class='det_item' wx:for="{{list}}">
+
+        <view class='det_left'>{{item.listLeft}}</view>
+        <view class='det_right'>
+          <image src='../../image/plus.png' wx:if="{{item.isPluse}}"></image>
+          <image src='../../image/reduce.png' wx:else></image>
+          <text>{{item.listNum}}</text>
+        </view>
+
+      </view>
+    
     </view>
 
     

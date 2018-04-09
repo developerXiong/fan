@@ -64,7 +64,7 @@ Page({
       }
     ],
     selectMonth: null,
-    statusCode:null,
+    statusCode:0,
     title:'现金流',
     details_title:'现金流明细',
     wordsTop:'本月累计（元）',
@@ -74,6 +74,7 @@ Page({
     numLeft:'132,000.00',
     numRight: '64,000.00',
     list:[
+     //其他五种数据
       {
         listLeft:'库存现金',
         important:true,
@@ -108,12 +109,41 @@ Page({
       },
       {
         listLeft: '库存现金',
+        important: false,
         listRightTopWords: '期初',
         listRightBotWords: '期末',
         listRightTopNum: '1231,121.50',
         listRightBotNum: '1231,121.50'
       }
     ]
+    // ,
+    // list: [
+    //   //纳税表数据
+    //   {
+    //     listLeft: '增值税',
+    //     important: false,
+    //     isPluse: true,
+    //     listNum: '3.50'
+    //   },
+    //   {
+    //     listLeft: '库存现金',
+    //     important: false,
+    //     isPluse: false,
+    //     listNum: '3.50'
+    //   },
+    //   {
+    //     listLeft: '库存现金',
+    //     important: false,
+    //     isPluse: true,
+    //     listNum: '3.50'
+    //   },
+    //   {
+    //     listLeft: '库存现金',
+    //     important: false,
+    //     isPluse: true,
+    //     listNum: '3.50'
+    //   }
+    // ]
   },
 
   /**
@@ -121,9 +151,16 @@ Page({
    */
   onLoad: function (options) {
     var code = options.statusCode
+    //code代表不同详情页，通过判断code来隐藏掉某些部分
+    // 0代表纳税表 1代表现金流和利润表 3代表 应收应付和负债
     var selectMonth = options.selectMonth
     // console.log(selectMonth+code)
-    console.log(options)
+    
+
+    this.setData({
+      statusCode:code
+    })
+    // console.log(typeof(this.data.statusCode))
   },
 
   /**
