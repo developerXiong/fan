@@ -1,15 +1,10 @@
 Page({
-
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-    scrollLeft:0,
-    month:[
+    scrollLeft: 0,
+    month: [
       {
-        id:0,
-        words:'1月',
+        id: 0,
+        words: '1月',
         isSelect: false
       },
       {
@@ -68,75 +63,113 @@ Page({
         isSelect: false
       }
     ],
-    selectMonth:null
+    selectMonth: null,
+    statusCode:null,
+    title:'现金流',
+    details_title:'现金流明细',
+    wordsTop:'本月累计（元）',
+    wordsLeft: '期初',
+    wordsRight: '期末',
+    numTop:'345.50',
+    numLeft:'132,000.00',
+    numRight: '64,000.00',
+    list:[
+      {
+        listLeft:'库存现金',
+        important:true,
+        listRightTopWords:'期初',
+        listRightBotWords: '期末',
+        listRightTopNum: '1231,121.50',
+        listRightBotNum: '1231,121.50'
+      },
+      {
+        listLeft: '库存现金',
+        important: false,
+        listRightTopWords: '期初',
+        listRightBotWords: '期末',
+        listRightTopNum: '1231,121.50',
+        listRightBotNum: '1231,121.50'
+      },
+      {
+        listLeft: '库存现金',
+        important: false,
+        listRightTopWords: '期初',
+        listRightBotWords: '期末',
+        listRightTopNum: '1231,121.50',
+        listRightBotNum: '1231,121.50'
+      },
+      {
+        listLeft: '库存现金',
+        important: false,
+        listRightTopWords: '期初',
+        listRightBotWords: '期末',
+        listRightTopNum: '1231,121.50',
+        listRightBotNum: '1231,121.50'
+      },
+      {
+        listLeft: '库存现金',
+        listRightTopWords: '期初',
+        listRightBotWords: '期末',
+        listRightTopNum: '1231,121.50',
+        listRightBotNum: '1231,121.50'
+      }
+    ]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
-    for(var i=0 ;i<this.data.month.length;i++){
-      if (this.data.month[i].isSelect){
-        this.setData({
-          selectMonth : i
-        })
-      }
-      
-    }
+    var code = options.statusCode
+    var selectMonth = options.selectMonth
+    // console.log(selectMonth+code)
+    console.log(options)
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-    
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    
   },
 
 
-  prev:function(){
+  prev:function () {
     //点击月份左侧按钮
 
     if (this.data.scrollLeft > 0) {
@@ -154,25 +187,26 @@ Page({
       })
     }
   },
-  scroll:function(e){ 
+
+  scroll: function (e) {
     //手动滚动月份时取数值
     this.setData({
 
-      scrollLeft:e.detail.scrollLeft
+      scrollLeft: e.detail.scrollLeft
     })
   },
-  selectMonth:function(e){
+  selectMonth: function (e) {
     //选中月份时
     //切换样式
 
-    for( var i = 0 ; i<this.data.month.length ; i++){
+    for (var i = 0; i < this.data.month.length; i++) {
       var month = 'month[' + i + '].isSelect'
       this.setData({
         [month]: false
       })
     }
-    var id=e.currentTarget.id
-    
+    var id = e.currentTarget.id
+
 
 
     var month = 'month[' + id + '].isSelect'
@@ -180,9 +214,9 @@ Page({
       [month]: true
     })
 
-    
-    
-    
+
+
+
     this.setData({
       //得到月份id 跳转时传参
       selectMonth: e.target.id
@@ -192,33 +226,18 @@ Page({
     // wx.request({
     //   url: '',
     // })
-    
-    
+
+
   },
 
 
-  format:function(num){
-    //格式化数字的正则
-    var num = (num || 0).toString(), temp = num.length % 3;
-    switch (temp) {
-      case 1:
-        num = '00' + num;
-        break;
-      case 2:
-        num = '0' + num;
-        break;
-    }
-    return num.match(/\d{3}/g).join(',').replace(/^0+/, '');
-  },
+  goBack: function () {
 
-
-  goPrograss:function(){
-    //点击订单进程
-
-    wx.navigateTo({
-      url: '../process/process?monthId=' + this.data.selectMonth,
+    // wx.navigateTo({
+    //   url: '../index/index'
+    // })
+    wx.navigateBack({
+      delta: 1
     })
   }
-
-
 })

@@ -1,0 +1,88 @@
+  <!-- 现金流 利润表 -->
+  <view class='container'>
+    
+    <view class='header'>
+      <view class='goBack' bindtap='goBack'>
+    <image src='../../image/goBack.png'></image>
+  </view>
+      <view class='title'>{{title}}</view>
+      <view class='header_bg'>
+        <image src="../../image/bg01@2x.png"></image>
+      </view>
+
+      <view class='header_cont'>
+
+        <view class='h_c_top'>
+          <view class='prev' bindtap='prev'>
+            <image src='../../image/prev.png'></image>
+          </view> 
+          <scroll-view scroll-x class='month' scroll-left="{{scrollLeft}}" scroll-with-animation="{{true}}" bindscroll="scroll">
+            <view class='scroll-view-item' bindtap='selectMonth' wx:for="{{month}}" id='{{item.id}}' class="{{item.isSelect?'scroll-view-item-select':'scroll-view-item-normal'}}"> 
+              {{item.words}}
+            </view>
+          </scroll-view>
+          <view class='next' bindtap='next'>
+            <image src='../../image/next.png'></image>
+          </view> 
+        </view>
+
+        <view class='h_c_bot'>
+          <view class='h_c_bot1'></view>
+          <view class='h_c_bot2'></view>
+          <view class='h_c_bot3'>
+            <view class='h_c_bot_bg'>
+              <image src='../../image/bg02@2x.png'></image>
+            </view>
+            <view class='h_c_bot_cont'>
+              <view class='profit'>
+                <view class='profit_num'>{{numTop}}</view>
+                <view class='profit_words'>{{wordsTop}}</view>
+              </view>
+              <view class='pro_under'>
+                <view class='public'>
+                  <view class='public_top'>
+                    <view class='public_top_img'>
+                      <image src='../../image/icon_up.png'></image>
+                    </view>
+                    <text class='public_num'>{{numLeft}}</text>
+                  </view>
+                  <view class='public_words'>{{wordsLeft}}</view>
+                </view>
+                <view class='public'>
+                  <view class='public_top'>
+                    <view class='public_top_img'>
+                      <image src='../../image/icon_up.png'></image>
+                    </view>
+                    <text class='public_num'>{{numRight}}</text>
+                  </view>
+                  <view class='public_words'>{{wordsRight}}</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        
+      </view>
+      <view class='details_title'>{{details_title}}</view>
+    </view>
+
+
+    <view class='details_list'>
+      <view class='det_item' wx:for="{{list}}">
+        <view class="{{item.important?'det_left_impor':'det_left'}}">{{item.listLeft}}</view>
+        <view class='det_right'>
+          <view class='det_right_top'>
+            <text class='det_right_words'>{{item.listRightTopWords}}</text>
+            <text class='det_right_num'>{{item.listRightTopNum}}</text>
+          </view>
+          <view class='det_right_bottom'>
+            <text class='det_right_words'>{{item.listRightBotWords}}</text>
+            <text class='det_right_num'>{{item.listRightBotNum}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    
+  
+  </view>

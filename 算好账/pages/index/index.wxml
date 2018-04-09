@@ -97,27 +97,28 @@
   </view>
   
   <view class='table'>
-    <navigator class='table_item'>
+    <navigator url='../detail/detail?key=nashui&statusCode=0' class='table_item'>
       <view class='table_item_num'>1.4k</view>
       <view class='table_item_words'>纳税表</view>
     </navigator>
-   <navigator class='table_item'>
+    
+   <navigator url="../detail/detail?statusCode=1&key=xianjin&selectMonth={{selectMonth}}" class='table_item'>
       <view class='table_item_num'>1.4k</view>
       <view class='table_item_words'>现金流</view>
     </navigator>
-    <navigator class='table_item'>
+    <navigator  url='../detail/detail?key=lirun&statusCode=1' class='table_item'>
       <view class='table_item_num'>1.4k</view>
       <view class='table_item_words'>利润表</view>
     </navigator>
-    <navigator class='table_item'>
+    <navigator url='../detail/detail?key=yingshou&statusCode=2' class='table_item'>
       <view class='table_item_num'>1.4k</view>
       <view class='table_item_words'>应收账款</view>
     </navigator>
-    <navigator class='table_item'>
+    <navigator url='../detail/detail?key=yingfu&statusCode=2' class='table_item'>
       <view class='table_item_num'>1.4k</view>
       <view class='table_item_words'>应付账款</view>
     </navigator>
-    <navigator class='table_item'>
+    <navigator url='../detail/detail?key=fuzhai&statusCode=2' class='table_item'>
       <view class='table_item_num'>1.4k</view>
       <view class='table_item_words'>资产负债表</view>
     </navigator>

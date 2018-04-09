@@ -61,14 +61,98 @@
   right: -100rpx;
   top: -100rpx;
   z-index: 10;
-  background-image: linear-gradient(-35deg,#C86DD7  0%,#3023AE  100%);
+  background-image: linear-gradient(-45deg,#C86DD7  0%,#3023AE  100%);
+}
+.public .btn image{
+  width: 26rpx;
+  height: 26rpx;
+  position: absolute;
+  left: 50rpx;
+  bottom: 50rpx;
+}
+.public .list_name{
+  width: 70rpx;
+  height: 100rpx;
+  padding-left: 15rpx;
+  padding-right: 15rpx;
+  margin-bottom: 18rpx;
+  background: #FFFFFF;
+  box-shadow: 0 4px 6px 0 rgba(0,0,0,0.10);
+  border-radius: 5px;
+  font-size: 30rpx;
+  color: #6C59CF;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40rpx;
+  margin-left: 40rpx;
+}
+.public .progress{
+  width: 100%;
+  height: 100rpx;
+}
+.public .progress .prog_cont{
+  width: 100%;
+  height: 100%;
+}
+.public .progress .prog_cont .prog_words{
+  width: 100%;
+  height: 50rpx;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.public .progress .prog_cont .prog_words text{
+  width: 20%; 
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 23rpx;
+  color: #4837BC;
+  /* letter-spacing:-1rpx; */
+}
+.public .progress .prog_cont .prog_line{
+  width: 87%;
+  margin-left: 6.5%;
+  height: 25rpx;
+  /* background-image: linear-gradient(to left,#C86DD7 ,#3023AE );  */
+  display: flex;
+  justify-content: space-between;
+}
+.public .progress .prog_cont .prog_line text{
+  width: 8rpx;
+  background: #B5B5B5;
+}
+/* .public .progress .prog_cont .prog_line text{
+  background: #6F60CE;
+} */
+
+.public .list{
+  width: 90%;
+  margin-left: 5%;
+  min-height: 0;
+  border-top: 2px solid #AD95FF;
+}
+.public .list .list_item{
+  height: 136rpx;
+  width: 100%;
+  border-bottom: 1px solid #B7BEC5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 30rpx;
+  color: #737B91;
+}
+.public .list .list_item:last-child{
+  border-bottom: 0;
+}
+.public .list .list_item .list_item_time text{
+  color: #71C009;
 }
 
 
 
 
-
-
-.account,.change{
-  margin-top: 35rpx;
-}

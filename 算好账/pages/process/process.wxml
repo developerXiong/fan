@@ -1,4 +1,4 @@
-<!--logs.wxml-->
+
 <view class="container">
   <view class='goBack' bindtap='goBack'>
     <image src='../../image/goBack.png'></image>
@@ -9,28 +9,51 @@
   <view class='title' bindtap='back'>订单进程</view>
 
 
-  <view class='register public'>
-    <view class='btn'>
-      <image src='../../image/open.png'></image>
+
+
+  <view class='cont'>
+    <view class='public' wx:for="{{message}}" wx:for-index="index">
+      <view class='btn' bindtap="openList" data-index="{{index}}">
+        <image wx:if="{{item.isOpen}}" src='../../image/open.png'></image>
+        <image wx:else src='../../image/close.png'></image>
+      </view>
+
+      <view class='list_name'>{{item.listName}}</view>
+      
+      <view class='progress'>
+        <!-- <view class='prog_bg'></view> -->
+        <view class='prog_cont'>
+          <view class='prog_words'>
+            <text wx:for="{{item.words}}" wx:for-item="items">{{items}}</text>
+          </view>
+
+          <view class='prog_line'>
+            <text></text>
+
+            
+          </view>
+        
+        </view>
+      </view>
+
+      <view class='list' wx:if="{{item.isOpen}}">
+        <view class='list_item' wx:for="{{item.list}}" wx:for-item="itemss">
+          <view class='list_item_words'>{{itemss.list_words}}</view>
+          <view class='list_item_time'>
+            <text>{{itemss.list_time_left}}</text>
+             {{itemss.list_time}}
+          </view>
+        </view>
+      
+      </view>
+    
     </view>
   
-  
   </view>
-
-  <view class='account public'>
-    <view class='btn'>
-
-    </view>
   
-  </view>
 
 
-  <view class='change public'>
-    <view class='btn'>
-
-    </view>
+ 
   
   
-  
-  </view>
 </view>
