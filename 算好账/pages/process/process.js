@@ -4,17 +4,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    // progressDot:[
-    //   progressDotClass:''
-    // ]
     status:[],//本地
     message:[
       {
-        listName:'公司注册',
-        isOpen:false,
-        code:1,
-        words:['开始','准备材料','审核','领取营业材料','完成'],
-        list:[
+        listName:'公司注册',//左上角名称
+        isOpen:false,//是否默认被打开
+        progressCode:1,//进度状态码 0-4
+        words:['开始','准备材料','审核','领取营业材料','完成'], //进度条对应文字
+        list:[  //打开后的列表
           {
             list_words:'会计记账',
             list_time_left:'AM',
@@ -75,6 +72,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
+
+    // var mess = this.data.message
+    // var sss = []
+    // for(var i=0;i<mess.length;i++){
+    //   var leng = (mess[i].code+1)*6
+    //   // console.log(leng)
+      
+    //   for(var z=0;z<leng;z++){
+    //     sss.push('prog_dot_show')
+    //   }
+
+    // }
+    // console.log(this.data.status)
+   
+
     // console.log(options.monthId)
     // let total = 30,step=6
     // let mess = this.data.message

@@ -6,7 +6,8 @@
   <view class='cont_bg'>
     <image src='../../image/bg03@2x.png'></image> 
   </view>
-  <view class='title' bindtap='back'>订单进程</view> 
+  <view class='title'>订单进程</view>
+
 
 
 
@@ -29,7 +30,7 @@
 
           <view class='prog_line'>
             <text class='prog_dot_show'></text>
-            <!-- <text class='prog_dot_default' wx:for="{{s}}"></text> -->
+             <text class='prog_dot_default' wx:for="{{status}}"></text> 
             <!-- <text></text>
             <text></text>
             <text></text>

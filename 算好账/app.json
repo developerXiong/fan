@@ -1,8 +1,12 @@
 {
   "pages":[
-    "pages/process/process",
+    "pages/order/order",
     "pages/index/index",
+    
+    "pages/process/process",
+    
     "pages/detail/detail"
+    
     
     
   ],

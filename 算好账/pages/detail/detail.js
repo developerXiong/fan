@@ -20,7 +20,7 @@ Page({
       {
         id: 3,
         words: '4月',
-        isSelect: true
+        isSelect: false
       },
       {
         id: 4,
@@ -65,6 +65,9 @@ Page({
     ],
     selectMonth: null,
     statusCode:0,
+
+
+    //现金流利润表
     title:'现金流',
     details_title:'现金流明细',
     wordsTop:'本月累计（元）',
@@ -74,7 +77,7 @@ Page({
     numLeft:'132,000.00',
     numRight: '64,000.00',
     list:[
-     //其他五种数据
+     
       {
         listLeft:'库存现金',
         important:true,
@@ -117,8 +120,15 @@ Page({
       }
     ]
     // ,
+
+
+    //纳税表
+    // title: '纳税表',
+    // details_title: '现金流明细',
+    // wordsTop: '本月累计（元）',
+    // numTop: '345.50',
     // list: [
-    //   //纳税表数据
+    //   
     //   {
     //     listLeft: '增值税',
     //     important: false,
@@ -144,6 +154,58 @@ Page({
     //     listNum: '3.50'
     //   }
     // ]
+
+
+    //应收应付负债
+    // title: '应收',
+    // details_title: '现金流明细',
+    // wordsLeft: '期初',
+    // wordsRight: '期末',
+    // numLeft: '132,000.00',
+    // numRight: '64,000.00',
+    // list: [
+
+    //   {
+    //     listLeft: '库存现金',
+    //     important: true,
+    //     listRightTopWords: '期初',
+    //     listRightBotWords: '期末',
+    //     listRightTopNum: '1231,121.50',
+    //     listRightBotNum: '1231,121.50'
+    //   },
+    //   {
+    //     listLeft: '库存现金',
+    //     important: false,
+    //     listRightTopWords: '期初',
+    //     listRightBotWords: '期末',
+    //     listRightTopNum: '1231,121.50',
+    //     listRightBotNum: '1231,121.50'
+    //   },
+    //   {
+    //     listLeft: '库存现金',
+    //     important: false,
+    //     listRightTopWords: '期初',
+    //     listRightBotWords: '期末',
+    //     listRightTopNum: '1231,121.50',
+    //     listRightBotNum: '1231,121.50'
+    //   },
+    //   {
+    //     listLeft: '库存现金',
+    //     important: false,
+    //     listRightTopWords: '期初',
+    //     listRightBotWords: '期末',
+    //     listRightTopNum: '1231,121.50',
+    //     listRightBotNum: '1231,121.50'
+    //   },
+    //   {
+    //     listLeft: '库存现金',
+    //     important: false,
+    //     listRightTopWords: '期初',
+    //     listRightBotWords: '期末',
+    //     listRightTopNum: '1231,121.50',
+    //     listRightBotNum: '1231,121.50'
+    //   }
+    // ]
   },
 
   /**
@@ -154,11 +216,18 @@ Page({
     //code代表不同详情页，通过判断code来隐藏掉某些部分
     // 0代表纳税表 1代表现金流和利润表 3代表 应收应付和负债
     var selectMonth = options.selectMonth
-    // console.log(selectMonth+code)
+    
     
 
     this.setData({
-      statusCode:code
+      statusCode:code,
+      selectMonth: selectMonth,
+      scrollLeft: (selectMonth) * 55
+    })
+
+    var month = 'month[' + this.data.selectMonth + '].isSelect'
+    this.setData({
+      [month]: true
     })
     // console.log(typeof(this.data.statusCode))
   },
@@ -218,9 +287,13 @@ Page({
   },
   next: function () {
     //点击月份右侧按钮
-    if (this.data.scrollLeft < 471) {
+    if ((this.data.scrollLeft + 120) < 778) {
       this.setData({
         scrollLeft: this.data.scrollLeft + 120
+      })
+    } else {
+      this.setData({
+        scrollLeft: 778
       })
     }
   },

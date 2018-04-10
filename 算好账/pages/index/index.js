@@ -6,6 +6,7 @@ Page({
    */
   data: {
     scrollLeft:0,
+    sideShow:false,
     month:[
       {
         id:0,
@@ -25,7 +26,7 @@ Page({
       {
         id: 3,
         words: '4月',
-        isSelect: true
+        isSelect: false
       },
       {
         id: 4,
@@ -68,6 +69,52 @@ Page({
         isSelect: false
       }
     ],
+    message:{
+      orderNum:1,//左侧侧边栏的订单数量
+      profit:'32345.50',//本月利润
+      income:'1300000',//收入
+      pay:'1300000',//支出
+      monthDefaul:'6',//默认选中的月份
+      list:[
+        //此处code用来控制下一级详情页的样式，因为6个页面并非同一模板，对应的code不要改
+        {
+          words:'纳税表',
+          key:'nashui',
+          code:0,
+          num:'1.4k'
+        },
+        {
+          words: '现金流',
+          key: 'xianjin',
+          code: 1,
+          num: '1.4k'
+        },
+        {
+          words: '利润表',
+          key: 'lirun',
+          code: 1,
+          num: '1.4k'
+        },
+        {
+          words: '应收账款',
+          key: 'yingshou',
+          code: 2,
+          num: '1.4k'
+        },
+        {
+          words: '应付账款',
+          key: 'yingfu',
+          code: 2,
+          num: '1.4k'
+        },
+        {
+          words: '资产负债表',
+          key: 'fuzhai',
+          code: 2,
+          num: '1.4k'
+        }
+      ]
+    },
     selectMonth:null
   },
 
@@ -75,15 +122,20 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
-    for(var i=0 ;i<this.data.month.length;i++){
-      if (this.data.month[i].isSelect){
-        this.setData({
-          selectMonth : i
-        })
-      }
+    this.setData({
+      selectMonth: this.data.message.monthDefaul,
+      scrollLeft: (this.data.message.monthDefaul)*55,
       
-    }
+    })
+
+    var month = 'month[' + this.data.selectMonth + '].isSelect'
+    this.setData({
+      [month]: true
+    })
+
+
+
+   
   },
 
   /**
@@ -148,16 +200,21 @@ Page({
   },
   next: function () {
     //点击月份右侧按钮
-    if (this.data.scrollLeft < 471) {
+    console.log(this.data.scrollLeft)
+    if ((this.data.scrollLeft+120) <778) {
       this.setData({
         scrollLeft: this.data.scrollLeft + 120
+      })
+    }else{
+      this.setData({
+        scrollLeft: 778
       })
     }
   },
   scroll:function(e){ 
     //手动滚动月份时取数值
+    // console.log(e.detail.scrollWidth)
     this.setData({
-
       scrollLeft:e.detail.scrollLeft
     })
   },
@@ -216,7 +273,27 @@ Page({
     //点击订单进程
 
     wx.navigateTo({
-      url: '../process/process?monthId=' + this.data.selectMonth,
+      url: '../process/process?monthId=' + this.data.selectMonth
+    })
+  },
+
+  goMy:function(){
+    //点击打开我的按钮
+    this.setData({
+      sideShow:true
+    })
+  },
+
+  backIndex:function(){
+    this.setData({
+      sideShow: false
+    })
+  },
+
+
+  goOrder:function(){
+    wx.navigateTo({
+      url: '../order/order'
     })
   }
 

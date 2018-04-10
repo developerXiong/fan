@@ -1,9 +1,41 @@
 <!--index.wxml-->
+<view class="{{sideShow?'side_show':'side'}}">
+  <view class='side_cont'>
+    <view class='logo'>
+      <image src='../../image/logo@2x.png'></image>
+    </view>
+    <view class='info'>
+      <view class='info_name'>儒道财务</view>
+      <view class='info_email'>suanhz2018@163.com</view>
+    </view>
+    <view class='handle'>
+      <view class='order' bindtap='goOrder'>
+        <view class='order_words'>我的订单</view>
+        <view class='order_num' wx:if="{{message.orderNum > 0}}">{{message.orderNum}}</view>
+      </view>
+      <view class='contact'>联系我们</view>
+    </view>
+  </view>
+  <view class="{{sideShow?'side_right_show':'side_right'}}" bindtap='backIndex'></view>
+  <view class='side_back' bindtap='backIndex'>
+    <view class='side_back_img'>
+      <image src='../../image/goMy.png'></image>
+    </view>
+    <view class='side_back_words'>返回</view>
+  </view>
+</view>
+
+
+
+
 <view class="container">
 
- 
+  
 
   <view class='header'>
+  <view class='goBack' bindtap='goMy'>
+    <image src='../../image/goBack.png'></image>
+  </view>
     <view class='title'>算好账</view>
     <view class='header_bg'>
       <image src="../../image/bg01@2x.png"></image>
@@ -97,12 +129,12 @@
   </view>
   
   <view class='table'>
-    <navigator url='../detail/detail?key=nashui&statusCode=0&selectMonth={{selectMonth}}' class='table_item'>
-      <view class='table_item_num'>1.4k</view>
-      <view class='table_item_words'>纳税表</view>
+    <navigator url='../detail/detail?key={{item.key}}&statusCode={{item.code}}&selectMonth={{selectMonth}}' class='table_item' wx:for="{{message.list}}">
+      <view class='table_item_num'>{{item.num}}</view>
+      <view class='table_item_words'>{{item.words}}</view>
     </navigator>
     
-   <navigator url="../detail/detail?key=xianjin&statusCode=1&selectMonth={{selectMonth}}" class='table_item'>
+   <!-- <navigator url="../detail/detail?key=xianjin&statusCode=1&selectMonth={{selectMonth}}" class='table_item'>
       <view class='table_item_num'>1.4k</view>
       <view class='table_item_words'>现金流</view>
     </navigator>
@@ -122,7 +154,7 @@
       <view class='table_item_num'>1.4k</view>
       <view class='table_item_words'>资产负债表</view>
     </navigator>
-    
+     -->
   
   </view>
 </view>
