@@ -2,11 +2,11 @@ Page({
 
   /**
    * 页面的初始数据
-   */
+   */ 
   data: {
-    status:[],//本地
     message:[
       {
+        // status: [],
         listName:'公司注册',//左上角名称
         isOpen:false,//是否默认被打开
         progressCode:1,//进度状态码 0-4
@@ -25,9 +25,10 @@ Page({
         ]
       },
       {
+        // status:[],
         listName: '记账报税',
         isOpen: true,
-        code: 4,
+        progressCode: 4,
         words: ['开始', '收票', '记账', '报账', '完成'],
         list: [
           {
@@ -48,9 +49,10 @@ Page({
         ]
       },
       {
+        // status:[],
         listName: '公司变更',
         isOpen: false,
-        code: 3,
+        progressCode: 3,
         words: ['开始', '准备材料', '审核', '变更', '完成'],
         list: [
           {
@@ -72,41 +74,29 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
 
-    // var mess = this.data.message
-    // var sss = []
-    // for(var i=0;i<mess.length;i++){
-    //   var leng = (mess[i].code+1)*6
-    //   // console.log(leng)
-      
-    //   for(var z=0;z<leng;z++){
-    //     sss.push('prog_dot_show')
-    //   }
+    let total = 30,step=6
+    let mess = this.data.message
 
-    // }
-    // console.log(this.data.status)
-   
+    for( var i=0;i<mess.length;i++){
+      var dots = []
+      let code = mess[i].progressCode;
+      var len = (parseInt(code)+1)*step
+      for (var z = 0; z < len; z ++) {
+        dots.push('prog_dot_show');
+      }
+      for (var y = 0; y < total - len; y++) {
+        dots.push('prog_dot_default');
+      }
 
-    // console.log(options.monthId)
-    // let total = 30,step=6
-    // let mess = this.data.message
-    // // for( var i=0;i<mess.length;i++){
-    //   let code=mess[0].code;
-    //   var len = (code+1)*step
-    //   for(var z=0;z<total;z++){
-    //     var sss = []
-    //     if(z<len){
-    //       sss.push('prog_dot_show')
-    //     }else{
-    //       sss.push('prog_dot_default')
-    //     }
-    //     this.setData({
-    //       status: sss
-    //     });
-    //   }
-    // // }
-    // console.log(this.data.status)
+      console.log(dots)
+      var status = 'message[' + i + '].status'
+      this.setData({
+        [status]: dots
+      });
+    }
+    
+    
 
   },
 

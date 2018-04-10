@@ -29,8 +29,8 @@
           </view>
 
           <view class='prog_line'>
-            <text class='prog_dot_show'></text>
-             <text class='prog_dot_default' wx:for="{{status}}"></text> 
+            <text class="{{ dot }}" wx:for="{{ message[index].status }}" wx:for-item="dot"></text>
+            <!-- <text class="{{ dot }}" wx:for="{{ message.status_default}}" wx:for-item="dot"></text>  -->
             <!-- <text></text>
             <text></text>
             <text></text>

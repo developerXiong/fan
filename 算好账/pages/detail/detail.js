@@ -68,7 +68,7 @@ Page({
 
 
     //现金流利润表
-    title:'现金流',
+    title:'现金流', 
     details_title:'现金流明细',
     wordsTop:'本月累计（元）',
     wordsLeft: '期初',
@@ -81,6 +81,8 @@ Page({
       {
         listLeft:'库存现金',
         important:true,
+        isPluse: true,
+        listNum: '3.50',
         listRightTopWords:'期初',
         listRightBotWords: '期末',
         listRightTopNum: '1231,121.50',
@@ -89,6 +91,8 @@ Page({
       {
         listLeft: '库存现金',
         important: false,
+        isPluse: true,
+        listNum: '3.50',
         listRightTopWords: '期初',
         listRightBotWords: '期末',
         listRightTopNum: '1231,121.50',
@@ -97,6 +101,8 @@ Page({
       {
         listLeft: '库存现金',
         important: false,
+        isPluse: true,
+        listNum: '3.50',
         listRightTopWords: '期初',
         listRightBotWords: '期末',
         listRightTopNum: '1231,121.50',
@@ -105,6 +111,8 @@ Page({
       {
         listLeft: '库存现金',
         important: false,
+        isPluse: true,
+        listNum: '3.50',
         listRightTopWords: '期初',
         listRightBotWords: '期末',
         listRightTopNum: '1231,121.50',
@@ -113,6 +121,8 @@ Page({
       {
         listLeft: '库存现金',
         important: false,
+        isPluse: true,
+        listNum: '3.50',
         listRightTopWords: '期初',
         listRightBotWords: '期末',
         listRightTopNum: '1231,121.50',
