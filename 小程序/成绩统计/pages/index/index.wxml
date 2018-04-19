@@ -1,0 +1,20 @@
+<!--index.wxml-->
+<view class="container">
+
+    <input bindinput='input1' name="input" placeholder-class='placeholder' placeholder="请输入你的名字"/>
+
+
+    <input bindinput='input2' name="input" placeholder-class='placeholder' placeholder="请输入你的语文成绩"/>
+
+    <input bindinput='input3' name="input" placeholder-class='placeholder'  placeholder="请输入你的数学成绩"/>
+
+  <button bindtap='test'  type='primary' hover-class="other-button-hover" > 提交</button>
+
+ 
+<view class='cont' hidden='{{flag}}'>
+  <view>姓名：{{name}}</view>
+  <view>语文成绩：{{chineseScore}}</view>
+  <view>数学成绩：{{mathScore}}</view>
+  <view>平均分：{{avg}}</view>
+</view>
+</view>

@@ -13,7 +13,7 @@
         <view class='order_words'>我的订单</view>
         <view class='order_num' wx:if="{{message.orderNum > 0}}">{{message.orderNum}}</view>
       </view>
-      <view class='contact'>联系我们</view>
+      <view class='contact' bindtap='goContact'>联系我们</view>
     </view>
   </view>
   <view class="{{sideShow?'side_right_show':'side_right'}}" bindtap='backIndex'></view>
@@ -34,7 +34,7 @@
 
   <view class='header'>
   <view class='goBack' bindtap='goMy'>
-    <image src='../../image/goBack.png'></image>
+    <image src='../../image/menu@2x.png'></image>
   </view>
     <view class='title'>算好账</view>
     <view class='header_bg'>
@@ -129,7 +129,7 @@
   </view>
   
   <view class='table'>
-    <navigator url='../detail/detail?key={{item.key}}&statusCode={{item.code}}&selectMonth={{selectMonth}}' class='table_item' wx:for="{{message.list}}">
+    <navigator url='../detail/detail?key={{item.key}}&statusCode={{item.code}}&monthId={{monthId}}' class='table_item' wx:for="{{message.list}}">
       <view class='table_item_num'>{{item.num}}</view>
       <view class='table_item_words'>{{item.words}}</view>
     </navigator>

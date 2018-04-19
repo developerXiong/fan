@@ -9,8 +9,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "1.9.94",
-	"appid": "wxa86ff306a513f763",
-	"projectname": "zhang",
+	"appid": "touristappid",
+	"projectname": "%E6%88%90%E7%BB%A9%E7%BB%9F%E8%AE%A1",
 	"condition": {
 		"search": {
 			"current": -1,

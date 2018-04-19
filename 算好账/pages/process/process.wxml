@@ -15,8 +15,8 @@
   <view class='cont'>
     <view class='public' wx:for="{{message}}" wx:for-index="index">
       <view class='btn' bindtap="openList" data-index="{{index}}">
-        <image wx:if="{{item.isOpen}}" src='../../image/open.png'></image>
-        <image wx:else src='../../image/close.png'></image>
+        <image wx:if="{{item.isOpen}}" src='../../image/close.png'></image>
+        <image wx:else src='../../image/open.png'></image>
       </view>
 
       <view class='list_name'>{{item.listName}}</view>
@@ -30,39 +30,7 @@
 
           <view class='prog_line'>
             <text class="{{ dot }}" wx:for="{{ message[index].status }}" wx:for-item="dot"></text>
-            <!-- <text class="{{ dot }}" wx:for="{{ message.status_default}}" wx:for-item="dot"></text>  -->
-            <!-- <text></text>
-            <text></text>
-            <text></text>
-            <text></text>
-            <text></text>
-            <text></text>
-            <text></text>
-            <text></text>
-            <text></text>
-            <text></text>
-            <text></text>
-            <text></text>
-            <text></text>
-            <text></text>
-            <text></text>
-            <text></text>
-            <text></text>
-            <text></text>
-            <text></text>
-            <text></text>
-            <text></text>
-            <text></text>
-            <text></text>
-            <text></text>
-            <text></text>
-            <text></text>
-            <text></text>
-            <text></text>
-            <text></text> -->
-
-
-            
+      
           </view>
         
         </view>

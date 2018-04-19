@@ -15,8 +15,8 @@
   align-items: center;
 }
 .goBack image{
-  width: 35rpx;
-  height: 25rpx;
+  width: 50rpx;
+  height: 50rpx;
 }
 .header{
   width: 100%;
@@ -86,7 +86,7 @@
   border-bottom: 2px solid #00FFC6;
 }
 .prev,.next{
-  width: 20rpx;
+  width: 40rpx;
   height: 100%;
   display: flex;
   justify-content: center;

@@ -63,7 +63,7 @@ Page({
         isSelect: false
       }
     ],
-    selectMonth: null,
+    monthId: null,
     statusCode:0,
 
 
@@ -129,93 +129,6 @@ Page({
         listRightBotNum: '1231,121.50'
       }
     ]
-    // ,
-
-
-    //纳税表
-    // title: '纳税表',
-    // details_title: '现金流明细',
-    // wordsTop: '本月累计（元）',
-    // numTop: '345.50',
-    // list: [
-    //   
-    //   {
-    //     listLeft: '增值税',
-    //     important: false,
-    //     isPluse: true,
-    //     listNum: '3.50'
-    //   },
-    //   {
-    //     listLeft: '库存现金',
-    //     important: false,
-    //     isPluse: false,
-    //     listNum: '3.50'
-    //   },
-    //   {
-    //     listLeft: '库存现金',
-    //     important: false,
-    //     isPluse: true,
-    //     listNum: '3.50'
-    //   },
-    //   {
-    //     listLeft: '库存现金',
-    //     important: false,
-    //     isPluse: true,
-    //     listNum: '3.50'
-    //   }
-    // ]
-
-
-    //应收应付负债
-    // title: '应收',
-    // details_title: '现金流明细',
-    // wordsLeft: '期初',
-    // wordsRight: '期末',
-    // numLeft: '132,000.00',
-    // numRight: '64,000.00',
-    // list: [
-
-    //   {
-    //     listLeft: '库存现金',
-    //     important: true,
-    //     listRightTopWords: '期初',
-    //     listRightBotWords: '期末',
-    //     listRightTopNum: '1231,121.50',
-    //     listRightBotNum: '1231,121.50'
-    //   },
-    //   {
-    //     listLeft: '库存现金',
-    //     important: false,
-    //     listRightTopWords: '期初',
-    //     listRightBotWords: '期末',
-    //     listRightTopNum: '1231,121.50',
-    //     listRightBotNum: '1231,121.50'
-    //   },
-    //   {
-    //     listLeft: '库存现金',
-    //     important: false,
-    //     listRightTopWords: '期初',
-    //     listRightBotWords: '期末',
-    //     listRightTopNum: '1231,121.50',
-    //     listRightBotNum: '1231,121.50'
-    //   },
-    //   {
-    //     listLeft: '库存现金',
-    //     important: false,
-    //     listRightTopWords: '期初',
-    //     listRightBotWords: '期末',
-    //     listRightTopNum: '1231,121.50',
-    //     listRightBotNum: '1231,121.50'
-    //   },
-    //   {
-    //     listLeft: '库存现金',
-    //     important: false,
-    //     listRightTopWords: '期初',
-    //     listRightBotWords: '期末',
-    //     listRightTopNum: '1231,121.50',
-    //     listRightBotNum: '1231,121.50'
-    //   }
-    // ]
   },
 
   /**
@@ -225,21 +138,21 @@ Page({
     var code = options.statusCode
     //code代表不同详情页，通过判断code来隐藏掉某些部分
     // 0代表纳税表 1代表现金流和利润表 3代表 应收应付和负债
-    var selectMonth = options.selectMonth
+    var monthId = options.monthId
     
-    
+    console.log(monthId)
 
     this.setData({
       statusCode:code,
-      selectMonth: selectMonth,
-      scrollLeft: (selectMonth) * 55
+      monthId: monthId,
+      scrollLeft: (monthId) * 55
     })
 
-    var month = 'month[' + this.data.selectMonth + '].isSelect'
+    var month = 'month[' + this.data.monthId + '].isSelect'
     this.setData({
       [month]: true
     })
-    // console.log(typeof(this.data.statusCode))
+
   },
 
   /**
@@ -318,7 +231,7 @@ Page({
   selectMonth: function (e) {
     //选中月份时
     //切换样式
-
+  
     for (var i = 0; i < this.data.month.length; i++) {
       var month = 'month[' + i + '].isSelect'
       this.setData({
@@ -338,9 +251,10 @@ Page({
 
 
     this.setData({
-      //得到月份id 跳转时传参
-      selectMonth: e.target.id
+      //得到月份id 切换时传参
+      monthId: e.target.id
     })
+    console.log(this.data.monthId)
 
     //请求数据
     // wx.request({

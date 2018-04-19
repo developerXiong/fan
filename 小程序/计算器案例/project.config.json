@@ -1,5 +1,8 @@
 {
 	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
 	"setting": {
 		"urlCheck": true,
 		"es6": true,
@@ -8,9 +11,9 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "1.9.94",
-	"appid": "wxa86ff306a513f763",
-	"projectname": "zhang",
+	"libVersion": "1.9.98",
+	"appid": "touristappid",
+	"projectname": "%E8%AE%A1%E7%AE%97%E5%99%A8%E6%A1%88%E4%BE%8B",
 	"condition": {
 		"search": {
 			"current": -1,

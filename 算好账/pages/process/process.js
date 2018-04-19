@@ -6,7 +6,6 @@ Page({
   data: {
     message:[
       {
-        // status: [],
         listName:'公司注册',//左上角名称
         isOpen:false,//是否默认被打开
         progressCode:1,//进度状态码 0-4
@@ -25,7 +24,6 @@ Page({
         ]
       },
       {
-        // status:[],
         listName: '记账报税',
         isOpen: true,
         progressCode: 4,
@@ -49,7 +47,6 @@ Page({
         ]
       },
       {
-        // status:[],
         listName: '公司变更',
         isOpen: false,
         progressCode: 3,
@@ -75,6 +72,7 @@ Page({
    */
   onLoad: function (options) {
 
+    console.log(options.monthId)
     let total = 30,step=6
     let mess = this.data.message
 
@@ -89,7 +87,6 @@ Page({
         dots.push('prog_dot_default');
       }
 
-      console.log(dots)
       var status = 'message[' + i + '].status'
       this.setData({
         [status]: dots

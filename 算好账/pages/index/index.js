@@ -74,7 +74,7 @@ Page({
       profit:'32345.50',//本月利润
       income:'1300000',//收入
       pay:'1300000',//支出
-      monthDefaul:'6',//默认选中的月份
+      monthId:'6',//默认选中的月份
       list:[
         //此处code用来控制下一级详情页的样式，因为6个页面并非同一模板，对应的code不要改
         {
@@ -115,7 +115,7 @@ Page({
         }
       ]
     },
-    selectMonth:null
+    monthId:null
   },
 
   /**
@@ -123,12 +123,12 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      selectMonth: this.data.message.monthDefaul,
-      scrollLeft: (this.data.message.monthDefaul)*55,
+      monthId: this.data.message.monthId,
+      scrollLeft: (this.data.message.monthId)*55,
       
     })
 
-    var month = 'month[' + this.data.selectMonth + '].isSelect'
+    var month = 'month[' + this.data.monthId + '].isSelect'
     this.setData({
       [month]: true
     })
@@ -242,7 +242,7 @@ Page({
     
     this.setData({
       //得到月份id 跳转时传参
-      selectMonth: e.target.id
+      monthId: e.target.id
     })
 
     //请求数据
@@ -273,7 +273,7 @@ Page({
     //点击订单进程
 
     wx.navigateTo({
-      url: '../process/process?monthId=' + this.data.selectMonth
+      url: '../process/process?monthId=' + this.data.monthId
     })
   },
 
@@ -292,8 +292,21 @@ Page({
 
 
   goOrder:function(){
+    var orderNum = 'meesage.orderNum'
+    this.setData({
+      [orderNum]: 0
+    })
+
     wx.navigateTo({
       url: '../order/order'
+    })
+  },
+  
+  
+  
+  goContact: function () {
+    wx.navigateTo({
+      url: '../contact/contact'
     })
   }
 

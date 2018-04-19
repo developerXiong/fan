@@ -1,0 +1,22 @@
+input{
+  height: 100rpx;
+  width: 94%;
+  padding-left: 3%;
+  padding-right: 3%;
+  border-bottom: 1px solid #ddd;
+}
+button{
+  width: 94%;
+  margin-top: 20rpx;
+}
+.placeholder{
+  font-size: 30rpx;
+}
+.cont{
+  margin-top: 20rpx;
+}
+.cont view{
+  margin-bottom: 20rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}
