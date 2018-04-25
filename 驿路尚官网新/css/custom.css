@@ -166,6 +166,7 @@ a{
 #service,#pricing_table,#about,#team,#blog,#contact,#testimonial,#portfolio,#video-fact,#about-details {
      padding-bottom: 50px;
      padding-top:90px;
+    /*height: 5rem;*/
 }
 section{
     /*padding:50px 0px;*/
@@ -688,7 +689,11 @@ padding: 8px 15px;
    -moz-transition-duration:1s;
      -o-transition-duration:1s;
         transition-duration:1s;
+    padding: 10px;
 }
+/*.isotope .isotope-item .figure img{*/
+    /*border: 1px solid #aaa;*/
+/*}*/
 .isotope{
 /*transition-property*/
 -webkit-transition-property:height, width;
@@ -1038,6 +1043,8 @@ padding: 8px 15px;
     border-radius: 7px;
     padding-bottom: 25px;
     margin: 0 10px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .item .single-member h3 {
@@ -1534,8 +1541,11 @@ padding: 8px 15px;
 /* Client Area
 ========================================== */
 #client {
-    padding: 30px 0px;
-    background: #f2f2f2;
+    /*padding:0px 15px;*/
+    background: url("../images/home_more.png") no-repeat center center;
+    background-size: cover;
+    height: 11rem;
+
 }
 #client-carousel {
     padding: 30px 0px;  
@@ -1543,6 +1553,32 @@ padding: 8px 15px;
 
 #client h3.feature_title {
     color: #fff !important;
+}
+.more1,.more2{
+    height: 100%;
+}
+.more1{
+    line-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 4rem;
+}
+@media ( max-width: 768px ) {
+    .more1{
+        width: 90%;
+        margin-left: 5%;
+        height: 50%;
+        /*line-height: 50%;*/
+        font-size: 2rem;
+        /*padding-left: 15px;*/
+        /*padding-right: 15px;*/
+    }
+    .more2{
+        height: 50%;
+        /*margin-top: 20px;*/
+    }
 }
 .client-carousel .owl-controls {
     margin: 70px 0px;
@@ -1576,6 +1612,7 @@ padding: 8px 15px;
 ==============================================*/
 #contact{
     background: #fff;
+    /*padding-top: 0;*/
 }
 #contact .feature_title{}
 #contact .divider{color: #fff!important;}
@@ -2418,12 +2455,14 @@ iframe{
     .video-section {
         padding: 100px 0;
     }
+
 }
 @media ( min-width: 992px ) {
     .video-section {
         padding: 120px 0;
     }
 }
+
 
 /*Panel*/
 
