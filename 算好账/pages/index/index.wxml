@@ -65,7 +65,7 @@
             <image src='../../image/bg02@2x.png'></image>
           </view>
           <view class='h_c_bot_cont'>
-            <view class='profit'>
+            <view class='profit' bindtap='getUserInfo'>
               <view class='profit_num'>32345.50</view>
               <view class='profit_words'>本月利润（元）</view>
             </view>
