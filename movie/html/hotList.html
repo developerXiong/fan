@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<script src="../js/mui.min.js"></script>
+		<style type="text/css">
+			html,
+			body {
+				background: white;
+			}
+			
+			.mui-content {
+				background: transparent;
+			}
+			
+			.wrap-search {
+				margin: 15px;
+				border-radius: 5px;
+				background: #e6e6e6;
+				height: 30px;
+				text-align: center;
+			}
+			/*.mui-pull-top-pocket{
+  				top: 180px !important;
+			}*/
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<div class="mui-scroll-wrapper" id="refreshContainer">
+				<div class="mui-scroll">
+					<ul class="mui-table-view mui-table-view-chevron" id="movies">
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script src="../js/jquery-2.1.4.js"></script>
+
+		<script type="text/javascript">
+			mui.init({
+				pullRefresh: {
+					container: "#refreshContainer", //下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
+					//下拉刷新
+					down: {
+						contentdown: "下拉可以刷新",
+						contentover: "释放立即刷新",
+						contentrefresh: "正在刷新...",
+						callback: downRefresh
+					},
+					//上拉加载
+					up: {
+						//配置可以不写
+						callback: upRefresh
+					}
+				}
+			})
+			mui.getJSON("https://api.douban.com/v2/movie/in_theaters", {
+				start: 0,
+				count: 10
+			}, function(res) {
+				var newMovies = conbert(res.subjects);
+				addList(res);
+			});
+
+			function addList(res) {
+				var table = document.querySelector(".mui-table-view");
+				var newMovies = conbert(res.subjects);
+				for(var i = 0; i < newMovies.length; i++) {
+					var li = document.createElement("li");
+					li.className = "mui-table-view-cell mui-media";
+					var str = '';
+					str += "<a href='javascript:;' title='" + newMovies[i].id + "'>";
+					str += "<img class='mui-media-object mui-pull-left' src='" + newMovies[i].images + "' style='max-width:60px;width: 60px; height: 80px;'>";
+					str += "<div class='mui-media-body'>";
+					str += newMovies[i].title;
+					str += "<p class='mui-ellipsis'>评分： <span style='color: coral;'>" + newMovies[i].average + "</span></p>";
+					str += "<p class='mui-ellipsis'>导演： <span>" + newMovies[i].directors + "</span></p>";
+					str += "<p class='mui-ellipsis'>主演： <span>" + newMovies[i].casts + "</span></p>";
+					str += "</div>";
+					str += "</a>";
+
+					li.innerHTML = str;
+					table.appendChild(li);
+				}
+			}
+
+			function downRefresh() {
+				mui.getJSON("https://api.douban.com/v2/movie/in_theaters", {
+					start: 0,
+					count: 10
+				}, function(res) {
+					var newMovies = conbert(res.subjects);
+					$(".mui-table-view").empty();
+					addList(res);
+					mui("#refreshContainer").pullRefresh().endPulldownToRefresh();
+				});
+			}
+			//
+			function upRefresh() {
+				var len = document.getElementsByClassName("mui-table-view-cell").length;
+				mui.getJSON("https://api.douban.com/v2/movie/in_theaters", {
+					start: len,
+					count: 10
+				}, function(res) {
+					var maxlen = res.total;
+					addList(res)
+					mui('#refreshContainer').pullRefresh().endPullupToRefresh(len == maxlen);
+				})
+			}
+
+			function conbert(items) {
+				//将数据整理后传回
+				var newItemes = [];
+
+				//遍历
+				items.forEach(function(item) {
+
+					//演员
+					var casts = '';
+					for(var i = 0; i < item.casts.length; i++) {
+						casts += item.casts[i].name;
+						if(i != item.casts.length - 1) {
+							casts += "/"; //非最后一个加/
+						}
+					}
+					//类型
+					var genres = '';
+					for(var i = 0; i < item.genres.length; i++) {
+						genres += item.genres[i];
+						if(i != item.genres.length - 1) {
+							genres += "/"; //非最后一个加/
+						}
+					}
+					//导演
+					var directors = '';
+					for(var i = 0; i < item.directors.length; i++) {
+						directors += item.directors[i].name;
+						if(i != item.directors.length - 1) {
+							directors += "/"; //非最后一个加/
+						}
+					}
+					newItemes.push({
+						id: item.id,
+						title: item.title,
+						genres: genres,
+						average: item.rating.average,
+						directors: directors,
+						casts: casts,
+						images: item.images.large
+					})
+
+				})
+
+				return newItemes;
+			}
+
+			mui.plusReady(function() {
+				//预加载详情页
+				detail = mui.preload({
+					url: 'movie_detail.html',
+					id: 'movie_detail.html',
+					styles: {
+						"render": "always", //一直渲染
+						"popGesture": "hide"
+					}
+				})
+
+			})
+
+			//给列表统一添加事件,
+
+			mui("#movies").on("tap", "a", function(e) {
+				//获取当前发生点击事件的li的id
+				var movieId = this.getAttribute("title");
+				//触发子窗口自定义事件
+				mui.fire(detail, "movieId", {
+					id: movieId
+				})
+				//				mui.openWindow({
+				//					id: 'movie_detail.html', //b页面id  
+				//					show: {
+				//						autoShow: true, //页面loaded事件发生后自动显示，默认为true  
+				////						aniShow: "slide-in-right"
+				//					}
+				//				});
+				detail.show('slide-in-right');
+
+			})
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="js/mui.min.js"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+		</script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">微信</h1>
+		</header>
+
+		<nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item mui-active" href="sub1.html">
+				<span class="mui-icon mui-icon-weixin"></span>
+				<span class="mui-tab-label">首页</span>
+			</a>
+			<a class="mui-tab-item" href="sub2.html">
+				<span class="mui-icon mui-icon-contact"></span>
+				<span class="mui-tab-label">通讯录</span>
+			</a>
+			<a class="mui-tab-item" href="sub3.html">
+				<span class="mui-icon mui-icon-paperplane"></span>
+				<span class="mui-tab-label">发现</span>
+			</a>
+			<a class="mui-tab-item" href="sub4.html">
+				<span class="mui-icon mui-icon-person"></span>
+				<span class="mui-tab-label">我的</span>
+			</a>
+		</nav>
+
+	</body>
+	<script type="text/javascript">
+		var subPages = ['sub1.html','sub2.html','sub3.html','sub4.html'];
+		var subPageStyle = {
+			top:'44px',
+			bottom:'50px'
+		}
+		
+		mui.plusReady(function(){
+			var self=plus.webview.currentWebview();//拿到index对应的当前窗体
+			for(var i=0;i<subPages.length;i++){
+				var sub=plus.webview.create(subPages[i],subPages[i],subPageStyle);//1对应的页面，2创建后页面id（跟链接一样），3页面打开的样式，4页面传参
+				sub.hide();//全都隐藏
+				self.append(sub);
+			}
+			plus.webview.show(subPages[0]);//展示第一个，括号里面写id
+			
+			
+			
+		})
+		
+		mui(".mui-bar-tab").on("tap","a",function(e){
+			var tagPage = this.getAttribute("href");//获取属性
+			plus.webview.show(tagPage,"fade-in",100);//1展示的id，2展示的动画，3动画速度
+		})
+		
+		
+		var first=null;
+		mui.back=function(){//mui.back默认行为是关闭当前窗体
+			//安卓端下点击两次返回退出程序
+			//重写mui.back
+			if(!first){
+				//第一次按下返回键
+				first=new Date().getTime();//记录第一次点击的时间
+				mui.toast("再按一次退出应用");
+				setTimeout(function(){
+					//一秒后检测有没有按下第二次
+					first=null;
+					
+				},1000)
+			}else{
+				if(new Date().getTime()-first<1000){
+					//第二次点击后first不为空，则进入else部分
+					//两次时间间隔小于一秒
+					plus.runtime.quit();
+					
+				}
+			}	
+		}
+	</script>
+
+</html>

@@ -1,0 +1,19 @@
+.mui-bar-nav{
+	background: black;
+}
+.mui-title{
+	color: white;
+	font-weight: bold;
+}
+nav{
+	background: white;
+}
+.mui-active .mui-icon{
+	color: #3AC507;
+}
+.mui-active .mui-tab-label{
+	color: #3AC507;
+}
+.mui-pull-left{
+	color: white;
+}

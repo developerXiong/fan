@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="js/mui.min.js"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			.mui-table-view-cell{
+				padding: 5px 15px;
+			}
+			.mui-ellipsis{
+				line-height: 42px;
+				color: #000;
+				font-size: 16px;
+			}
+			.mui-table-view-cell .mui-media-object{
+				width: 30px;
+				height: 30px;
+				margin-top: 6px;
+			}
+		</style>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</head>
+
+	<body>
+		<div class="mui-content">
+		    <ul class="mui-table-view">
+		        <li class="mui-table-view-cell mui-media" id="pyq">
+		            <img class="mui-media-object mui-pull-left" src="img/pyq1.png">
+		            <p class="mui-ellipsis">朋友圈</p>
+		        </li>
+		    </ul>
+		    <div style="height: 20px;"></div>
+		    <ul class="mui-table-view">
+		        <li class="mui-table-view-cell mui-media">
+		            <img class="mui-media-object mui-pull-left" src="img/saoys.png">
+		            <p class="mui-ellipsis">扫一扫</p>
+		        </li>
+		        <li class="mui-table-view-cell mui-media">
+		            <img class="mui-media-object mui-pull-left" src="img/yaoyy.png">
+		            <p class="mui-ellipsis">摇一摇</p>
+		        </li>
+		    </ul>
+		    <div style="height: 20px;"></div>
+		    <ul class="mui-table-view">
+		        <li class="mui-table-view-cell mui-media">
+		            <img class="mui-media-object mui-pull-left" src="img/fujdr.png">
+		            <p class="mui-ellipsis">附近的人</p>
+		        </li>
+		        <li class="mui-table-view-cell mui-media">
+		            <img class="mui-media-object mui-pull-left" src="img/piaolp.png">
+		            <p class="mui-ellipsis">漂流瓶</p>
+		        </li>
+		    </ul>
+		</div>
+		<script type="text/javascript">
+			var pyqDom = document.getElementById("pyq");
+			pyqDom.addEventListener("tap",function(){
+				mui.openWindow({
+					url:"sub3_pyqHeader.html",
+					id:"sub3_pyqHeader.html"
+				})
+			})
+		</script>
+		
+	</body>
+
+</html>

@@ -1,0 +1,183 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			.top-index {
+				color: red;
+				font-size: 18px;
+				font-style: initial;
+				width: 30px;
+				display: inline-block;
+			}
+			
+			.line {
+				width: 50px;
+				background: #C4C4C4;
+				/*background: red;*/
+				height:1px;
+				display: inline-block;
+			}
+			
+			.card {
+				margin-left: 15px;
+				margin-right: 15px;
+				height: 120px;
+				border: 1px solid #C4C4C4;
+				border-radius: 2px;
+				box-shadow: 0px 1px 5px #C4C4C4;
+				padding: 15px;
+				text-align: left;
+			}
+			
+			.ornge-medium {
+				color: coral;
+				font-size: 14px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">北美票房榜</h1>
+		</header>
+
+		<div class="mui-content" style="background: white;padding-bottom: 10px;">
+			<ul id='list' style="list-style: none;padding-left: 1px;margin-top: 0;">
+				<li v-for="item in list" @click="open_detail(item)">
+					<div style="height:60px;padding-top:20px;text-align: center; display: flex;-webkit-display:flex;-moz-display:flex;justify-content: center;align-items: center;">
+						<div class="line"></div>
+						<div class="top-index">
+							{{item.sort}}
+						</div>
+						<div class="line"></div>
+					</div>
+					<div class="card">
+
+						<img class="mui-pull-left" style="width: 70px;height: 90px;max-width: 70px;margin-right: 10px;" :src="item.cover">
+
+						<p class="mui-ellipsis dark-big" style="margin-bottom: 2px;">{{item.title}}</p>
+						<p class="mui-ellipsis gray-medium" style="line-height: 20px;margin-bottom: 2px;">
+							豆瓣评分：
+							<span class="ornge-medium">{{item.score}}分</span>
+						</p>
+						<p class="mui-ellipsis gray-medium" style="line-height: 20px;margin-bottom: 2px;">
+							导演：
+							<span>{{item.directorsStr}}</span>
+						</p>
+						<p class="mui-ellipsis gray-medium" style="line-height: 20px;margin-bottom: 2px;">
+							演员：
+							<span>{{item.castsStr}}</span>
+						</p>
+
+					</div>
+					<span class="dark-medium" style="margin-left: 15px;display:block;margin-top: 10px;">票房{{item.box / 10000}}万美元</span>
+
+				</li>
+			</ul>
+		</div>
+
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/vue.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			
+			var movies = new Vue({
+				el: '#list',
+				data: {
+					list: []
+				},
+				methods: {
+					//打开详情页面
+					open_detail: function(item) {
+						//触发详情页面的自定义事件
+						mui.fire(detail, "movieId", {
+							id: item.id
+						});
+						detail.show('slide-in-right');
+					}
+
+				}
+			})
+			
+			
+			
+			mui.plusReady(function() {
+				//预加载详情页
+				detail = mui.preload({
+					url: 'movie_detail.html',
+					id: 'movie_detail.html',
+					styles: {
+						"render": "always", //一直渲染
+						"popGesture": "hide"
+					}
+				})
+				
+				getData();
+
+			})
+			
+			function getData(){
+				plus.nativeUI.showWaiting('加载中',{
+					width:'100px',
+					height:'100px'
+				})
+				mui.getJSON('https://api.douban.com/v2/movie/us_box',{
+					
+				},function(resp){
+					plus.nativeUI.closeWaiting();
+					movies.list = convert(resp);
+				})
+			}
+			
+			
+			//数据转换
+			function convert(obj){
+				var newItems = [];
+				
+				var items = obj.subjects;
+				for(var i=0;i<items.length;i++){
+					var item = items[i]
+					//导演
+					var directorsStr = '';
+					for(var k=0;k<item.subject.directors.length;k++){
+						directorsStr += item.subject.directors[k].name;
+						if(k!=item.subject.directors.length-1){
+							directorsStr += '/';
+						}
+					}
+					//演员
+					var castsStr = '';
+					for(var k=0;k<item.subject.casts.length;k++){
+						castsStr += item.subject.casts[k].name;
+						if(k!=item.subject.casts.length-1){
+							castsStr += '/';
+						}
+					}
+					
+					newItems.push({
+						sort:i+1,
+						id:item.subject.id,
+						title:item.subject.title,
+						cover:item.subject.images.medium,
+						score:item.subject.rating.average,
+						directorsStr:directorsStr,
+						castsStr:castsStr,
+						box:item.box
+					})
+					
+					
+					
+				}
+				
+				return newItems;
+			}
+		</script>
+	</body>
+
+</html>

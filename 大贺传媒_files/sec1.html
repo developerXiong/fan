@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>核心地标大屏</title>
+    <link rel='stylesheet prefetch' href='css/slick.min.css'>
+    <link rel='stylesheet prefetch' href='css/slick-theme.min.css'>
+    <script src="js/jquery.min.js"></script>
+    <style>
+        body, html {
+            font-size: 62.5%;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            border: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .cont {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .top {
+            width: 100%;
+            height: 390px;
+        }
+
+        .top_left {
+            position: absolute;
+            left: 60px;
+            top: 50px;
+        }
+
+        .top_left p:first-child {
+            color: #656565;
+            font-size: 19px;
+        }
+
+        .top_left p:last-child {
+            color: #656565;
+            font-size: 10px;
+        }
+
+        .title {
+            width: 350px;
+            float: right;
+            margin-right: 150px;
+            margin-top: 90px;
+        }
+
+        .title .title_img {
+            width: 247px;
+            height: 45px;
+            margin-bottom: 30px;
+        }
+
+        .title .title_img img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .title p {
+            line-height: 30px;
+            color: #656565;
+            font-size: 19px;
+        }
+
+        .box {
+            width: 100%;
+            height: 715px;
+            /*padding-top: 290px;*/
+            position: relative;
+        }
+
+        .box .box_bg {
+            width: 100%;
+            height: 565px;
+        }
+
+        .box .box_bg img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .left {
+            width: 632px;
+            height: 715px;
+            position: absolute;
+            left: 50px;
+            top: -74px;
+            background: url("images/sec_cover.png") no-repeat;
+            display: -webkit-flex;
+            display: flex;
+            display: -moz-box;
+            display: -ms-flexbox;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .left_cont {
+            width: 333px;
+            /*height: 420px;*/
+        }
+
+        .left_cont .left_words {
+            font-size: 19px;
+            color: #656565;
+        }
+
+        .left_cont .left_title {
+            width: 333px;
+            margin-top: 100px;
+        }
+
+        .left_cont .left_title .left_title_item {
+            width: 330px;
+            height: 32px;
+            border: 1px solid #aaa;
+            font-size: 18px;
+            color: #656565;
+            text-align: center;
+            line-height: 32px;
+            margin-bottom: 44px;
+        }
+
+        .slideshow {
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 1;
+            width: calc(100% - 682px);
+            width: -moz-calc(100% - 682px);
+            width: -webkit-calc(100% - 682px);
+            height: 565px;
+            display: -webkit-flex;
+            display: flex;
+            display: -moz-box;
+            display: -ms-flexbox;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slideshow .slider {
+            width: 100%;
+            height: 100%;
+            box-shadow: 0 20px 50px -25px black;
+        }
+
+        .slick-slider .slick-list {
+            width: 100%;
+            height: 100%;
+        }
+
+        .slideshow .item img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .slideshow * {
+            outline: none;
+        }
+
+        .slideshow .slider {
+            box-shadow: 0 20px 50px -25px black;
+        }
+
+        .slideshow .slider-track {
+
+            -webkit-transition: all 1s cubic-bezier(0.7, 0, 0.3, 1);
+            transition: all 1s cubic-bezier(0.7, 0, 0.3, 1);
+        }
+
+        .slider-track {
+            height: 100%;
+        }
+
+        .slideshow .item {
+            height: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .slideshow .item img {
+            width: 100%;
+            -webkit-transition: all 1s cubic-bezier(0.7, 0, 0.3, 1);
+            transition: all 1s cubic-bezier(0.7, 0, 0.3, 1);
+            -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+        }
+
+        .slideshow .item.slick-active img {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+        }
+
+        .slick-dotted.slick-slider {
+            margin-bottom: 0;
+        }
+
+        .slick-slide{
+            outline: none;
+        }
+        .slick-dots {
+            bottom: 25px;
+        }
+        .slider .slick-arrow{
+            display: none!important;
+        }
+        .slick-prev:before{
+            content: '';
+        }
+        .slick-next:before{
+            content:''
+        }
+        .slick-next{
+            right: -60px;
+        }
+        .slick-prev{
+            left: -60px;
+        }
+        .slick-prev:hover{
+            background: url("images/prev.png") no-repeat;
+        }
+        .slick-next:hover{
+            background: url("images/next.png") no-repeat;
+        }
+        .slick-prev:focus{
+            background: url("images/prev.png") no-repeat;
+        }
+        .slick-next:focus{
+            background: url("images/next.png") no-repeat;
+        }
+        .slick-next, .slick-prev{
+            width: 18px;
+            height: 25px;
+            background-size: cover;
+        }
+        .slick-prev{
+            background: url("images/prev.png") no-repeat;
+        }
+        .slick-next{
+            background: url("images/next.png") no-repeat;
+        }
+    </style>
+    <!--[if IE]>
+    <script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="cont">
+    <div class="top">
+        <div class="top_left">
+            <p>核心地标大屏</p>
+            <p>Core landmark screen</p>
+        </div>
+        <div class="title">
+            <div class="title_img">
+                <img src="images/sec1_title.png" alt="">
+            </div>
+            <p>城市核心地标媒体</p>
+            <p>大画面，大视野，大影响 </p>
+            <p>锁定城市主流核心区域</p>
+            <p>南京超级屏王辐射城市主流人群</p>
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="box_bg">
+            <img src="images/sec_bg.png" alt="">
+        </div>
+        <div class="left">
+            <div class="left_cont">
+                <div class="left_item">
+                    <p class="left_words">位于南京市新街口商圈核心位置, <br>有着近百年历史的著名商圈 <br>南京的中央商务区(CBD),<br> 近百家世界五百强分支机构进驻</p>
+                    <div class="left_title">
+                        <div class="left_title_item">
+                            “唯一”三面立体大屏
+                        </div>
+                        <div class="left_title_item">
+                            南京超级屏王
+                        </div>
+                        <div class="left_title_item">
+                            区域人车流量8,337,968人次/周
+                        </div>
+
+                    </div>
+                </div>
+                <div class="left_item">
+                    <p class="left_words">将您在浏览器中输入的内容发送给 Google，以便提供更智能的拼写检查功能
+, <br>有着近百年历史的著名商圈 <br>南京的中央商务区(CBD),<br> 近百家世界五百强分支机构进驻</p>
+                    <div class="left_title">
+                        <div class="left_title_item">
+                            “唯一”三面立体大屏
+                        </div>
+                        <div class="left_title_item">
+                            南京超级屏王
+                        </div>
+                        <div class="left_title_item">
+                            区域人车流量8,337,968人次/周
+                        </div>
+
+                    </div>
+                </div>
+                <div class="left_item">
+                    <p class="left_words">nakgklajkgljlanl,dsnm0拉開的兩個加兩個nkdjfkndgnd, <br>有着近百的多看幾個卡里快過年了呢年 <br>南京的中央商务区(CBD),<br> 近百家世界五百强分支机构进驻</p>
+                    <div class="left_title">
+                        <div class="left_title_item">
+                            “唯一”三面立体大屏
+                        </div>
+                        <div class="left_title_item">
+                            南京超级屏王
+                        </div>
+                        <div class="left_title_item">
+                            区域人车流量8,337,968人次/周
+                        </div>
+
+                    </div>
+                </div>
+                <div class="left_item">
+                    <p class="left_words">已保存的信用卡将显示在这里<br>有着近百年历史的著名商圈 <br>南京的中央商务区(CBD),<br> 近百家世界五百强分支机构进驻</p>
+                    <div class="left_title">
+                        <div class="left_title_item">
+                            “唯一”三面立体大屏
+                        </div>
+                        <div class="left_title_item">
+                            南京超级屏王
+                        </div>
+                        <div class="left_title_item">
+                            区域人车流量8,337,968人次/周
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slideshow">
+            <div class="slider">
+                <div class="item">
+                    <img src="images/1.jpg"/>
+                </div>
+                <div class="item">
+                    <img src="images/2.jpg"/>
+                </div>
+                <div class="item">
+                    <img src="images/3.jpg"/>
+                </div>
+                <div class="item">
+                    <img src="images/4.jpg"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src='js/jquery.easing.min.js'></script>
+<script type="text/javascript" src='js/slick.min.js'></script>
+<script>
+    //右边区域大小
+    var width1 = $('.slideshow').width();
+    $('.slider').width(width1 * 0.8).height(width1 * 0.8 * 0.62);
+
+    //轮播
+    $('.left_cont').slick({
+        autoplay: false,
+        autoplaySpeed: 3000,
+        draggable: true,
+        arrows: true,
+        dots: false,
+        fade: true,
+        speed: 900,
+        infinite: true,
+        cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
+        touchThreshold: 100
+    })
+    $('.slider').slick({
+        autoplay: false,
+        autoplaySpeed: 3000,
+        draggable: true,
+        arrows: true,
+        dots: true,
+        fade: true,
+        speed: 900,
+        infinite: true,
+        cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
+        touchThreshold: 100
+    })
+    $('.left_cont').find('.slick-prev').click(function () {
+        $('.slider').find('.slick-prev').click()
+    })
+    $('.left_cont').find('.slick-next').click(function () {
+        $('.slider').find('.slick-next').click()
+    })
+
+
+</script>
+
+
+</body>
+</html>

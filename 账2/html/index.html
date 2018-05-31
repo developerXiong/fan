@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>公司注册</title>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/public.js"></script>
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+<div class="cont">
+    <div class="header">
+        <div class="header-top">
+            <div class="wrap">
+                <div class="logo">
+                    <img src="../image/logo@2x.png" alt="">
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li class=""><a href="#">首页</a></li>
+                        <li class="active menu_select"><a href="#">公司注册</a></li>
+                        <li class=""><a href="#">记账报税</a></li>
+                        <li class=""><a href="#">公司变更</a></li>
+                        <!--<li class=""><a href="">渠道招商</a></li>-->
+                        <li class=""><a href="#">关于我们</a></li>
+                        <li class=""><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="header_btn">
+                    <div class="open header_btn_show">
+                        <img src="../image/ic_menu@2x.png" alt="">
+                    </div>
+                    <div class="close">
+                        <img src="../image/ic_cancel@2x.png" alt="">
+                    </div>
+                </div>
+                <div class="menu_hide">
+                    <ul>
+                        <li class=""><a href="#">首页</a></li>
+                        <li class="active menu_hide_select"><a href="#">公司注册</a></li>
+                        <li class=""><a href="#">记账报税</a></li>
+                        <li class=""><a href="#">公司变更</a></li>
+                        <!--<li class=""><a href="">渠道招商</a></li>-->
+                        <li class=""><a href="#">关于我们</a></li>
+                        <li class=""><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="menu_contact">
+                    <div class="phone">咨询电话：025-83326140</div>
+                    <span class="line"></span>
+                    <a href="#" class="conc_online">在线咨询</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="banner">
+        <img src="../image/banner@2x.png" alt="">
+    </div>
+
+    <div class="check">
+        <div class="check_img">
+            <p class="check_title">公司注册线上核名系统</p>
+            <p class="check_line"></p>
+            <p class="check_words">注册前看看公司名是否可用</p>
+        </div>
+        <div class="check_info">
+            <div class="check_top">
+
+                <div class="check_left">
+                    <div class="check_icon check_icon1">
+                        <img src="../image/ic_reg_address@2x.png" alt="">
+                    </div>
+                    <div class="check_add">
+                        <input type="text" value="南京" class="check_add_input">
+                        <ul class="check_add_hide">
+                            <li class="check_add_item">南京</li>
+                            <li class="check_add_item">北京</li>
+                            <li class="check_add_item">上海</li>
+                            <li class="check_add_item">郑州</li>
+                            <li class="check_add_item">苏州</li>
+                            <li class="check_add_item">杭州</li>
+                            <li class="check_add_item">扬州</li>
+                            <li class="check_add_item">镇江</li>
+                        </ul>
+                    </div>
+                    <div class="check_icon check_icon2" id="showAdd">
+                        <img src="../image/ic_reg_pulldown@2x.png" alt="">
+                    </div>
+                </div>
+                <div class="check_right">
+                    <div class="check_icon check_icon3">
+                        <img src="../image/ic_reg_name@2x.png" alt="">
+                    </div>
+                    <input type="text" placeholder="请输入公司名称，例：南京儒道财务科技有限公司">
+                </div>
+
+            </div>
+            <div class="check_bot">
+                <div class="btn">免费查询</div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="hot">
+        <div class="hot_title">
+            热门服务项目
+        </div>
+        <div class="hot_cont">
+            <div class="hot_item">
+                <div class="hot_item_img">
+                    <img src="../image/ic_company@2x.png" alt="">
+                </div>
+                <div class="hot_item_right">
+                    <p>注册公司</p>
+                    <p>核名成功后，5个工作日即可办理完成</p>
+                </div>
+            </div>
+            <div class="hot_item">
+                <div class="hot_item_img">
+                    <img src="../image/ic_change@2x.png" alt="">
+                </div>
+                <div class="hot_item_right">
+                    <p>公司变更</p>
+                    <p>专业为您办理股东变更、注册资金变更等</p>
+                </div>
+            </div>
+            <div class="hot_item">
+                <div class="hot_item_img">
+                    <img src="../image/ic_bookkeeping@2x.png" alt="">
+                </div>
+                <div class="hot_item_right">
+                    <p>代理记账</p>
+                    <p>为企业提供规范做账、申报服务</p>
+                </div>
+            </div>
+            <div class="hot_item">
+                <div class="hot_item_img">
+                    <img src="../image/ic_R@2x.png" alt="">
+                </div>
+                <div class="hot_item_right">
+                    <p>商标注册</p>
+                    <p>专业团队为您提供专业商标注册服务</p>
+                </div>
+            </div>
+            <div class="hot_item">
+                <div class="hot_item_img">
+                    <img src="../image/ic_logout@2x.png" alt="">
+                </div>
+                <div class="hot_item_right">
+                    <p>公司注销</p>
+                    <p>按要求提供资料，轻松办理公司注销</p>
+                </div>
+            </div>
+            <div class="hot_item">
+                <div class="hot_item_img">
+                    <img src="../image/ic_license@2x.png" alt="">
+                </div>
+                <div class="hot_item_right">
+                    <p>特殊经营许可证</p>
+                    <p>为特殊企业提供特殊经营许可证</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="process">
+        <div class="process_title">
+            极简注册流程，仅需3步
+        </div>
+        <div class="process_cont">
+            <div class="pro_item1">
+                <div class="pro_item1_top">
+                    <p>快速核名</p>
+                    <p>人工+机器核查，通过率接近1000%</p>
+                </div>
+                <div class="pro_item1_bot">
+                    立即核名
+                </div>
+            </div>
+            <div class="pro_item2">
+                <img src="../image/ic_goright.png" alt="">
+            </div>
+            <div class="pro_item1">
+                <div class="pro_item1_top">
+                    <p>提交资料</p>
+                    <p>精通办理渠道与资料准备</br>专门渠道专人代办</p>
+                </div>
+                <div class="pro_item1_bot pro_item1_bot_blue">
+                    了解更多
+                </div>
+            </div>
+            <div class="pro_item2">
+                <img src="../image/ic_goright.png" alt="">
+            </div>
+            <div class="pro_item1">
+                <div class="pro_item1_top">
+                    <p>领取营业执照</p>
+                    <p>专业运行团队全程代办</br>最快只需3天</p>
+                </div>
+                <div class="pro_item1_bot">
+                    立即核名
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="reward">
+        <div class="reward_title">
+            地方政府 税收资金扶持奖励
+        </div>
+        <div class="reward_title2">
+            GOVERNMENT SUPPORT
+        </div>
+        <div class="rew_cont">
+            <div class="rew_item">
+                <div class="rew_item_img">
+                    <img src="../image/ic_reward_off@2x.png" alt=""  class="rew_item_img_show">
+                    <img src="../image/ic_reward_on@2x.png" alt="">
+                </div>
+                <p class="rew_item_title">地方税收贡献奖励</p>
+                <p class="rew_item_words">传统企业贡献奖励</p>
+                <p class="rew_item_words">营改增企业增值税</p>
+                <p class="rew_item_words">企业所得税</p>
+                <p class="rew_item_words">最高 <span> 40% </span> 扶持奖励</p>
+            </div>
+            <div class="rew_item">
+                <div class="rew_item_img">
+                    <img src="../image/ic_personal_off@2x.png" alt="" class="rew_item_img_show">
+                    <img src="../image/ic_personal_on@2x.png" alt="">
+                </div>
+                <p class="rew_item_title">个人所得税</p>
+                <p class="rew_item_words">最高 <span> 40% </span> 扶持奖励</p>
+            </div>
+            <div class="rew_item">
+                <div class="rew_item_img">
+                    <img src="../image/ic_government_off@2x.png" alt="" class="rew_item_img_show">
+                    <img src="../image/ic_government_on@2x.png" alt="">
+                </div>
+                <p class="rew_item_title">支持企业上市挂牌补贴</p>
+                <p class="rew_item_words">传统企业贡献奖励</p>
+                <p class="rew_item_words">营改增企业增值税</p>
+                <p class="rew_item_words">企业所得税</p>
+                <p class="rew_item_words"><span> 40万-1000万</span></p>
+            </div>
+            <div class="rew_item">
+                <div class="rew_item_img">
+                    <img src="../image/ic_talent_off@2x.png" alt=""  class="rew_item_img_show">
+                    <img src="../image/ic_talent_on@2x.png" alt="">
+                </div>
+                <p class="rew_item_title">人才引进奖励</p>
+                <p class="rew_item_words">本地户口</p>
+                <p class="rew_item_words">购房补贴</p>
+                <p class="rew_item_words">社会公积金补贴</p>
+                <p class="rew_item_words">子女教育等</p>
+            </div>
+        </div>
+        <div class="rew_bot">
+            <div class="rew_btn">
+                立即咨询
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+    <div class="pk">
+        <div class="pk_title">选择我们一劳永逸</div>
+        <div class="pk_cont">
+            <div class="pk_header">
+                <div class="pk_header_left">自己办理</div>
+                <div class="pk_header_center">PK</div>
+                <div class="pk_header_right">算好账办理</div>
+            </div>
+            <div class="pk_mid">
+                <div class="pk_item">
+                    <p class="pk_item_leftwords">
+                        流程复杂，需要资料复杂，耗时超过30个工作日
+                    </p>
+                    <div class="pk_item_leftbox">
+                        太慢
+                    </div>
+                    <div class="pk_item_img">
+                        <img src="../image/goright.png" alt="">
+                    </div>
+                    <div class="pk_item_rightbox">
+                        省时
+                    </div>
+                    <p class="pk_item_rightwords">
+                        最快3天领取执照。10余年工商代理经验，精通办理流程
+                    </p>
+                </div>
+                <div class="pk_item">
+                    <p class="pk_item_leftwords">
+                        不懂财务，做账、报税困难，无人提供咨询
+                    </p>
+                    <div class="pk_item_leftbox">
+                        费神
+                    </div>
+                    <div class="pk_item_img">
+                        <img src="../image/goright.png" alt="">
+                    </div>
+                    <div class="pk_item_rightbox">
+                        省心
+                    </div>
+                    <p class="pk_item_rightwords">
+                        资深老会计，1对1服务做账、报税
+                    </p>
+                </div>
+                <div class="pk_item">
+                    <p class="pk_item_leftwords">
+                        不懂得合理避税，隐形成本高
+                    </p>
+                    <div class="pk_item_leftbox">
+                        伤财
+                    </div>
+                    <div class="pk_item_img">
+                        <img src="../image/goright.png" alt="">
+                    </div>
+                    <div class="pk_item_rightbox">
+                        省钱
+                    </div>
+                    <p class="pk_item_rightwords">
+                        资深财税专家，合理避税
+                    </p>
+                </div>
+            </div>
+            <div class="pk_bot">
+                <div class="pk_btn">了解更多</div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="material">
+        <div class="mat_title"><span>需要您准备的材料和</span>您将拿到的材料</div>
+        <div class="mat_cont">
+
+            <div class="mat_left">
+                <div class="mat_left_title">NO.1 准备材料</div>
+                <div class="mat_item_box">
+                    <div class="mat_item">
+                        <div class="mat_item_title">
+                            <div class="mat_item_title_num">
+                                <div class="mat_item_circle1">
+                                    1
+                                </div>
+                            </div>
+                            <p>实体材料</p>
+                        </div>
+                        <ul class="mat_item_list">
+                            <li>1.股东/法人/监事的身份证复印件</li>
+                            <li>2.在刻章前可能需要法人身份证原件</li>
+                            <li>注：法人和监事不能是同一人</li>
+                        </ul>
+                    </div>
+                    <div class="mat_item">
+                        <div class="mat_item_title">
+                            <div class="mat_item_title_num">
+                                <div class="mat_item_circle1">
+                                    2
+                                </div>
+                            </div>
+                            <p>文字信息</p>
+                        </div>
+                        <ul class="mat_item_list">
+                            <li>1.3-5个您想要的公司名称</li>
+                            <li>2.注册资本金额数字和股东出资情况</li>
+                            <li>3.高管任职情况</li>
+                        </ul>
+                    </div>
+                    <div class="mat_item">
+                        <div class="mat_item_title">
+                            <div class="mat_item_title_num">
+                                <div class="mat_item_circle1">
+                                    3
+                                </div>
+                            </div>
+                            <p>法人到场</p>
+                        </div>
+                        <ul class="mat_item_list">
+                            <li>1.公司注册需要法人带身份证原件到场确认一下</li>
+                            <li>注：购买银行开户服务的话 部分银行要求法人到场</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="mat_line"></div>
+            <div class="mat_right">
+                <div class="mat_right_title"><span>NO.2</span>拿到的材料</div>
+                <div class="mat_right_img">
+                    <img src="../image/material.png" alt="">
+                </div>
+                <ul class="mat_right_ul">
+                    <li>1.企业统一社会信用代码 </li>
+                    <li>2.营业执照（正副本） </li>
+                    <li>3.房屋租赁合同 </li>
+                    <li>4.印鉴留存卡 </li>
+                    <li>5.公司印章 </li>
+                    <li>6.公司章程 </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="type">
+        <div class="type_title">
+            选择您要注册公司的类型
+        </div>
+        <div class="type_cont">
+            <div class="type_item type_item_show">生活服务</div>
+            <div class="type_item">节能环保</div>
+            <div class="type_item">影视文化</div>
+            <div class="type_item">信息技术</div>
+            <div class="type_item">广告创新</div>
+            <div class="type_item">网络技术</div>
+            <div class="type_item">运输行业</div>
+            <div class="type_item">商贸业</div>
+            <div class="type_item">工程技术</div>
+            <div class="type_item">加工制造</div>
+            <div class="type_item">新能源</div>
+            <div class="type_item">医药业</div>
+            <div class="type_item">教育业</div>
+            <div class="type_item">纺织业</div>
+            <div class="type_item">服务业</div>
+            <div class="type_item">旅游业</div>
+            <div class="type_item">更多</div>
+        </div>
+        <div class="type_bot">
+            <div class="type_btn">立即咨询</div>
+        </div>
+    </div>
+
+
+
+    <div class="get">
+        <div class="get_title">
+            在算好账注册你还能得到什么
+        </div>
+        <div class="get_title2">
+            WHAT ELSE CAN YOU GET
+        </div>
+        <div class="get_cont">
+            <div class="get_item">
+                <div class="get_item_img">
+                    <img src="../image/get1.png" alt="">
+                </div>
+                <div class="get_item_bot">
+                    <p>创业资金扶持</p>
+                    <p>业内优先与银行签订战略合作的财务公司</p>
+                </div>
+            </div>
+            <div class="get_item">
+                <div class="get_item_img">
+                    <img src="../image/get2.png" alt="">
+                </div>
+                <div class="get_item_bot">
+                    <p>异业联盟资源</p>
+                    <p>提供目前服务的 近十万家各行业企业资源</p>
+                </div>
+            </div>
+            <div class="get_item">
+                <div class="get_item_img">
+                    <img src="../image/get3.png" alt="">
+                </div>
+                <div class="get_item_bot">
+                    <p>创业俱乐部</p>
+                    <p>多家名企进行创业探讨与指导</p>
+                </div>
+            </div>
+        </div>
+        <div class="get_bot">
+            <div class="get_btn">
+                立即咨询
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <div class="fixed">
+        <div class="fixed_box">
+            <div class="fixed_item fixed_first fixed_item_hide">你想知道</div>
+            <div class="fixed_item">多久拿营业执照</div>
+            <div class="fixed_item">如何快速拿证</div>
+            <div class="fixed_item fixed_item_hide">注册公司费用</div>
+            <div class="fixed_item fixed_item_hide">注册公司注意事项</div>
+            <div class="fixed_item fixed_item_hide">注册公司要求</div>
+        </div>
+    </div>
+
+
+
+    <div class="footer">
+        <div class="footer_item footer1">
+            <div class="footer_title">
+                <img src="../image/logo@2x.png" alt="">
+            </div>
+            <p class="footer1_info">Copyright © 2018 suanhz.com All Rights Reserved 版权所有 算好账 </p>
+        </div>
+        <div class="footer_item footer2">
+            <div class="footer_title">产品服务</div>
+            <a href="" class="footer_link">公司注册</a>
+            <a href="" class="footer_link">记账报税</a>
+            <a href="" class="footer_link">企业变更</a>
+        </div>
+        <div class="footer_item footer3">
+            <div class="footer_title">合作共赢</div>
+            <a href="" class="footer_link">渠道招商</a>
+        </div>
+        <div class="footer_item footer4">
+            <div class="footer_title">关于我们</div>
+            <a href="" class="footer_link">公司简介</a>
+            <a href="" class="footer_link">公司资讯</a>
+            <a href="" class="footer_link">联系我们</a>
+            <a href="" class="footer_link">加入我们</a>
+        </div>
+        <div class="footer_item footer5">
+            <div class="footer_title">微信关注</div>
+            <div class="QRcode">
+                <img src="../image/wechat_qrcode.jpg" alt="">
+            </div>
+        </div>
+        <div>
+            <a href="#" target="_blank" style="color:#FFFFFF;text-align:center;font-size:14px;">苏ICP备18018339号</a>
+        </div>
+    </div>
+    <div class="goTop">
+        <img src="../image/up@2x.png" alt="">
+    </div>
+</div>
+<script>
+    //选择注册类型切换样式
+
+    $(".type_item").click(function () {
+        $(this).addClass("type_item_show").siblings().removeClass("type_item_show")
+    })
+
+
+    //鼠标移入效果
+    $(".rew_item").each(function () {
+        $(this).mouseover(function () {
+            $(this).find("img").last().addClass("rew_item_img_show").siblings().removeClass("rew_item_img_show")
+        }).mouseout(function () {
+            $(this).find("img").first().addClass("rew_item_img_show").siblings().removeClass("rew_item_img_show")
+        })
+    })
+
+
+
+//核对公司名的下拉菜单
+    $("#showAdd").click(function (e) {
+        e.stopPropagation();
+        $(".check_add_hide").toggleClass("check_add_show")
+    })
+    $("html,body").click(function () {
+        $(".check_add_hide").removeClass("check_add_show")
+    })
+    $(".check_add_item").click(function () {
+        var val=$(this).text()
+        console.log(val)
+        $(".check_add_input").val(val)
+    })
+
+
+
+
+    function size1(classname,num) {
+        var width = classname.width();
+        var height= width / num
+        classname.height(height);
+        $(window).resize(function () {
+            classname.height(height);
+        })
+        return height
+    }
+    size1($(".banner"),3);
+    var m_minh=$(".material").width() / 1.75;
+    $(".material").css({
+        'minHeight':m_minh
+    })
+    size1($(".mat_right_img"),1.46);
+    size1($(".check_img"),1.67);
+    var minh=size1($(".check_img"),1.67);
+    $(".check").css({
+        'minHeight':minh
+    })
+</script>
+</body>
+</html>

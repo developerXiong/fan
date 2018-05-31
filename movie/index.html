@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+    <style type="text/css">
+    	html,
+		body {
+			background: white;
+		}
+    </style>
+</head>
+<body>
+	
+	<nav class="mui-bar mui-bar-tab">
+	    <a class="mui-tab-item mui-active" href="html/hot.html">
+	        <span class="mui-icon mui-icon-home"></span>
+	        <span class="mui-tab-label">热映</span>
+	    </a>
+	    <a class="mui-tab-item" href="html/paihang.html">
+	        <span class="mui-icon mui-icon-search"></span>
+	        <span class="mui-tab-label">排行</span>
+	    </a>
+	    <a class="mui-tab-item" href="html/set.html">
+	        <span class="mui-icon mui-icon-gear"></span>
+	        <span class="mui-tab-label">设置</span>
+	    </a>
+	</nav>
+	
+	
+	
+	
+	
+	
+	<script type="text/javascript">
+		var subPages = ['html/hot.html','html/paihang.html','html/set.html'];
+		var subPageStyle = {
+			top:'0',
+			bottom:'50px'
+		}
+		
+		mui.plusReady(function(){
+			var self=plus.webview.currentWebview();//拿到index对应的当前窗体
+			for(var i=0;i<subPages.length;i++){
+				var sub=plus.webview.create(subPages[i],subPages[i],subPageStyle);//1对应的页面，2创建后页面id（跟链接一样），3页面打开的样式，4页面传参
+				sub.hide();//全都隐藏
+				self.append(sub);
+			}
+			plus.webview.show(subPages[0]);//展示第一个，括号里面写id
+			
+			
+			
+		})
+		
+		mui(".mui-bar-tab").on("tap","a",function(e){
+			var tagPage = this.getAttribute("href");//获取属性
+			plus.webview.show(tagPage,"fade-in",100);//1展示的id，2展示的动画，3动画速度
+		})
+	</script>
+</body>
+</html>

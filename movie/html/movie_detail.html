@@ -1,0 +1,198 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<style>
+			.top {
+				text-align: center;
+				padding: 10px 0;
+				background: #3c3c3c;
+				/*background: pink;*/
+			}
+			
+			.mui-bar-nav {
+				-webkit-box-shadow: none;
+				box-shadow: none;
+				/*去掉标题栏下方阴影*/
+			}
+			
+			.mui-ellipsis-4 {
+				display: -webkit-box;
+				overflow: hidden;
+				white-space: normal !important;
+				text-overflow: ellipsis;
+				word-wrap: break-word;
+				-webkit-line-clamp: 4;
+				-webkit-box-orient: vertical;
+				/*最多显示四行*/
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">电影</h1>
+		</header>
+		<div class="mui-content" style="background: white;" id="content">
+			<div class="top">
+				<img :src="cover" style="width: 160px;height: 240px;vertical-align: top;" />
+			</div>
+			<div style="padding: 15px;height: 90px;">
+				<div style="float: left;padding-top: 2px;">
+					<span class="dark-big" style="display: block;">{{title}}</span>
+					<span class="gray-medium">{{year}} / {{genres.toString().replace(/,/g,'/')}}</span>
+					<span class="gray-medium" style="display: block;">{{directors.length>0?directors[0].name:''}}导演作品</span>
+				</div>
+				<div style="float: right;width: 60px;height: 60px;background: white;text-align: center;box-shadow:0px 0px 10px #AAAAAA ;">
+					<span class="gray-micro" style="display: block;vertical-align:middle ;margin-top:5px;line-height: 15px;">豆瓣评分</span>
+					<span class="dark-big" style="display: block;line-height: 20px;" v-if="score>0">{{score}}</span>
+					<span class="dark-big" style="display: block;line-height: 20px; font-size: 10px;" v-else>暂无评分</span>
+					<span class="gray-micro" style="display: block;line-height: 15px;">{{ratingCount}}人</span>
+				</div>
+			</div>
+			<div style="height: 0.5px;background: #a2a2a2;margin-left: 15px;"></div> 
+			<p class="gray-medium" style="margin:10px 0px 0px 15px ;">剧情简介</p>
+			<p class="mui-ellipsis-4 dark-big" style="margin: 0px 15px;">{{summary}}</p>
+			<p class="gray-medium" style="margin:10px 0px 0px 15px ;">演员</p>
+			<div style="overflow-x: scroll;white-space: nowrap;padding-left: 15px;">
+				<div style="display: inline-block;" v-for="item in casts" @click="openDetail(item)">
+					
+					
+					<img v-if="item.avatars" :src="item.avatars.medium" alt="" style="width: 70px;height: 100px;margin-right: 10px;" />
+					<img v-else src='../img/1.jpg' alt="" style="width: 70px;height: 100px;margin-right: 10px;" />
+					
+					
+					<div class="dark-micro mui-ellipsis" style="width: 70px;text-align: center;">
+						{{item.name}}
+					</div>
+				</div>
+			</div>
+			<p class="dark-medium" style="margin-top: 10px;margin-bottom: 0; text-align: center;background: #e6e6e6;line-height: 40px;">评论</p>
+			<ul class="mui-table-view" style="background:white">
+				<li class="mui-table-view-cell mui-media">
+					<img class="mui-media-object mui-pull-left" src="../img/6.jpg" style="width: 30px;height: 30px;border-radius: 30px;">
+					<div class="mui-media-body">
+						<span class="dark-medium" style="line-height: 30px;text-align: center;float: left;">幸福v</span>
+						<span class="gray-medium" style="line-height: 30px;text-align: center;float: right;">日期</span>
+						<p class="mui-ellipsis " style="clear: both;">能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+					</div>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+					<img class="mui-media-object mui-pull-left" src="../img/6.jpg" style="width: 30px;height: 30px;border-radius: 30px;">
+					<div class="mui-media-body">
+						<span class="dark-medium" style="line-height: 30px;text-align: center;float: left;">幸福v</span>
+						<span class="gray-medium" style="line-height: 30px;text-align: center;float: right;">日期</span>
+						<p class="mui-ellipsis " style="clear: both;">能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+					</div>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+					<img class="mui-media-object mui-pull-left" src="../img/6.jpg" style="width: 30px;height: 30px;border-radius: 30px;">
+					<div class="mui-media-body">
+						<span class="dark-medium" style="line-height: 30px;text-align: center;float: left;">幸福v</span>
+						<span class="gray-medium" style="line-height: 30px;text-align: center;float: right;">日期</span>
+						<p class="mui-ellipsis " style="clear: both;">能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+					</div>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+					<img class="mui-media-object mui-pull-left" src="../img/6.jpg" style="width: 30px;height: 30px;border-radius: 30px;">
+					<div class="mui-media-body">
+						<span class="dark-medium" style="line-height: 30px;text-align: center;float: left;">幸福v</span>
+						<span class="gray-medium" style="line-height: 30px;text-align: center;float: right;">日期</span>
+						<p class="mui-ellipsis " style="clear: both;">能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+					</div>
+				</li>
+			</ul>
+
+		</div>
+
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/vue.js "></script>
+		<script type="text/javascript">
+			mui.init();
+
+			function getDefalutData() {
+				return {
+					title: '',
+					cover: '',
+					score: '',
+					ratingCount: '',
+					summary: '',
+					year: '',
+					genres: '',
+					casts: [],
+					directors: []
+				}
+			}
+
+			var data_detail = new Vue({
+				el: '#content',
+				data: getDefalutData(),
+				methods: {
+					resetData: function() {
+						//重置数据
+						Object.assign(this.$data, getDefalutData());
+					},
+					openDetail: function(item) {
+						//打开演员详情页
+						mui.openWindow({
+							url: "cast_detail.html",
+							id: "cast_detail.html",
+							extras: {
+								//传参
+								castId: item.id
+							},
+							waiting: {
+								autoShow: false //自动显示等待框，默认为true
+							}
+						})
+					}
+				}
+
+			});
+
+			mui.plusReady(function() {
+				var self = plus.webview.currentWebview();
+
+				//hide事件发生时，滚动到顶部，清空数据
+				self.addEventListener('hide', function(e) {
+					window.scrollTo(0, 0);
+					data_detail.resetData();
+				}, false)
+			})
+
+			//获取页面传值
+			var id = null;
+			window.addEventListener("movieId", function(event) {
+				id = event.detail.id
+
+				plus.nativeUI.showWaiting("加载中", {
+					//开启等待框
+					width: '100px',
+					height: '100px'
+				});
+				//请求数据
+				mui.getJSON('https://api.douban.com/v2/movie/subject/' + id, function(resp) {
+					data_detail.title = resp.title;
+					data_detail.cover = resp.images.large;
+					data_detail.score = resp.rating.average;
+					data_detail.ratingCount = resp.ratings_count;
+					data_detail.summary = resp.summary;
+					data_detail.countries = resp.countries.toString('/,/g', '/'); //将逗号替换成/
+					data_detail.year = resp.year;
+					data_detail.genres = resp.genres.toString('/,/g', '/');
+					data_detail.casts = resp.casts;
+					data_detail.directors = resp.directors;
+					//关闭等待框
+					plus.nativeUI.closeWaiting();
+
+				})
+			})
+		</script>
+	</body>
+
+</html>

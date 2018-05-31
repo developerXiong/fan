@@ -1,0 +1,12 @@
+{
+	"index.html": {
+		"refer": [
+			"index-menu.html",
+			"examples/guide.html",
+			"examples/input.html",
+			"examples/pullrefresh.html",
+			"examples/radio.html",
+			"examples/pullrefresh_with_tab.html"
+		]
+	}
+}

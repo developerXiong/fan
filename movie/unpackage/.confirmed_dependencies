@@ -1,0 +1,56 @@
+{
+	"index.html": {
+		"resources": [
+			"html/hot.html"
+		],
+		"refer": [
+			"html/set.html",
+			"html/hot.html",
+			"html/paihang.html"
+		]
+	},
+	"html/hot.html": {
+		"resources": [
+			"html/hotList.html"
+		],
+		"refer": [
+			"html/hotList.html",
+			"html/search.html"
+		]
+	},
+	"html/hotList.html": {
+		"refer": [
+			"html/movie_ditail.html",
+			"html/movie_detail.html"
+		]
+	},
+	"html/movie_detail.html": {
+		"refer": [
+			"html/cast_detail.html"
+		]
+	},
+	"html/paihang.html": {
+		"refer": [
+			"html/top250.html",
+			"html/beimei.html"
+		]
+	},
+	"html/search.html": {
+		"refer": [
+			"html/searchResult.html"
+		]
+	},
+	"html/set.html": {
+		"refer": [
+			"html/about.html"
+		]
+	},
+	"html/searchResult.html": {
+		"resources": [
+			"html/searchResultList.html"
+		],
+		"refer": [
+			"html/searchResultList.html"
+		]
+	}
+}

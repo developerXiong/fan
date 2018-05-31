@@ -1,0 +1,213 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+img{
+    border: 0;
+}
+a{
+    text-decoration: none;
+}
+input[type=button],input[type=text],input[type=password]{-webkit-appearance:none;outline: none;border-radius: 0}
+html,body{
+    font-size: 12px;
+    background: white;
+}
+body{
+    font-family: PingFangSC-Regular, "Microsoft Yahei",sans-serif;
+}
+
+.cont{
+    background: #fafafa;
+}
+.header {
+    width: 100%;
+    background: white;
+}
+
+.header .header-top {
+    width: 100%;
+    height: 6rem;
+    display: -webkit-flex;  /* 新版本语法: Chrome 21+ */
+    display: flex;          /* 新版本语法: Opera 12.1, Firefox 22+ */
+
+    display: -moz-box;      /* 老版本语法: Firefox (buggy) */
+    display: -ms-flexbox;   /* 混合版本语法: IE 10 */
+    justify-content: center;
+}
+
+.header .header-top .wrap {
+    width: 88%;
+    height: 6rem;
+    position: relative;
+    display: -webkit-flex;  /* 新版本语法: Chrome 21+ */
+    display: flex;          /* 新版本语法: Opera 12.1, Firefox 22+ */
+    display: -moz-box;      /* 老版本语法: Firefox (buggy) */
+    display: -ms-flexbox;   /* 混合版本语法: IE 10 */
+    justify-content: center;
+}
+
+.header .header-top .wrap .logo {
+    width: 12rem;
+    height: 4rem;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -1.6rem;
+}
+
+.header .header-top .wrap .logo img {
+    width: 100%;
+    height: 100%;
+}
+.header .header-top .wrap .menu{
+    /*display: none;*/
+}
+.header .header-top .wrap .menu li {
+    float: left;
+    border-bottom: 4px solid transparent;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-size: 1.2rem;
+}
+
+.header .header-top .wrap .menu li a {
+    color: #4A4A4A;
+    line-height: 5.7rem;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.header .header-top .wrap .menu li.active {
+    border-bottom: 4px solid #0E6EB8;
+}
+.header_btn{
+    width: 1.6rem;
+    height: 1.6rem;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -0.8rem;
+    display: none;
+}
+.header_btn .open,.close{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /*background: red;*/
+    display: none;
+}
+
+.header_btn .header_btn_show{
+    display: block;
+}
+.header_btn .open img{
+    width: 100%;
+    height: 100%;
+}
+.header_btn .close img{
+    width: 100%;
+    height: 100%;
+}
+.menu_hide{
+    /*width: 100px;*/
+    padding: 10px 15px;
+    border-top: 1px solid #969696;
+    background-color: rgba(0,0,0,.8);
+    flex-direction: column;
+    position: absolute;
+    top:50%;
+    margin-top: 0.8rem;
+    right: 0;
+    display: none;
+}
+.menu_hide_show{
+    display: block;
+}
+.menu_hide li{
+    line-height: 24px;
+    font-size:1.1rem;
+    text-align: center;
+    /*margin-bottom: .26666667rem;*/
+}
+.menu_hide li a{
+    color: #d3d3d3;
+}
+.menu_contact{
+    width:27rem ;
+    height: 95%;
+    color: #008DD2;
+    font-size: 1.5rem;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    right: 0;
+}
+.menu_contact .line{
+    display: block;
+    width: 1px;
+    height: 30%;
+    background: #008DD2;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+.menu_contact .conc_online{
+    color: #008DD2;
+}
+
+.menu_hide li.active a{
+    font-weight: bold;
+}
+@media screen and (max-width: 1200px) {
+
+}
+@media screen and (max-width: 992px) {
+
+}
+@media screen and (max-width: 768px) {
+    .header {
+        padding-top: 0;
+
+    }
+    .header .header-top .wrap .menu{
+        display: none;
+    }
+    .header_btn{
+        display: block;
+    }
+    .header-bottom .h_b_cont{
+        width: 100%;
+    }
+    .header-bottom .h_b_cont .h_b_words{
+        font-size: 3.5rem;
+    }
+    .menu_contact{
+        display: none;
+    }
+}
+@media screen and (max-width: 480px) {
+    .header-bottom .h_b_cont .h_b_words{
+        font-size: 2.5rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

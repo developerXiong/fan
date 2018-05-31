@@ -1,0 +1,544 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" style="overflow: hidden; height: 100%;">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>驿路尚</title>
+    <meta name="keywords" content="驿路尚" />
+    <meta name="description" content="驿路尚" />
+    <link rel="Stylesheet" type="text/css" href="css/page.css" />
+    <link rel="Stylesheet" type="text/css" href="css/index.css" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/fullPage.js"></script>
+    <script src="js/respond.src.js"></script>
+    <script type="text/javascript" src="ckplayer/ckplayer.js" charset="utf-8"></script>
+    <script src="js/function.js"></script>
+    <script>
+        $(function () {
+            $(".top").animate({top: "0px"});
+            for (i = 1; i < 31; i++) {
+
+                var xt = $(".thir_page ul li.qiu" + i + " a img.xqiu");
+//                xt.load(function () {
+
+                    var img_h = xt.height();
+                    var img_w = xt.width();
+
+                    var mt = (154 - img_h) / 2;
+                    var ml = (153 - img_w) / 2;
+
+                    xt.css("marginTop", mt);
+                    xt.css("marginLeft", ml);
+//                })
+            }
+
+            $(".thir_page ul li").hover(function () {
+                $(this).find(".xqiu").fadeOut("normal");
+                $(this).find(".dqiu").fadeIn("normal");
+            }, function () {
+                $(this).find(".xqiu").fadeIn("normal");
+                $(this).find(".dqiu").fadeOut("normal");
+            })
+
+
+            $('#dahe').fullpage({
+//                sectionsColor: ['#df0010', '#fff', '#df0010', '#fff'],
+                verticalCentered:true,
+//                navigation:true,
+                resize:true,
+                anchors: ['page1', 'page2', 'page3','page4','page5','footer1'],
+                menu: '.menu',
+                afterLoad: function (anchorLink, index) {
+                    $("#r_logo img").attr("src", "images/r_logo.png");
+                    $(".dh_list").animate({right: "-165px"});
+                    $(".top").animate({top: "0px"});
+                    if (index == 1) {
+                        $(".menuList").removeClass("menuListRed");
+                        $(".top .dh").hide();
+                        $(".top .tel").show();
+                        $(".menu .page2").show();
+                        $(".menu .page1").hide();
+                        $(".menu .page3").hide();
+                        $(".menu .page4").hide();
+                        $(".menu .page5").hide();
+                        $(".menu .page6").hide();
+                        $(".menu").removeClass("bmenu");
+                        $('.logo').find('img').attr('src','images/logor.png')
+                    }
+                    if (index == 2) {
+
+                        $(".menuList").addClass("menuListRed");
+                        $(".top").addClass("tred");
+                        $(".top .tel").hide();
+                        $(".top .dh").show();
+                        $(".menu .page1").hide();
+                        $(".menu .page2").hide();
+                        $(".menu .page4").hide();
+                        $(".menu .page3").show();
+                        $(".menu .page5").hide();
+                        $(".menu .page6").hide();
+                        $(".menu").addClass("bmenu");
+                        $('.logo').find('img').attr('src','images/logow.png')
+                    }
+                    if (index == 3) {
+                        $(".menuList").removeClass("menuListRed");
+                        $(".top .tel").hide();
+                        $(".top .dh").show();
+                        $(".menu .page1").hide();
+                        $(".menu .page2").hide();
+                        $(".menu .page3").hide();
+                        $(".menu .page4").show();
+                        $(".menu .page5").hide();
+                        $(".menu .page6").hide();
+                        $(".menu").removeClass("bmenu");
+                        $('.logo').find('img').attr('src','images/logor.png')
+
+                    }
+                    if (index == 4) {
+
+                        $(".menuList").removeClass("menuListRed");
+                        $(".top").addClass("tred");
+                        $(".top .tel").hide();
+                        $(".top .dh").show();
+                        $(".menu .page4").hide();
+                        $(".menu .page2").hide();
+                        $(".menu .page3").hide();
+                        $(".menu .page1").hide();
+                        $(".menu .page5").show();
+                        $(".menu .page6").hide();
+                        $(".menu").removeClass("bmenu");
+                        $('.logo').find('img').attr('src','images/logor.png')
+                    }
+                    if (index == 5) {
+
+                        $(".menuList").removeClass("menuListRed");
+                        $(".top").addClass("tred");
+                        $(".top .tel").hide();
+                        $(".top .dh").show();
+                        $(".menu .page4").hide();
+                        $(".menu .page2").hide();
+                        $(".menu .page3").hide();
+                        $(".menu .page1").hide();
+                        $(".menu .page5").hide();
+                        $(".menu .page6").show();
+                        $(".menu").removeClass("bmenu");
+                        $('.logo').find('img').attr('src','images/logor.png')
+                    }
+                    if (index == 6) {
+
+                        $(".menuList").removeClass("menuListRed");
+                        $(".top").addClass("tred");
+                        $(".top .tel").hide();
+                        $(".top .dh").show();
+                        $(".menu .page4").hide();
+                        $(".menu .page2").hide();
+                        $(".menu .page3").hide();
+                        $(".menu .page1").hide();
+                        $(".menu .page5").hide();
+                        $(".menu .page6").hide();
+                        $(".menu").removeClass("bmenu");
+                        $('.logo').find('img').attr('src','images/logor.png')
+                    }
+
+                },
+                onLeave: function (index, direction) {
+                    $(".top").animate({top: "-100px"});
+
+                    if (index == 2) {
+                        $(".top").removeClass("tred");
+                        $(".dh_list").animate({right: "-165px"});
+                        $(".dh_list").removeClass("dh_b");
+                        $('.logo').find('img').attr('src','images/logow.png')
+                    }
+
+                    if (index == 3) {
+
+                        $(".dh_list").animate({right: "-165px"});
+                        $(".dh_list").removeClass("dh_b");
+                        $('.logo').find('img').attr('src','images/logor.png')
+                    }
+                    if (index == 4) {
+                        $(".top").removeClass("tred");
+                        $(".dh_list").animate({right: "-165px"});
+                        $(".dh_list").removeClass("dh_b");
+                        $('.logo').find('img').attr('src','images/logor.png')
+                    }
+                    if (index == 4) {
+                        $(".top").removeClass("tred");
+                        $(".dh_list").animate({right: "-165px"});
+                        $(".dh_list").removeClass("dh_b");
+                        $('.logo').find('img').attr('src','images/logor.png')
+                    }
+                }
+
+            });
+
+
+            $(".dh").click(function () {
+                var dhlist = $(".dh_list");
+                if (dhlist.hasClass("dh_b")) {
+                    dhlist.removeClass("dh_b");
+                    dhlist.animate({right: "0"});
+
+                } else {
+                    dhlist.addClass("dh_b");
+                    dhlist.animate({right: "-165px"});
+
+                }
+
+
+
+
+
+            })
+
+            $(".dh_list ul li span a").hover(function () {
+                $(this).parents("span").addClass("focus");
+            }, function () {
+                $(this).parents("span").removeClass("focus");
+            })
+
+
+            setInterval(function () {
+                $(".fir_p .q1").animate({opacity: 1}, 500);
+            }, 1000);
+            setInterval(function () {
+                $(".fir_p .q4").animate({opacity: 1}, 500);
+            }, 1000);
+            setInterval(function () {
+                $(".fir_p .q2").animate({opacity: 1}, 500);
+            }, 1500);
+            setInterval(function () {
+                $(".fir_p .q3").animate({opacity: 1}, 500);
+            }, 1500);
+            setInterval(function () {
+                $(".fir_p .q5").animate({opacity: 1}, 500);
+            }, 1500);
+            setInterval(function () {
+                $(".fir_p .navs ul li a").animate({opacity: 1}, 500);
+            }, 2000);
+            setInterval(function () {
+                $(".fir_p .b1").animate({opacity: 1}, 500)
+            }, 2500);
+            setInterval(function () {
+                $(".fir_p .b2").animate({opacity: 1}, 500)
+            }, 3000);
+
+            var sp_w = $(window).width() * 0.6;
+            var sp_h = $(window).width() * 0.4;
+
+            $(".sec_page ul li .ltu").click(function () {
+                var spurl = $(this).parent("li").attr("data-src");
+                var tuurl = $(this).parent("li").attr("data-img");
+
+
+                sp(spurl, tuurl, sp_w, sp_h);
+                $("#sp_1").css("marginLeft", -(sp_w / 2));
+                $("#sp_1").css("marginTop", -(sp_h / 2));
+
+                $(".heibg").show();
+            })
+            $(".guanbi").click(function () {
+                $(".heibg").hide();
+
+            })
+
+        });
+
+
+
+    </script>
+    <script>
+        $(function(){
+
+            $(".top").animate({top:"0px"});
+            $(".top .dh").show();
+
+
+
+            $(".dh").click(function(){
+                var dhlist=$(".dh_list");
+                if(dhlist.hasClass("dh_b")){
+                    dhlist.removeClass("dh_b");
+                    dhlist.animate({right:"0"});
+
+                }else{
+                    dhlist.addClass("dh_b");
+                    dhlist.animate({right:"-165px"});
+                }
+
+            })
+
+            $(".dh_list ul li span a").hover(function(){
+                $(this).parents("span").addClass("focus");
+            },function(){
+                $(this).parents("span").removeClass("focus");
+            })
+        });
+    </script>
+</head>
+
+<body>
+<ul class="menu" >
+    <li data-menuanchor="page1" class="active page1"><a href="#page1"> </a></li>
+    <li data-menuanchor="page2" class="page2"><a href="#page2"> </a></li>
+    <li data-menuanchor="page3" class="page3"><a href="#page3"> </a></li>
+    <li data-menuanchor="page4" class="page4"><a href="#page4"> </a></li>
+    <li data-menuanchor="page5" class="page5"><a href="#page5"> </a></li>
+    <li data-menuanchor="page6" class="page6"><a href="#footer1"> </a></li>
+</ul>
+<div class="top">
+    <div class="logo l">
+        <a href="/">
+            <img src="images/logor.png" class="rd" style="display: block;width: 57px;height: 88px">
+        </a>
+    </div>
+    <div class="menuList">
+        <ul>
+            <li><a href="">首页</a></li>
+            <li><a href="">关于我们</a></li>
+            <li><a href="">媒体资源</a></li>
+            <li><a href="">合作伙伴</a></li>
+            <li><a href="">加入我们</a></li>
+        </ul>
+    </div>
+</div>
+<div class="heibg">
+    <div class="guanbi"><img src="images/guanbi.png"></div>
+    <div id="sp_1" style=" position:absolute; left:50%; top:50%; z-index:99999;"> </div>
+</div>
+<script type="text/javascript">
+
+
+
+
+
+    function sp(spurl, tuurl, sp_w, sp_h) {
+
+        var flashvars = {
+            f: spurl,
+            c: 0,
+            b: 1,
+            i: tuurl,
+            p: 2
+        };
+        var video = [spurl + '->video/mp4'];
+        CKobject.embed('ckplayer/ckplayer.swf', 'sp_1', 'ckplayer_a1', sp_w, sp_h, false, flashvars, video)
+        function closelights() {//关灯
+            alert(' 本演示不支持开关灯');
+        }
+        function openlights() {//开灯
+            alert(' 本演示不支持开关灯');
+        }
+
+
+    }
+
+</script>
+<div id="dahe">
+    <div class="section section1">
+        <div class="section1_title1">
+            <img src="images/title2.png" alt="">
+        </div>
+        <div class="section1_title2">
+            <img src="images/title1.png" alt="">
+        </div>
+    </div>
+
+
+    <div class="section section2">
+        <div class="section2_cont">
+            <div class="section2_img">
+                <img src="images/bg1.jpg" alt="">
+            </div>
+            <div class="section2_words">
+                <div>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;南京驿路尚网络科技有限公司，基于户外媒体资源整合与营销，专注数字户外媒体的创新研发，成功打造全国首个高速公路智慧媒体平台以及城市商圈智慧媒体平台。<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;公司致力于挖掘和延展媒体的传播价值，倡导“点线面”多维度、立体化传播，精准构建全域宣传模式，是“比户外媒体更懂科技，比传统科技更懂媒体”的专业数字户外媒体运营商。
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="section section3">
+        <div class="section3_box">
+            <a class="section3_item">
+                <div class="sec_item_bg">
+                    <img src="images/item1.png" alt="">
+                </div>
+                <div class="sec_item_cover">
+                    <p>核心地标大屏</p>
+                </div>
+            </a>
+            <a class="section3_item">
+                <div class="sec_item_bg">
+                    <img src="images/item1.png" alt="">
+                </div>
+                <div class="sec_item_cover">
+                    <p>核心地标大屏</p>
+                </div>
+            </a>
+            <a class="section3_item">
+                <div class="sec_item_bg">
+                    <img src="images/item1.png" alt="">
+                </div>
+                <div class="sec_item_cover">
+                    <p>核心地标大屏</p>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+
+    <div class="section section4">
+        <div style=" width:300px; position:absolute; top:100px; left:50%; margin-left:-150px; font-size:28px; color:#fff; text-align:center; z-index:99999;"><img src="images/1_03.png"></div>
+        <div class="thir_page wl">
+            <div class="thir_page_top"> </div>
+            <ul>
+                <li class="qiu1 qius"><a href="anli.php?i=135"><img src="images/small/p1-1.png" class="xqiu"><img src="images/big/p1.png" class="dqiu"></a></li>
+                <li class="qiu2 qius"><a href="anli.php?i=125"><img src="images/small/p2-2.png" class="xqiu"><img src="images/big/p2.png" class="dqiu"></a></li>
+                <li class="qiu3 qius"><a href="anli.php?i=112"><img src="images/small/p3-3.png" class="xqiu"><img src="images/big/p3.png" class="dqiu"></a></li>
+                <li class="qiu4 qius"><a href="anli.php?i=111"><img src="images/small/p4-4.png" class="xqiu"><img src="images/big/p4.png" class="dqiu"></a></li>
+                <li class="qiu5 qius"><a href="anli.php?i=72"><img src="images/small/p5-5.png" class="xqiu"><img src="images/big/p5.png" class="dqiu"></a></li>
+                <li class="qiu6 qius"><a href="anli.php?i=137"><img src="images/small/p6-6.png" class="xqiu"><img src="images/big/p6.png" class="dqiu"></a></li>
+                <li class="qiu7 qius"><a href="anli.php?i=124"><img src="images/small/p7-7.png" class="xqiu"><img src="images/big/p7.png" class="dqiu"></a></li>
+                <li class="qiu8 qius"><a href="anli.php?i=103"><img src="images/small/p8-8.png" class="xqiu"><img src="images/big/p8.png" class="dqiu"></a></li>
+                <li class="qiu9 qius"><a href="anli.php?i=147"><img src="images/small/p9-9.png" class="xqiu"><img src="images/big/p9.png" class="dqiu"></a></li>
+                <li class="qiu10 qius"><a href="anli.php?i=144"><img src="images/small/p10-10.png" class="xqiu"><img src="images/big/p10.png" class="dqiu"></a></li>
+                <li class="qiu11 qius"><a href="anli.php?i=155"><img src="images/small/p11-11.png" class="xqiu"><img src="images/big/p11.png" class="dqiu"></a></li>
+                <li class="qiu12 qius"><a href="anli.php?i=154"><img src="images/small/p12-12.png" class="xqiu"><img src="images/big/p12.png" class="dqiu"></a></li>
+                <li class="qiu13 qius"><a href="anli.php?i=92"><img src="images/small/p13-13.png" class="xqiu"><img src="images/big/p13.png" class="dqiu"></a></li>
+                <li class="qiu14 qius"><a href="anli.php?i=120"><img src="images/small/p14-14.png" class="xqiu"><img src="images/big/p14.png" class="dqiu"></a></li>
+                <li class="qiu15 qius"><a href="anli.php?i=104"><img src="images/small/p15-15.png" class="xqiu"><img src="images/big/p15.png" class="dqiu"></a></li>
+                <li class="qiu16 qius"><a href="anli.php?i=123"><img src="images/small/p16-16.png" class="xqiu"><img src="images/big/p16.png" class="dqiu"></a></li>
+                <li class="qiu17 qius"><a href="anli.php?i=71"><img src="images/small/p17-17.png" class="xqiu"><img src="images/big/p17.png" class="dqiu"></a></li>
+                <li class="qiu18 qius"><a href="anli.php?i=148"><img src="images/small/p18-18.png" class="xqiu"><img src="images/big/p18.png" class="dqiu"></a></li>
+                <li class="qiu19 qius"><a href="anli.php?i=66"><img src="images/small/p19-19.png" class="xqiu"><img src="images/big/p19.png" class="dqiu"></a></li>
+                <li class="qiu20 qius"><a href="anli.php?i=121"><img src="images/small/p20-20.png" class="xqiu"><img src="images/big/p20.png" class="dqiu"></a></li>
+                <li class="qiu21 qius"><a href="anli.php?i=132"><img src="images/small/p21-21.png" class="xqiu"><img src="images/big/p21.png" class="dqiu"></a></li>
+                <li class="qiu22 qius"><a href="anli.php?i=89"><img src="images/small/p22-22.png" class="xqiu"><img src="images/big/p22.png" class="dqiu"></a></li>
+                <li class="qiu23 qius"><a href="anli.php?i=100"><img src="images/small/p23-23.png" class="xqiu"><img src="images/big/p23.png" class="dqiu"></a></li>
+                <li class="qiu24 qius"><a href="anli.php?i=70"><img src="images/small/p24-24.png" class="xqiu"><img src="images/big/p24.png" class="dqiu"></a></li>
+                <li class="qiu25 qius"><a href="anli.php?i=98"><img src="images/small/p25-25.png" class="xqiu"><img src="images/big/p25.png" class="dqiu"></a></li>
+                <li class="qiu26 qius"><a href="anli.php?i=145"><img src="images/small/p26-26.png" class="xqiu"><img src="images/big/p26.png" class="dqiu"></a></li>
+                <li class="qiu27 qius"><a href="anli.php?i=133"><img src="images/small/p27-27.png" class="xqiu"><img src="images/big/p27.png" class="dqiu"></a></li>
+                <li class="qiu28 qius"><a href="anli.php?i=116"><img src="images/small/p28-28.png" class="xqiu"><img src="images/big/p28.png" class="dqiu"></a></li>
+                <li class="qiu29 qius"><a href="anli.php?i=146"><img src="images/small/p29-29.png" class="xqiu"><img src="images/big/p29.png" class="dqiu"></a></li>
+                <li class="qiu30 qius"><a href="anli.php?i=134"><img src="images/small/p30-30.png" class="xqiu"><img src="images/big/p30.png" class="dqiu"></a></li>
+                <li class="qiu31 qius"><a href="http://www.dahe-ad.com/video大贺+最终"><img src="images/small/p31-31.png" class="xqiu"><img src="images/big/p31.png" class="dqiu"></a></li>
+            </ul>
+
+        </div>
+    </div>
+    <div class="section section5" id="nextS">
+        <div class="sec5_list">
+            <div class="sec5_item">
+                <div class="sec5_item_title">
+                    <p>文案策划</p>
+                    <span></span>
+                </div>
+                <div class="sec5_item_hide">
+                    岗位职责：<br> 1、协助协会各种会议活动，及会议纪要的整理；<br> 2、协助公司各类宣传策划方案的设计和撰写;<br>  3、配合销售经理，针对客户需求，撰写销售方案;<br>  4、负责公司对外媒体和广告表现文字的策划与设计; <br> 5、负责媒体软文和广告资料的收集与整理。 <br> 任职要求： <br> 1、大专及以上学历，广告、新闻中文等相关专业优先； <br> 2、具备一定的文字功底和无穷的创意想象力，执行力强、有良好的组织活动能力并能独立撰写通知；<br>  3、熟悉公关活动项目的整体策划，掌握常规性公关活动流程策划、对活动物料以及相关所需设备熟悉；<br>  4、掌握Office办公软件，尤其熟练操作PPT，掌握PS，AI等相关作图软件。
+                </div>
+            </div>
+            <div class="sec5_item">
+                <div class="sec5_item_title">
+                    <p>文案策划</p>
+                    <span></span>
+                </div>
+                <div class="sec5_item_hide">
+                    岗位职责：<br> 1、协助协会各种会议活动，及会议纪要的整理；<br> 2、协助公司各类宣传策划方案的设计和撰写;<br>  3、配合销售经理，针对客户需求，撰写销售方案;<br>  4、负责公司对外媒体和广告表现文字的策划与设计; <br> 5、负责媒体软文和广告资料的收集与整理。 <br> 任职要求： <br> 1、大专及以上学历，广告、新闻中文等相关专业优先； <br> 2、具备一定的文字功底和无穷的创意想象力，执行力强、有良好的组织活动能力并能独立撰写通知；<br>  3、熟悉公关活动项目的整体策划，掌握常规性公关活动流程策划、对活动物料以及相关所需设备熟悉；<br>  4、掌握Office办公软件，尤其熟练操作PPT，掌握PS，AI等相关作图软件。
+                </div>
+            </div>
+            <div class="sec5_item">
+                <div class="sec5_item_title">
+                    <p>文案策划</p>
+                    <span></span>
+                </div>
+                <div class="sec5_item_hide">
+                    岗位职责：<br> 1、协助协会各种会议活动，及会议纪要的整理；<br> 2、协助公司各类宣传策划方案的设计和撰写;<br>  3、配合销售经理，针对客户需求，撰写销售方案;<br>  4、负责公司对外媒体和广告表现文字的策划与设计; <br> 5、负责媒体软文和广告资料的收集与整理。 <br> 任职要求： <br> 1、大专及以上学历，广告、新闻中文等相关专业优先； <br> 2、具备一定的文字功底和无穷的创意想象力，执行力强、有良好的组织活动能力并能独立撰写通知；<br>  3、熟悉公关活动项目的整体策划，掌握常规性公关活动流程策划、对活动物料以及相关所需设备熟悉；<br>  4、掌握Office办公软件，尤其熟练操作PPT，掌握PS，AI等相关作图软件。
+                </div>
+            </div>
+            <div class="sec5_item">
+                <div class="sec5_item_title">
+                    <p>文案策划</p>
+                    <span></span>
+                </div>
+                <div class="sec5_item_hide">
+                    岗位职责：<br> 1、协助协会各种会议活动，及会议纪要的整理；<br> 2、协助公司各类宣传策划方案的设计和撰写;<br>  3、配合销售经理，针对客户需求，撰写销售方案;<br>  4、负责公司对外媒体和广告表现文字的策划与设计; <br> 5、负责媒体软文和广告资料的收集与整理。 <br> 任职要求： <br> 1、大专及以上学历，广告、新闻中文等相关专业优先； <br> 2、具备一定的文字功底和无穷的创意想象力，执行力强、有良好的组织活动能力并能独立撰写通知；<br>  3、熟悉公关活动项目的整体策划，掌握常规性公关活动流程策划、对活动物料以及相关所需设备熟悉；<br>  4、掌握Office办公软件，尤其熟练操作PPT，掌握PS，AI等相关作图软件。
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section footerss" id="section-footer">
+        <div id="footer-text">
+            http://www.jb51.net/article/134499.htm
+            https://blog.csdn.net/SinceroTu/article/details/77876905
+        </div>
+    </div>
+
+</div>
+
+<script>
+    //最后一部分的高度
+
+    //第二部分图片比例
+    var width2 = $(window).width();
+    var width1 = width2 / 1.8;
+    $('.section2_cont').height(width1 / 1.81);
+
+    //第三部分蒙层
+
+    $(".section3_item").each(function () {
+        $(this).mouseover(function () {
+            $(this).find('.sec_item_cover').css({
+                'background-color':'rgba(0,0,0,0)',
+                'transition':'1s'
+            })
+            $(this).find('.sec_item_cover').find('p').css({
+                'color':'rgba(255,255,255,1)',
+                'transition':'.5s'
+            })
+            $(this).css({
+                'width':'40%',
+                'transition':'.5s'
+            })
+            $(this).siblings('.section3_item').css({
+                'width':'30%',
+                'transition':'.5s'
+            })
+        }).mouseout(function () {
+            $(this).find('.sec_item_cover').css({
+                'background-color':'rgba(0,0,0,.3)',
+                'transition':'1.5s'
+            })
+            $(this).find('.sec_item_cover').find('p').css({
+                'color':'rgba(255,255,255,0)',
+                'transition':'.5s'
+            })
+            $(".section3_item").css({
+                'width': 'calc(100% / 3)',
+                'width': '-moz-calc(100% / 3)',
+                'width': '-webkit-calc(100% / 3)'
+            })
+        })
+    })
+
+    //点击招聘信息
+    $('.sec5_item_title').each(function () {
+        $(this).click(function () {
+            $(this).find('span').toggleClass('show');
+            $(this).siblings('.sec5_item_hide').toggleClass('sec5_item_show');
+            $(this).parents('.sec5_item').siblings('.sec5_item').find('.sec5_item_hide').removeClass('sec5_item_show');
+            $(this).parents('.sec5_item').siblings('.sec5_item').find('span').removeClass('show');
+        })
+    })
+
+
+</script>
+
+</body>
+</html>

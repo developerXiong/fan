@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;" title="熊春阳">
+						<img class="mui-media-object mui-pull-left" src="img/ic_choose copy@2x.png">
+						<div class="mui-media-body">
+							熊春阳
+							<p class="mui-ellipsis">能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+						</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;" title="钱芬倩">
+						<img class="mui-media-object mui-pull-left" src="img/ic_choose copy@2x.png">
+						<div class="mui-media-body">
+							钱芬倩
+							<p class="mui-ellipsis">想要这样一间小木屋，夏天挫冰吃瓜，冬天围炉取暖.</p>
+						</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;" title="赵爱灵">
+						<img class="mui-media-object mui-pull-left" src="img/ic_choose copy@2x.png">
+						<div class="mui-media-body">
+							赵爱灵
+							<p class="mui-ellipsis">烤炉模式的城，到黄昏，如同打翻的调色盘一般.</p>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+		<script type="text/javascript">
+			mui(".mui-table-view-cell").on("tap","a",function(e){
+				//传值
+				var title = this.getAttribute("title");
+				
+				
+				//点击跳转
+				mui.openWindow({
+					url:'sub1Chat.html',
+					id:'sub1Chat.html',
+					style:{},
+					extras:{
+						//传值
+						title:title
+					},
+					show:{
+						//显示效果
+						autoShow:true,//是否直接自动显示（懒加载或者延迟加载时候用false）
+						aniShow:'slide-in-right',//动画，从右侧滑入
+						duration:100//时间
+					},
+					waiting:{
+						autoShow:true,//是否显示等待框
+						title:'正在加载...',//不写则没有
+						options:{
+							//调整宽高
+	//						width:
+	//						height:
+						}
+					}
+				})
+			})
+		</script>
+	</body>
+
+</html>
